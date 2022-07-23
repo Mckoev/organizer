@@ -1,0 +1,26 @@
+import React from 'react';
+import './App.css';
+import {Route, Routes} from "react-router-dom";
+import Calendar from "./components/Calendar";
+import Map from "./components/Map";
+import Lists from "./components/Lists";
+import News from "./components/News";
+import Home from "./components/home/Home";
+import Page from "./components/page/Page";
+import Weather from "./components/weather/Weather";
+
+function App() {
+
+  return (
+      <Routes>
+          <Route path="/" element={<Page component={Home()}/>}/>
+          <Route path="weather" element={<Page component={Weather()}/>}/>
+          <Route path="calendar" element={<Page component={Calendar()}/>}/>
+          <Route path="map" element={<Page component={Map()}/>} />
+          <Route path="lists" element={<Page component={Lists()}/>} />
+          <Route path='news' element={<Page component={News()}/>} />
+      </Routes>
+  );
+}
+
+export default App;
