@@ -1,0 +1,144 @@
+.page-tasks .bg {
+  background-image: url('http://ultraimg.com/images/gAbeciZ.jpg');
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
+}
+.page-tasks .overlay {
+  background-color: rgba(0, 153, 50, 0.3);
+}
+.page-tasks .wrapper {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 760px;
+  height: 440px;
+  overflow: hidden;
+}
+.page-tasks .panel-tasklist {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0 1%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.page-tasks .panel-tasklist .header {
+  text-align: center;
+}
+.page-tasks .panel-tasklist .header .title {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  background-color: rgba(0, 255, 84, 0.7);
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+}
+.page-tasks .panel-tasklist .newItem {
+  padding: 15px 15px 0px 15px;
+  height: 35px;
+}
+.page-tasks .panel-tasklist .newItem .text {
+  cursor: pointer;
+}
+.page-tasks .panel-tasklist .newItem .text .title {
+  display: inline-block;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+.page-tasks .panel-tasklist .newItem .text i {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  color: #cccccc;
+  line-height: 20px;
+  vertical-align: middle;
+}
+.page-tasks .panel-tasklist .newItem input {
+  display: none;
+  width: 100%;
+  padding: 2px 6px;
+  background-color: #006622;
+  border: 1px solid #009932;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: 'Open Sans';
+  color: White;
+}
+.page-tasks .panel-tasklist ul {
+  height: 370px;
+  padding: 10px 10px;
+  overflow: auto;
+  /* scrollbar design Chrome */
+}
+.page-tasks .panel-tasklist ul::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+.page-tasks .panel-tasklist ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #009932;
+  border: 1px solid #006622;
+}
+.page-tasks .panel-tasklist ul::-webkit-scrollbar-corner {
+  background: #009932;
+  display: none;
+  opacity: 0;
+}
+.page-tasks .panel-tasklist ul li {
+  padding: 0;
+  margin: 8px 0px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.page-tasks .panel-tasklist ul li .check,
+.page-tasks .panel-tasklist ul li .title,
+.page-tasks .panel-tasklist ul li .plus {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 20px;
+  vertical-align: top;
+}
+.page-tasks .panel-tasklist ul li .check {
+  position: relative;
+  margin: 0px 0px 0px 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00ff54;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+.page-tasks .panel-tasklist ul li .title {
+  width: 170px;
+  padding: 2px 6px;
+}
+.page-tasks .panel-tasklist ul li.checked .check:after {
+  content: '\f00c';
+  position: absolute;
+  font-family: FontAwesome;
+  font-size: 0.9rem;
+  top: -2px;
+  left: 1px;
+}
+.page-tasks .panel-tasklist ul li.checked .title {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #b3b3b3;
+}
+.page-tasks .panel-tasklist ul li .plus {
+  width: 20px;
+  height: 20px;
+}
+.page-tasks .panel-tasklist.right {
+  left: auto;
+  right: 20px;
+}
