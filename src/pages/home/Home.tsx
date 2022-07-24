@@ -1,6 +1,5 @@
 import React from 'react';
-
-const sunIcon = require('../../img/sunIcon.svg') as string;
+import './home.css'
 
 function Home() {
     return (

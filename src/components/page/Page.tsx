@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './page.css'
-import Icons from "../Icons";
+import Icons from "../icons/Icons";
 
 const Page = ({ component }: { component: React.ReactNode}) => {
     return (

@@ -1,0 +1,28 @@
+.main-icons .panel-functions {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 20px 0px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.main-icons .panel-functions .icon {
+    margin: 0px 20px;
+    font-size: 45px;
+    width: 87px;
+    height: 87px;
+    text-align: center;
+    cursor: pointer;
+    /*border: 2px solid rgba(0, 233, 94, 0.4);*/
+    -moz-border-radius: 87px;
+    -webkit-border-radius: 87px;
+    border-radius: 87px;
+}
+.main-icons .panel-functions .icon .title {
+    font-size: 1.0rem;
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+}
