@@ -1,7 +1,7 @@
 import React from 'react'
-import './lists.css'
+import './tasks.css'
 
-function Lists() {
+function Tasks() {
   return (
     <div className="page page-tasks">
       <div className="bg"></div>
@@ -13,7 +13,7 @@ function Lists() {
           </div>
           <div className="newItem">
             <div className="text">
-              <i className="fa fa-plus"></i>
+              <img src={require('../../img/plus.png')}/>
               <span className="title">Add new item</span>
             </div>
             <input type="text" placeholder="Add new item" />
@@ -43,7 +43,7 @@ function Lists() {
           </div>
           <div className="newItem">
             <div className="text">
-              <i className="fa fa-plus"></i>
+              <img src={require('../../img/plus.png')}/>
               <span className="title">Add new item</span>
             </div>
             <input type="text" placeholder="Add new item" />
@@ -77,7 +77,7 @@ function Lists() {
           </div>
           <div className="newItem">
             <div className="text">
-              <i className="fa fa-plus"></i>
+              <img src={require('../../img/plus.png')}/>
               <span className="title">Add new item</span>
             </div>
             <input type="text" placeholder="Add new item" />
@@ -102,4 +102,4 @@ function Lists() {
   )
 }
 
-export default Lists
+export default Tasks

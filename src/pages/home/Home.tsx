@@ -1,5 +1,8 @@
 import React from 'react';
 import './home.css'
+import TimeNow from "../../components/timeNow";
+
+
 
 function Home() {
     return (
@@ -7,12 +10,10 @@ function Home() {
             <div className="bg"></div>
             <div className="overlay"></div>
             <div className="panel panel-time">
-                <div className="span time">15:06</div>
-                <div className="span date">Monday, 27 Juny 2015</div>
+                <TimeNow/>
             </div>
             <div className="panel panel-weather">
                 <div className="location">Budapest, Hungary</div>
-                 {/*.icon.wi.wi-day-sunny-overcast*/}
                 <img src="http://ultraimg.com/images/KlfpUAu.png"/>
                 <div className="span temp">28<span className="degree">&deg;C</span></div>
                 <div className="span text">Sunny</div>
@@ -53,13 +54,6 @@ function Home() {
                     </li>
                 </ul>
             </div>
-            {/*<div className="panel panel-functions">*/}
-            {/*    <div className="icon icon-weather" data-page="weather"><img src={require('../../img/sunBig.png')}/></div>*/}
-            {/*    <div className="icon icon-calendar" data-page="calendar"><img src={require('../../img/calendar.png')}/></div>*/}
-            {/*    <div className="icon icon-map" data-page="map"><img src={require('../../img/maps.png')}/></div>*/}
-            {/*    <div className="icon icon-tasks" data-page="tasks"><img src={require('../../img/task.png')}/></div>*/}
-            {/*    <div className="icon icon-news" data-page="news"><img src={require('../../img/news.png')}/></div>*/}
-            {/*</div>*/}
         </div>
     );
 }

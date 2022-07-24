@@ -1,13 +1,13 @@
 .page-home .panel-time {
     position: absolute;
     top: 30px;
-    width: 380px;
+    width: 400px;
     -moz-border-radius: 0px 5px 5px 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px 5px 5px 0px;
 }
 .page-home .panel-time .time {
-    font-size: 7.0rem;
+    font-size: 6.0rem;
     line-height: 8.0rem;
     text-align: center;
 }
