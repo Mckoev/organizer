@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './home.css'
 import TimeNow from "../../components/timeNow";
+import {getWeatherToHome} from "../../helpers/getWeatherToHome";
+import WeatherHome from "../../components/page/weatherHome";
 
 
 
 function Home() {
+    getWeatherToHome()
     return (
         <div className="page page-home" style={{display: 'block'}}>
             <div className="bg"></div>
@@ -12,12 +15,7 @@ function Home() {
             <div className="panel panel-time">
                 <TimeNow/>
             </div>
-            <div className="panel panel-weather">
-                <div className="location">Budapest, Hungary</div>
-                <img src="http://ultraimg.com/images/KlfpUAu.png"/>
-                <div className="span temp">28<span className="degree">&deg;C</span></div>
-                <div className="span text">Sunny</div>
-            </div>
+            <WeatherHome/>
             <div className="panel panel-calendar">
                 <ul>
                     <li>
