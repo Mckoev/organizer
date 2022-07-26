@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-function TimeNow() {
+function TimeHome() {
 
     const [time, setTime] = useState(new Date().toLocaleTimeString())
     const [date, setDate] = useState(new Date())
@@ -27,6 +27,6 @@ function TimeNow() {
     );
 }
 
-TimeNow.propTypes = {};
+TimeHome.propTypes = {};
 
-export default TimeNow;
+export default TimeHome;

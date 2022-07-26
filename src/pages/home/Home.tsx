@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import './home.css'
-import TimeNow from "../../components/timeNow";
+import TimeHome from "../../components/home/timeHome";
 import {getWeatherToHome} from "../../helpers/getWeatherToHome";
-import WeatherHome from "../../components/page/weatherHome";
+import WeatherHome from "../../components/home/weatherHome";
 
 
 
@@ -13,7 +13,7 @@ function Home() {
             <div className="bg"></div>
             <div className="overlay"></div>
             <div className="panel panel-time">
-                <TimeNow/>
+                <TimeHome/>
             </div>
             <WeatherHome/>
             <div className="panel panel-calendar">

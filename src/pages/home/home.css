@@ -33,9 +33,8 @@
     border-radius: 5px 0px 0px 5px;
     background-color: rgba(0, 0, 0, 0.2);
 }
-.page-home .panel-weather .location {
-    background-color: rgba(0, 233, 94, 0.6);
-    font-size: 1.1rem;
+.page-home .panel-weather .condition {
+    font-size: 1.5rem;
     line-height: 1.5rem;
     -moz-border-radius: 5px 0px 0px 0px;
     -webkit-border-radius: 5px;
@@ -48,7 +47,7 @@
     margin-right: 40px;
 }
 .page-home .panel-weather img {
-    width: 150px;
+    /*width: 150px;*/
     margin-right: 50px;
 }
 .page-home .panel-weather .temp {
@@ -64,9 +63,9 @@
     vertical-align: top;
 }
 .page-home .panel-weather .text {
-    font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     line-height: 2.5rem;
+    background-color: rgba(0, 233, 94, 0.6);
 }
 .page-home .panel-calendar ul {
     padding: 0px 20px;
@@ -161,4 +160,9 @@
     font-style: italic;
     color: #cccccc;
     font-size: 0.9rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }

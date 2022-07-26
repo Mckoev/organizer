@@ -1,22 +1,19 @@
+import {URL, TOKEN, METHODS} from "./API";
 
-const TOKEN = "MjBkMTc1MmItNTY5Mi00ZDlkLTg2MGUtNmNmNzExMDgxZDgy"
-const URL = "https://api.m3o.com/v1/weather/Now"
 
-export async function  getWeatherToHome(): Promise<any> {
-    const responce = await fetch(URL, {
-        method: 'POST',
+export function  getWeatherToHome(): Promise<any> {
+    const responce = fetch(URL, {
+        method: METHODS.POST,
         headers: {
             'Content-Type': `application/json`,
-            'Authorization' : `Bearer ${TOKEN}`,
+            'Authorization': `Bearer ${TOKEN}`,
         },
         body: JSON.stringify({
             "location": "petrozavodsk"
         })
-    });
-
-    let result = await responce.json();
-    console.log(result)
-    return result
+    })
+        .then(response => response.json())
+    return responce
 }
 
 

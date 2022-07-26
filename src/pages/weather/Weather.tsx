@@ -1,5 +1,6 @@
 import React from 'react';
 import './weather.css'
+import Location from "../../components/weather/Location";
 
 function Weather() {
     return (
@@ -39,10 +40,7 @@ function Weather() {
                     <div className="temp"><span className="value">19<span className="degree">&deg;C</span></span></div>
                 </div>
             </div>
-            <div className="panel panel-location">
-                <div className="title"><span>Budapest</span><span>Hungary</span></div>
-                <div className="icon fa fa-map-marker"></div>
-            </div>
+            <Location/>
             <div className="panel panel-forecast">
                 <div className="box">
                     <div className="title">Tue</div>
