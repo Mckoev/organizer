@@ -1,29 +1,26 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {getWeatherToHome} from "../../helpers/getWeatherToHome";
 import {Link} from "react-router-dom";
-import Weather from "../../pages/weather/Weather";
-
-const DOWNLOADING = 'downloading...'
+import {useAppDispatch, useAppSelector} from "../../reduxToolkit/hooks";
 
 function WeatherHome() {
-    const [location, setLocation] = useState(DOWNLOADING)
-    const [country, setCountry] = useState(" ")
-    const [temp, setTemp] = useState(" ")
-    const [condition, setCondition] = useState(DOWNLOADING)
-    const [icon, setIcon] = useState(" ")
+    const location = useAppSelector(state => state.toolkit.location)
+    const country = useAppSelector(state => state.toolkit.country)
+    const temp = useAppSelector(state => state.toolkit.temp)
+    const condition = useAppSelector(state => state.toolkit.condition)
+    const icon = useAppSelector(state => state.toolkit.icon)
 
-    async function getWeather() {
-        let result = await getWeatherToHome()
-        console.log(result)
-        setLocation(result.location)
-        setCountry(result.country)
-        setTemp(result.temp_c)
-        setCondition(result.condition)
-        setIcon(result.icon_url)
+    console.log(location)
+
+    const stateWeather = useAppSelector(state => state.toolkit)
+    const dispatch = useAppDispatch()
+
+    function handler() {
+        console.log(stateWeather)
     }
 
     useEffect(function () {
-        getWeather()
+        getWeatherToHome(location)
     }, [])
 
     return (
@@ -32,7 +29,7 @@ function WeatherHome() {
             <img src={icon}/>
             <div className="span temp">{temp}<span className="degree">&deg;C</span></div>
             <Link to="/weather"><div className="span text">{location}, {country}</div></Link>
-
+            <button onClick={() => handler()}>BTN</button>
         </div>
     );
 }

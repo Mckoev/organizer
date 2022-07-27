@@ -7,7 +7,6 @@ import WeatherHome from "../../components/home/weatherHome";
 
 
 function Home() {
-    getWeatherToHome()
     return (
         <div className="page page-home" style={{display: 'block'}}>
             <div className="bg"></div>
