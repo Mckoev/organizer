@@ -1,12 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import toolkitSlice from './toolkitSlice'
+import toolkitSliceDays from './toolkitSliceDays'
 
 const rootReducer = combineReducers({
-    toolkit: toolkitSlice,
+  toolkit: toolkitSlice,
+  toolkitSliceDays: toolkitSliceDays,
 })
 
 export const store = configureStore({
-    reducer: rootReducer,
+  reducer: rootReducer,
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
