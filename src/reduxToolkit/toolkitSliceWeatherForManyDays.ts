@@ -4,13 +4,13 @@ const init = {
   date: '',
   maxTemp: '',
   minTemp: '',
-  icon: '',
+  icon_url: '',
 }
 
-const toolkitSliceDays = createSlice({
+const toolkitSliceWeatherForManyDays = createSlice({
   name: 'day',
   initialState: {
-    arrState: [init, init, init, init, init, init],
+    arrState: [init, init, init, init, init, init, init],
   },
   reducers: {
     daysAction(state, action) {
@@ -18,11 +18,11 @@ const toolkitSliceDays = createSlice({
         state.arrState[i].date = action.payload[i].date
         state.arrState[i].maxTemp = action.payload[i].max_temp_c
         state.arrState[i].minTemp = action.payload[i].min_temp_c
-        state.arrState[i].icon = action.payload[i].icon_url
+        state.arrState[i].icon_url = action.payload[i].icon_url
       }
     },
   },
 })
 
-export default toolkitSliceDays.reducer
-export const { daysAction } = toolkitSliceDays.actions
+export default toolkitSliceWeatherForManyDays.reducer
+export const { daysAction } = toolkitSliceWeatherForManyDays.actions

@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react'
 import { useAppSelector } from '../../reduxToolkit/hooks'
-import { getWeatherToWeather } from '../../helpers/getWeatherToWeather'
-import { getWeatherToHome } from '../../helpers/getWeatherToHome'
+import { getWeatherForManyDays } from '../../helpers/getWeatherForManyDays'
+import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
 
 function Location() {
-  const location = useAppSelector((state) => state.toolkit.location)
-  const country = useAppSelector((state) => state.toolkit.country)
+  const location = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.location)
+  const country = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.country)
 
   function handler(e: any): void {
     e.preventDefault()
-    getWeatherToWeather(e.target[0].value)
-    getWeatherToHome(e.target[0].value)
+    getWeatherForManyDays(e.target[0].value)
+    getWeatherForOneDay(e.target[0].value)
   }
 
   useEffect(function () {
-    getWeatherToWeather(location)
+    getWeatherForManyDays(location)
   }, [])
 
   return (

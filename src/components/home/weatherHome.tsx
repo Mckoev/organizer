@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react'
-import { getWeatherToHome } from '../../helpers/getWeatherToHome'
+import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
 import { Link } from 'react-router-dom'
-import { useAppDispatch, useAppSelector } from '../../reduxToolkit/hooks'
+import { useAppSelector } from '../../reduxToolkit/hooks'
 
 function WeatherHome() {
-  const location = useAppSelector((state) => state.toolkit.location)
-  const country = useAppSelector((state) => state.toolkit.country)
-  const temp = useAppSelector((state) => state.toolkit.temp)
-  const condition = useAppSelector((state) => state.toolkit.condition)
-  const icon = useAppSelector((state) => state.toolkit.icon)
-
-  console.log(location)
+  const location = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.location)
+  const country = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.country)
+  const temp = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.temp)
+  const condition = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.condition)
+  const icon_url = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.icon_url)
 
   const stateWeather = useAppSelector((state) => state)
 
@@ -19,13 +17,13 @@ function WeatherHome() {
   }
 
   useEffect(function () {
-    getWeatherToHome(location)
+    getWeatherForOneDay(location)
   }, [])
 
   return (
     <div className="panel panel-weather">
       <div className="condition">{condition}</div>
-      <img src={icon} />
+      <img src={icon_url} alt='icon' />
       <div className="span temp">
         {temp}
         <span className="degree">&deg;C</span>
@@ -35,7 +33,7 @@ function WeatherHome() {
           {location}, {country}
         </div>
       </Link>
-      <button onClick={() => handler()}>BTN</button>
+      {/*<button onClick={() => handler()}>BTN</button>*/}
     </div>
   )
 }

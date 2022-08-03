@@ -1,19 +1,18 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useAppSelector } from '../../reduxToolkit/hooks'
 
 function PanelNow() {
-  const minTemp = useAppSelector((state) => state.toolkitSliceDays.arrState[0].minTemp)
-  const maxTemp = useAppSelector((state) => state.toolkitSliceDays.arrState[0].maxTemp)
-  const icon = useAppSelector((state) => state.toolkitSliceDays.arrState[0].icon)
-  const wind = useAppSelector((state) => state.toolkit.maxWind)
-  const wind_direction = useAppSelector((state) => state.toolkit.windDirection)
-  const humidity = useAppSelector((state) => state.toolkit.humidity)
+  const minTemp = useAppSelector((state) => state.toolkitSliceWeatherForManyDays.arrState[0].minTemp)
+  const maxTemp = useAppSelector((state) => state.toolkitSliceWeatherForManyDays.arrState[0].maxTemp)
+  const icon_url = useAppSelector((state) => state.toolkitSliceWeatherForManyDays.arrState[0].icon_url)
+  const wind = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.maxWind)
+  const wind_direction = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.windDirection)
+  const humidity = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.humidity)
 
   return (
     <div className="panel panel-now">
       <div className="mainInfo">
-        <img src={icon} />
+        <img src={icon_url} alt='icon' />
         <div className="temp">
           <span className="value">
             {maxTemp}

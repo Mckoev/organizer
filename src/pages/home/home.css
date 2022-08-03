@@ -1,7 +1,7 @@
 .page-home .panel-time {
     position: absolute;
     top: 30px;
-    width: 400px;
+    width: 390px;
     -moz-border-radius: 0px 5px 5px 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px 5px 5px 0px;
@@ -24,7 +24,7 @@
 .page-home .panel-weather {
     position: absolute;
     top: 30px;
-    width: 380px;
+    width: 390px;
     right: 0px;
     text-align: center;
     cursor: pointer;
@@ -39,6 +39,7 @@
     -moz-border-radius: 5px 0px 0px 0px;
     -webkit-border-radius: 5px;
     border-radius: 5px 0px 0px 0px;
+    margin-top: 5px;
 }
 .page-home .panel-weather .icon {
     display: inline-block;
@@ -47,14 +48,14 @@
     margin-right: 40px;
 }
 .page-home .panel-weather img {
-    /*width: 150px;*/
+    width: 94px;
     margin-right: 50px;
 }
 .page-home .panel-weather .temp {
     display: inline-block;
     vertical-align: top;
     font-size: 5.0rem;
-    line-height: 6.5rem;
+    line-height: 6.0rem;
     font-weight: 400;
 }
 .page-home .panel-weather .temp .degree {

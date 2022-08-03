@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './home.css'
 import TimeHome from "../../components/home/timeHome";
-import {getWeatherToHome} from "../../helpers/getWeatherToHome";
 import WeatherHome from "../../components/home/weatherHome";
 
 

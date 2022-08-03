@@ -1,15 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useAppSelector } from '../../reduxToolkit/hooks'
 
+
 function Box() {
-  const weatherDays = useAppSelector((state) => state.toolkitSliceDays.arrState)
-  const DAYS = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']
+  const weatherDays = useAppSelector((state) => state.toolkitSliceWeatherForManyDays.arrState).slice(1)
+  const DAYS: string[] = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']
 
   const listItems = weatherDays.map((el, index) => (
     <div className="box" key={index}>
       <div className="title">{DAYS[new Date(el.date).getDay()]}</div>
-      <img src={el.icon} />
+      <img src={el.icon_url} alt='icon weather'/>
       <div className="temp">
         <span className="value">
           {el.maxTemp}
