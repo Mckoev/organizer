@@ -1,169 +1,172 @@
 .page-home .panel-time {
-    position: absolute;
-    top: 30px;
-    width: 390px;
-    -moz-border-radius: 0px 5px 5px 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px 5px 5px 0px;
+  position: absolute;
+  top: 30px;
+  width: 390px;
+  -moz-border-radius: 0px 5px 5px 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px 5px 5px 0px;
 }
 .page-home .panel-time .time {
-    font-size: 6.0rem;
-    line-height: 8.0rem;
-    text-align: center;
+  font-size: 6rem;
+  line-height: 8rem;
+  text-align: center;
 }
 .page-home .panel-time .date {
-    background-color: rgba(0, 233, 94, 0.6);
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    text-align: center;
-    -moz-border-radius: 0px 0px 5px 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px 0px 5px 0px;
+  background-color: rgba(0, 233, 94, 0.6);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  -moz-border-radius: 0px 0px 5px 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px 0px 5px 0px;
 }
 
 .page-home .panel-weather {
-    position: absolute;
-    top: 30px;
-    width: 390px;
-    right: 0px;
-    text-align: center;
-    cursor: pointer;
-    -moz-border-radius: 5px 0px 0px 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px 0px 0px 5px;
-    background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30px;
+  width: 390px;
+  right: 0px;
+  text-align: center;
+  cursor: pointer;
+  -moz-border-radius: 5px 0px 0px 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 0px 0px 5px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .page-home .panel-weather .condition {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    -moz-border-radius: 5px 0px 0px 0px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px 0px 0px 0px;
-    margin-top: 5px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  -moz-border-radius: 5px 0px 0px 0px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px 0px 0px 0px;
+  margin-top: 5px;
 }
 .page-home .panel-weather .icon {
-    display: inline-block;
-    font-size: 3.0rem;
-    line-height: 4.0rem;
-    margin-right: 40px;
+  display: inline-block;
+  font-size: 3rem;
+  line-height: 4rem;
+  margin-right: 40px;
 }
 .page-home .panel-weather img {
-    width: 94px;
-    margin-right: 50px;
+  width: 94px;
+  margin-right: 50px;
 }
 .page-home .panel-weather .temp {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 5.0rem;
-    line-height: 6.0rem;
-    font-weight: 400;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 5rem;
+  line-height: 6rem;
+  font-weight: 400;
 }
 .page-home .panel-weather .temp .degree {
-    font-size: 2rem;
-    line-height: 4rem;
-    vertical-align: top;
+  font-size: 2rem;
+  line-height: 4rem;
+  vertical-align: top;
 }
 .page-home .panel-weather .text {
-    font-size: 1.8rem;
-    line-height: 2.5rem;
-    background-color: rgba(0, 233, 94, 0.6);
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  background-color: rgba(0, 233, 94, 0.6);
 }
 .page-home .panel-calendar ul {
-    padding: 0px 20px;
+  padding: 0px 20px;
 }
 .page-home .panel-calendar ul li {
-    padding: 0;
-    margin: 8px 0px;
-    background-color: rgba(0, 0, 0, 0.5);
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+  padding: 0;
+  margin: 8px 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
-.page-home .panel-calendar ul li .time, .page-home .panel-calendar ul li .title {
-    display: inline-block;
-    font-size: 1.0rem;
-    line-height: 1.2rem;
-    padding: 2px 6px;
+.page-home .panel-calendar ul li .time,
+.page-home .panel-calendar ul li .title {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  padding: 2px 6px;
 }
 .page-home .panel-calendar ul li .time {
-    width: 120px;
-    text-align: center;
-    font-weight: 300;
-    background-color: rgba(0, 233, 94, 0.6);
-    -moz-border-radius: 4px 0 0 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px 0 0 4px;
+  width: 120px;
+  text-align: center;
+  font-weight: 300;
+  background-color: rgba(0, 233, 94, 0.6);
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 0 0 4px;
 }
 
 .page-home .panel-calendar {
-    position: absolute;
-    top: 220px;
-    width: 380px;
-    height: 120px;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: initial;
+  position: absolute;
+  top: 220px;
+  width: 380px;
+  height: 120px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: initial;
 }
 
 .page-home .panel-tasks {
-    position: absolute;
-    top: 210px;
-    right: 0px;
-    width: 300px;
-    height: 140px;
-    overflow: hidden;
-    cursor: pointer;
-    background-color: initial;
+  position: absolute;
+  top: 210px;
+  right: 0px;
+  width: 300px;
+  height: 140px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: initial;
 }
 .page-home .panel-tasks ul {
-    padding-right: 30px;
+  padding-right: 30px;
 }
 .page-home .panel-tasks ul li {
-    padding: 0;
-    margin: 8px 0px;
-    background-color: rgba(0, 0, 0, 0.5);
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+  padding: 0;
+  margin: 8px 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
-.page-home .panel-tasks ul li .check, .page-home .panel-tasks ul li .title, .page-home .panel-tasks ul li .plus {
-    display: inline-block;
-    font-size: 1.0rem;
-    line-height: 20px;
-    vertical-align: middle;
+.page-home .panel-tasks ul li .check,
+.page-home .panel-tasks ul li .title,
+.page-home .panel-tasks ul li .plus {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 20px;
+  vertical-align: middle;
 }
 .page-home .panel-tasks ul li .title {
-    padding: 2px 6px;
+  padding: 2px 6px;
 }
 .page-home .panel-tasks ul li .check {
-    position: relative;
-    margin: 0px 0px 0px 2px;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(0, 233, 94, 0.6);
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
+  position: relative;
+  margin: 0px 0px 0px 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 233, 94, 0.6);
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
 }
 .page-home .panel-tasks ul li.checked .check:after {
-    content: '\f00c';
-    position: absolute;
-    font-family: FontAwesome;
-    font-size: 0.9rem;
-    top: -2px;
-    left: 1px;
+  content: '\f00c';
+  position: absolute;
+  font-family: FontAwesome;
+  font-size: 0.9rem;
+  top: -2px;
+  left: 1px;
 }
 .page-home .panel-tasks ul li .plus {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 .page-home .panel-tasks ul li.other .title {
-    font-style: italic;
-    color: #cccccc;
-    font-size: 0.9rem;
+  font-style: italic;
+  color: #cccccc;
+  font-size: 0.9rem;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }

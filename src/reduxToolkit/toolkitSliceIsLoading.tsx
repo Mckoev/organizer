@@ -6,7 +6,9 @@ const toolkitSliceIsLoading = createSlice({
     isLoading: true,
   },
   reducers: {
-    weatherAction(state, action) {
+    isLoadingAction(state, action) {
+      console.log(action)
+
       state.isLoading = action.payload.isLoading
     },
   },
@@ -14,4 +16,4 @@ const toolkitSliceIsLoading = createSlice({
 
 export default toolkitSliceIsLoading.reducer
 
-export const { weatherAction } = toolkitSliceIsLoading.actions
+export const { isLoadingAction } = toolkitSliceIsLoading.actions

@@ -1,6 +1,7 @@
 import { URL_HOME, TOKEN, METHODS } from './API'
 import { store } from '../reduxToolkit/store'
 import { weatherAction } from '../reduxToolkit/toolkitSliceWeatherForOneDay'
+import { isLoadingAction } from '../reduxToolkit/toolkitSliceIsLoading'
 
 export function getWeatherForOneDay(location: string): void {
   if (!location) {
@@ -25,8 +26,9 @@ export function getWeatherForOneDay(location: string): void {
     .then((result) => {
       console.log(result)
       store.dispatch(weatherAction(result))
+      store.dispatch(isLoadingAction(false))
     })
-      .catch((err) => {
-        console.error('Could not fetch ' +  err)
-      })
+    .catch((err) => {
+      console.error('Could not fetch ' + err)
+    })
 }

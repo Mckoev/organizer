@@ -49,7 +49,6 @@ function Home() {
           </li>
         </ul>
       </div>
-      <Spinner />
     </div>
   )
 }
