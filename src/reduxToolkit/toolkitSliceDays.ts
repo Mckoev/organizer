@@ -10,15 +10,15 @@ const init = {
 const toolkitSliceDays = createSlice({
   name: 'day',
   initialState: {
-    arrState: [init, init, init, init, init, init, init],
+    arrState: [init, init, init, init, init, init],
   },
   reducers: {
     daysAction(state, action) {
-      for (let i = 0; i < action.payload.forecast.length; i++) {
-        state.arrState[i].date = action.payload.forecast[i].date
-        state.arrState[i].maxTemp = action.payload.forecast[i].max_temp_c
-        state.arrState[i].minTemp = action.payload.forecast[i].min_temp_c
-        state.arrState[i].icon = action.payload.forecast[i].icon_url
+      for (let i = 0; i < action.payload.length; i++) {
+        state.arrState[i].date = action.payload[i].date
+        state.arrState[i].maxTemp = action.payload[i].max_temp_c
+        state.arrState[i].minTemp = action.payload[i].min_temp_c
+        state.arrState[i].icon = action.payload[i].icon_url
       }
     },
   },

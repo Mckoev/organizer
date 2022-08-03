@@ -21,7 +21,7 @@ export function getWeatherToWeather(location: string): void {
     .then((response) => response.json())
     .then((result) => {
       console.log(result)
-      //store.dispatch(weatherAction(result))
-      store.dispatch(daysAction(result))
+      result.forecast.shift()
+      store.dispatch(daysAction(result.forecast))
     })
 }

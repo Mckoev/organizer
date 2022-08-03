@@ -24,10 +24,17 @@ const toolkitSlice = createSlice({
       state.maxWind = action.payload.wind_kph
       state.windDirection = action.payload.wind_direction
       state.humidity = action.payload.humidity
+<<<<<<< HEAD
     },
+=======
+    },  
+>>>>>>> 286edcbc66377943e68776b5fd9b0a9fa391927c
   },
 })
 
 export default toolkitSlice.reducer
+<<<<<<< HEAD
 
+=======
+>>>>>>> 286edcbc66377943e68776b5fd9b0a9fa391927c
 export const { weatherAction } = toolkitSlice.actions

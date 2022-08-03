@@ -13,7 +13,6 @@ function WeatherHome() {
   console.log(location)
 
   const stateWeather = useAppSelector((state) => state)
-  const dispatch = useAppDispatch()
 
   function handler() {
     console.log(stateWeather)
