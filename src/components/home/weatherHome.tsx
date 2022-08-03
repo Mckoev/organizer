@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
 import { Link } from 'react-router-dom'
+import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
 import { useAppSelector } from '../../reduxToolkit/hooks'
 
 function WeatherHome() {
@@ -9,6 +9,8 @@ function WeatherHome() {
   const temp = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.temp)
   const condition = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.condition)
   const icon_url = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.icon_url)
+
+  console.log(location)
 
   const stateWeather = useAppSelector((state) => state)
 
@@ -23,7 +25,7 @@ function WeatherHome() {
   return (
     <div className="panel panel-weather">
       <div className="condition">{condition}</div>
-      <img src={icon_url} alt='icon' />
+      <img src={icon_url} />
       <div className="span temp">
         {temp}
         <span className="degree">&deg;C</span>
@@ -33,7 +35,7 @@ function WeatherHome() {
           {location}, {country}
         </div>
       </Link>
-      {/*<button onClick={() => handler()}>BTN</button>*/}
+      {/* <button onClick={() => handler()}>BTN</button> */}
     </div>
   )
 }
