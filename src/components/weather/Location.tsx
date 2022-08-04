@@ -17,6 +17,8 @@ function Location() {
     getWeatherForManyDays(location)
   }, [])
 
+  const st = useAppSelector((state) => state)
+
   return (
     <div className="panel panel-location">
       <div className="text-field text-field_floating-2">

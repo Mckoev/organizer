@@ -2,14 +2,16 @@ import React from 'react'
 import './weather.css'
 import Location from '../../components/weather/Location'
 import Forecast from '../../components/weather/Forecast'
-import PanelNow from '../../components/weather/PanelNow'
+import PanelWeatherPage from '../../components/weather/PanelWeatherPage'
+import {useAppSelector} from "../../reduxToolkit/hooks";
 
 function Weather() {
+
   return (
     <div className="page page-weather">
       <div className="bg"></div>
       <div className="overlay"></div>
-      <PanelNow />
+      <PanelWeatherPage />
       <Location />
       <Forecast />
     </div>

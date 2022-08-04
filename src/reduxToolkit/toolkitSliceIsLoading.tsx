@@ -3,17 +3,19 @@ import { createSlice } from '@reduxjs/toolkit'
 const toolkitSliceIsLoading = createSlice({
   name: 'isLoading',
   initialState: {
-    isLoading: true,
+    isLoadingWeatherForOneDay: true,
+    isLoadingWeatherForManyDays: true,
   },
   reducers: {
-    isLoadingAction(state, action) {
-      console.log(action)
-
-      state.isLoading = action.payload.isLoading
+    isLoadingWeatherForOneDay(state, action) {
+      state.isLoadingWeatherForOneDay = action.payload.isLoadingWeatherForOneDay
+    },
+    isLoadingWeatherForManyDays(state, action) {
+      state.isLoadingWeatherForManyDays = action.payload.isLoadingWeatherForManyDays
     },
   },
 })
 
 export default toolkitSliceIsLoading.reducer
 
-export const { isLoadingAction } = toolkitSliceIsLoading.actions
+export const { isLoadingWeatherForOneDay ,isLoadingWeatherForManyDays } = toolkitSliceIsLoading.actions

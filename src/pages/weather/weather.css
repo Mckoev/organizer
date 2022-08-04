@@ -11,6 +11,7 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+
 .page-weather .panel-now .mainInfo {
   text-align: center;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);

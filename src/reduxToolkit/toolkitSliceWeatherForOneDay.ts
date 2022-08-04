@@ -15,8 +15,6 @@ const toolkitSliceWeatherForOneDay = createSlice({
   },
   reducers: {
     weatherAction(state, action) {
-      console.log(action)
-
       state.location = action.payload.location
       state.country = action.payload.country
       state.temp = action.payload.temp_c

@@ -3,8 +3,10 @@ import './home.css'
 import TimeHome from '../../components/home/timeHome'
 import WeatherHome from '../../components/home/weatherHome'
 import Spinner from '../spinner/Spinner'
+import {useAppSelector} from "../../reduxToolkit/hooks";
 
 function Home() {
+
   return (
     <div className="page page-home" style={{ display: 'block' }}>
       <div className="bg"></div>
