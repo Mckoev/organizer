@@ -2,8 +2,6 @@ import React from 'react'
 import './home.css'
 import TimeHome from '../../components/home/timeHome'
 import WeatherHome from '../../components/home/weatherHome'
-import Spinner from '../spinner/Spinner'
-import {useAppSelector} from "../../reduxToolkit/hooks";
 
 function Home() {
 

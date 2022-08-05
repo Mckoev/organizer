@@ -1,14 +1,13 @@
-import {URL_HOME, TOKEN, METHODS} from './API'
+import {URL_HOME, TOKEN, METHODS, INITIAL_CITY} from './API'
 import {store} from '../reduxToolkit/store'
 import {weatherAction} from '../reduxToolkit/toolkitSliceWeatherForOneDay'
 import {isLoadingWeatherForOneDay} from '../reduxToolkit/toolkitSliceIsLoading'
-import {useAppSelector} from "../reduxToolkit/hooks";
 
 export function getWeatherForOneDay(location: string): void {
     if (!location) {
-        location = 'Moscow'
+        location = INITIAL_CITY
     }
-    const responce = fetch(URL_HOME, {
+    fetch(URL_HOME, {
         method: METHODS.POST,
         headers: {
             'Content-Type': `application/json`,

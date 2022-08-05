@@ -1,13 +1,13 @@
-import {URL_WEATHER, TOKEN, METHODS, URL_HOME} from './API'
+import {URL_WEATHER, TOKEN, METHODS, URL_HOME, INITIAL_CITY} from './API'
 import {store} from '../reduxToolkit/store'
 import {daysAction} from '../reduxToolkit/toolkitSliceWeatherForManyDays'
 import {isLoadingWeatherForManyDays} from "../reduxToolkit/toolkitSliceIsLoading";
 
 export function getWeatherForManyDays(location: string): void {
     if (!location) {
-        location = 'Moscow'
+        location = INITIAL_CITY
     }
-    const responce = fetch(URL_WEATHER, {
+    fetch(URL_WEATHER, {
         method: METHODS.POST,
         headers: {
             'Content-Type': `application/json`,

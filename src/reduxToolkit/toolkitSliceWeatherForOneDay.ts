@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {INITIAL_CITY} from "../helpers/API";
 
 const toolkitSliceWeatherForOneDay = createSlice({
   name: 'weather',
   initialState: {
-    location: 'Moscow',
+    location: INITIAL_CITY,
     country: 'Russia',
     temp: ' ',
     condition: ' ',

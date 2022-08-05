@@ -4,7 +4,7 @@ import {useAppSelector} from "../../reduxToolkit/hooks";
 import ContentForPanel from "./ContentForPanel";
 
 function PanelWeatherPage() {
-  const isLoadingWeatherForManyDays = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingWeatherForManyDays)
+  const isLoadingWeatherForManyDays: boolean = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingWeatherForManyDays)
 
 
   return (
