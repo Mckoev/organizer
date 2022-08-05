@@ -1,30 +1,38 @@
 import React from 'react'
-import { useAppSelector } from '../../reduxToolkit/hooks'
 
+interface Props {
+  date: string
+  icon_url: string
+  maxTemp: number | string
+  minTemp: number | string
+}
 
-function ContentForForecast() {
-    const weatherDays = useAppSelector((state) => state.toolkitSliceWeatherForManyDays.arrState).slice(1)
-    const DAYS: string[] = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']
+interface IElement {
+  el: Props
+}
 
-    const listItems = weatherDays.map((el, index) => (
-        <div className="box" key={index}>
-            <div className="title">{DAYS[new Date(el.date).getDay()]}</div>
-            <img src={el.icon_url} alt='icon weather'/>
-            <div className="temp">
+function ContentForForecast({ el }: IElement) {
+  const DAYS: string[] = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']
+
+  const listWeather = (
+    <div className="box">
+      <div className="title">{DAYS[new Date(el.date).getDay()]}</div>
+      <img src={el.icon_url} alt="icon weather" />
+      <div className="temp">
         <span className="value">
           {el.maxTemp}
-            <span className="degree">&deg;C</span>
+          <span className="degree">&deg;C</span>
         </span>
-                <span className="separator">/</span>
-                <span className="value">
+        <span className="separator">/</span>
+        <span className="value">
           {el.minTemp}
-                    <span className="degree">&deg;C</span>
+          <span className="degree">&deg;C</span>
         </span>
-            </div>
-        </div>
-    ))
+      </div>
+    </div>
+  )
 
-    return <>{listItems}</>
+  return <>{listWeather}</>
 }
 
 ContentForForecast.propTypes = {}
