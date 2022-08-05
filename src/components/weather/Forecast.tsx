@@ -10,7 +10,6 @@ function Box() {
   const listItems = weatherDays.map((el, index) => (
     <div className="box" key={index}>
       {isLoadingWeatherForManyDays ? <Spinner /> : <ContentForForecast el={el} />}
-      <Spinner />
     </div>
   ))
 
