@@ -10,3 +10,4 @@ export const METHODS: IMethods = {
 }
 
 export const INITIAL_CITY: string = 'Moscow'
+export const INITIAL_LOCATION: string = 'Russia'

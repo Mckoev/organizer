@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {INITIAL_CITY} from "../helpers/API";
+import {CITY, getLocalStorage, LOCATION} from "../helpers/localStorage";
 
 const toolkitSliceWeatherForOneDay = createSlice({
   name: 'weather',
   initialState: {
-    location: INITIAL_CITY,
-    country: 'Russia',
+    location: getLocalStorage(CITY),
+    country: getLocalStorage(LOCATION),
     temp: ' ',
     condition: ' ',
     icon_url: ' ',

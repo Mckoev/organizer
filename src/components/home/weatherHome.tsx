@@ -12,7 +12,7 @@ function WeatherHome() {
   const country = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.country)
 
   useEffect(function () {
-    getWeatherForOneDay(location)
+    getWeatherForOneDay()
   }, [])
 
   const st = useAppSelector((state) => state)

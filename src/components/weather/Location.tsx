@@ -3,6 +3,7 @@ import { useAppSelector } from '../../reduxToolkit/hooks'
 import { getWeatherForManyDays } from '../../helpers/getWeatherForManyDays'
 import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
 import {INITIAL_CITY} from "../../helpers/API";
+import {CITY, setLocalStorage} from "../../helpers/localStorage";
 
 function Location() {
 
@@ -12,12 +13,13 @@ function Location() {
 
   function handler(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault()
-    getWeatherForManyDays(inputCityValue)
-    getWeatherForOneDay(inputCityValue)
+    setLocalStorage( CITY, inputCityValue)
+    getWeatherForManyDays()
+    getWeatherForOneDay()
   }
 
   useEffect(function () {
-    getWeatherForManyDays(location)
+    getWeatherForManyDays()
   }, [])
 
   const st = useAppSelector((state) => state)
