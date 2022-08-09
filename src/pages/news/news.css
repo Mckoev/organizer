@@ -71,8 +71,8 @@
 .page-news .panel-newslist-small {
   position: absolute;
   top: 10px;
-  right: 10px;
-  width: 380px;
+  left: 10px;
+  width: 780px;
   height: 450px;
   overflow: auto;
   /* scrollbar design Chrome */
@@ -81,6 +81,8 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 10px;
+  margin: auto;
+  border: 10px solid rgba(0, 0, 0, 0);
 }
 .page-news .panel-newslist-small::-webkit-scrollbar {
   height: 10px;

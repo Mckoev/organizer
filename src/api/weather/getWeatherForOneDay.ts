@@ -1,11 +1,11 @@
-import {URL_HOME, TOKEN, METHODS, INITIAL_CITY} from './API'
-import {store} from '../reduxToolkit/store'
-import {weatherAction} from '../reduxToolkit/toolkitSliceWeatherForOneDay'
-import {isLoadingWeatherForOneDay} from '../reduxToolkit/toolkitSliceIsLoading'
-import {CITY, getLocalStorage, LOCATION, setLocalStorage} from "./localStorage";
+import {URL_HOME, TOKEN, INITIAL_CITY, CITY, LOCATION, LATITUDE, LONGITUDE} from './weatherApiData'
+import {store} from '../../reduxToolkit/store'
+import {weatherAction} from '../../reduxToolkit/toolkitSliceWeatherForOneDay'
+import {isLoadingWeatherForOneDay} from '../../reduxToolkit/toolkitSliceIsLoading'
+import {METHODS} from "../methods";
 
 export function getWeatherForOneDay(): void {
-    let location: string | null = getLocalStorage(CITY)
+    let location: string | null = localStorage.getItem(CITY)
 
     if (!location) {
         location = INITIAL_CITY
@@ -27,7 +27,9 @@ export function getWeatherForOneDay(): void {
             return response.json()
         })
         .then((result) => {
-            setLocalStorage(LOCATION, result.country)
+            localStorage.setItem(LOCATION, result.country)
+            localStorage.setItem(LATITUDE, result.latitude)
+            localStorage.setItem(LONGITUDE, result.longitude)
             store.dispatch(weatherAction(result))
             store.dispatch(isLoadingWeatherForOneDay(
                 {

@@ -1,12 +1,12 @@
-import {URL_WEATHER, TOKEN, METHODS, URL_HOME, INITIAL_CITY} from './API'
-import {store} from '../reduxToolkit/store'
-import {daysAction} from '../reduxToolkit/toolkitSliceWeatherForManyDays'
-import {isLoadingWeatherForManyDays} from "../reduxToolkit/toolkitSliceIsLoading";
-import {CITY, getLocalStorage} from "./localStorage";
+import {URL_WEATHER, TOKEN, URL_HOME, INITIAL_CITY, CITY} from './weatherApiData'
+import {store} from '../../reduxToolkit/store'
+import {daysAction} from '../../reduxToolkit/toolkitSliceWeatherForManyDays'
+import {isLoadingWeatherForManyDays} from "../../reduxToolkit/toolkitSliceIsLoading";
+import {METHODS} from "../methods";
 
 export function getWeatherForManyDays(): void {
 
-    let location: string | null = getLocalStorage(CITY)
+    let location: string | null = localStorage.getItem(CITY)
 
     if (!location) {
         location = INITIAL_CITY
