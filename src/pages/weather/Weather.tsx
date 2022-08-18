@@ -3,7 +3,6 @@ import './weather.css'
 import Location from '../../components/weather/Location'
 import Forecast from '../../components/weather/Forecast'
 import PanelWeatherPage from '../../components/weather/PanelWeatherPage'
-import {useAppSelector} from "../../reduxToolkit/hooks";
 
 function Weather() {
 

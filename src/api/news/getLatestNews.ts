@@ -4,11 +4,9 @@ import {store} from "../../reduxToolkit/store";
 import {newsAction} from "../../reduxToolkit/toolkitSliceLatestNews";
 import {isLoadingLatestNews} from "../../reduxToolkit/toolkitSliceIsLoading";
 
-let page = 0
-
+let page: number = 0
 
 export function getLatestNews(): void {
-    console.log('GET LATEST NEWS START page - ' + page)
     fetch(`${URL_LATEST_NEWS}&page=${page}`, {
         method: METHODS.GET
     })
