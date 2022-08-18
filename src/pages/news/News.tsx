@@ -2,8 +2,8 @@ import React, {useEffect} from 'react'
 import './news.css'
 import {getLatestNews} from "../../api/news/getLatestNews";
 import {useAppSelector} from "../../reduxToolkit/hooks";
-import LastNews from "../../components/news/LastNews";
 import Spinner from "../spinner/Spinner";
+import ListComponent from "../../components/news/ListComponent";
 
 function News() {
 
@@ -18,7 +18,7 @@ function News() {
             <div className="bg"></div>
             <div className="overlay">
                 <div className="panel panel-newslist-small">
-                    {isLoadingLatestNews ? <Spinner /> : <LastNews/> }
+                    {isLoadingLatestNews ? <Spinner /> : <ListComponent/> }
                 </div>
             </div>
         </div>
