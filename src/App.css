@@ -1,20 +1,3 @@
-.page .bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 800px;
-  height: 600px;
-  margin: auto auto;
-  background-image: url('http://ultraimg.com/images/yarQDmk.jpg');
-  background-size: cover;
-  -webkit-filter: blur(0px);
-  -moz-filter: blur(0px);
-  -o-filter: blur(0px);
-  -ms-filter: blur(0px);
-  filter: blur(0px);
-}
 .page .overlay {
   position: absolute;
   left: 0;

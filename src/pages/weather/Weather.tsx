@@ -8,7 +8,6 @@ function Weather() {
 
   return (
     <div className="page page-weather">
-      <div className="bg"></div>
       <div className="overlay"></div>
       <PanelWeatherPage />
       <Location />

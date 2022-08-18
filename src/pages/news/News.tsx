@@ -15,7 +15,6 @@ function News() {
 
     return (
         <div className="page page-news">
-            <div className="bg"></div>
             <div className="overlay">
                 <div className="panel panel-newslist-small">
                     {isLoadingLatestNews ? <Spinner /> : <ListComponent/> }

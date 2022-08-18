@@ -1,5 +1,6 @@
 import React from 'react'
 import './tasks.css'
+import ShoppingList from "../../components/tasks/ShoppingList";
 
 function Tasks() {
   return (
@@ -7,36 +8,8 @@ function Tasks() {
       <div className="bg"></div>
       <div className="overlay"></div>
       <div className="wrapper">
-        <div className="panel panel-tasklist">
-          <div className="header">
-            <div className="title">Shopping list (4)</div>
-          </div>
-          <div className="newItem">
-            <div className="text">
-              <img src={require('../../img/plus.png')}/>
-              <span className="title">Add new item</span>
-            </div>
-            <input type="text" placeholder="Add new item" />
-          </div>
-          <ul>
-            <li className="checked">
-              <div className="check"></div>
-              <div className="title">Milk</div>
-            </li>
-            <li>
-              <div className="check"></div>
-              <div className="title">Bread</div>
-            </li>
-            <li>
-              <div className="check"></div>
-              <div className="title">Cheese</div>
-            </li>
-            <li>
-              <div className="check"></div>
-              <div className="title">Beer</div>
-            </li>
-          </ul>
-        </div>
+
+      <ShoppingList/>
         <div className="panel panel-tasklist">
           <div className="header">
             <div className="title">To-do list (5)</div>

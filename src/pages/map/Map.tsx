@@ -1,24 +1,27 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './map.css'
 import YandexMap from "../../components/map/YandexMap";
 import Spinner from "../spinner/Spinner";
 import {useAppSelector} from "../../reduxToolkit/hooks";
 import Form from "../../components/Form";
+import {getWeatherForOneDay} from "../../api/weather/getWeatherForOneDay";
 
 function Map() {
+    useEffect(function () {
+        getWeatherForOneDay()
+    }, [])
 
-    const isLoadingLatestNews: boolean = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingLatestNews)
+    const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingWeatherForOneDay)
 
 
     return (
         <div className="page page-map">
-            <div className="bg"></div>
             <div className="overlay"></div>
             <div className="title">
                 <Form/>
             </div>
             <div className="map">
-                {isLoadingLatestNews ? <Spinner/> : <YandexMap/>}
+                {isLoadingWeatherForOneDay ? <Spinner/> : <YandexMap/>}
             </div>
 
         </div>

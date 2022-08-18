@@ -1,9 +1,11 @@
 export function getSize(index, items) {
+    console.log(items)
     let count = 110
-    if (items[index].title.length > 53) {
-        count = count + items[index].title.length - 50
+    if (items[index].title) {
+        if (items[index].title.length > 53) {
+            count = count + items[index].title.length - 50
+        }
     }
-
     if (!items[index].description) {
         return count
     }

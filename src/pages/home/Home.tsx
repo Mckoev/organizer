@@ -7,7 +7,6 @@ function Home() {
 
   return (
     <div className="page page-home" style={{ display: 'block' }}>
-      <div className="bg"></div>
       <div className="overlay"></div>
       <div className="panel panel-time">
         <TimeHome />
