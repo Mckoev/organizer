@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import { useAppSelector } from '../../reduxToolkit/hooks'
 import { getWeatherForManyDays } from '../../helpers/getWeatherForManyDays'
 import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
 
 function Location() {
+  const [inputCityValue, setInputCityValue] = useState('Moscow')
   const location = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.location)
   const country = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.country)
 
@@ -17,7 +18,7 @@ function Location() {
     getWeatherForManyDays(location)
   }, [])
 
-  const st = useAppSelector((state) => state)
+  let st = useAppSelector((state) => state)
 
   return (
     <div className="panel panel-location">
