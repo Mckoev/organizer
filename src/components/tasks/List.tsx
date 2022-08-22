@@ -51,7 +51,7 @@ function List({ name, initialStandartValue, store }) {
     <li key={index} className={el.complete ? 'checked' : ''}>
       <div className="check" onClick={() => changeElement(el.id)}></div>
       <div className="title" onClick={() => changeElement(el.id)}>
-        {el.task}{' '}
+        {el.task}
       </div>
       <div className="remove" onClick={() => removeEl(el.id)}>
         <img src={require('../../img/remove.png')}></img>

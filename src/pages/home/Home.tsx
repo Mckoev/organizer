@@ -2,9 +2,9 @@ import React from 'react'
 import './home.css'
 import TimeHome from '../../components/home/timeHome'
 import WeatherHome from '../../components/home/weatherHome'
+import PanelTasks from '../../components/home/PanelTasks'
 
 function Home() {
-
   return (
     <div className="page page-home" style={{ display: 'block' }}>
       <div className="overlay"></div>
@@ -28,26 +28,7 @@ function Home() {
           </li>
         </ul>
       </div>
-      <div className="panel panel-tasks">
-        <ul>
-          <li className="checked">
-            <div className="check"></div>
-            <div className="title">Milk</div>
-          </li>
-          <li>
-            <div className="check"></div>
-            <div className="title">Bread & cheese</div>
-          </li>
-          <li>
-            <div className="check"></div>
-            <div className="title">Beer & wine</div>
-          </li>
-          <li className="other">
-            <div className="plus"></div>
-            <div className="title">... and 15 other tasks</div>
-          </li>
-        </ul>
-      </div>
+      <PanelTasks />
     </div>
   )
 }
