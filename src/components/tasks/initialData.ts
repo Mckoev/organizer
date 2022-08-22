@@ -4,6 +4,10 @@ export const LISTS_NAMES = {
   longtermTasks: 'Long-term tasks',
 }
 
+export const shoppingList: string = 'shoppingList'
+export const todoList: string = 'todoList'
+export const longtermTasks: string = 'longtermTasks'
+
 export const initShopList = [
   {
     id: Math.random().toString(36).substring(2, 9),

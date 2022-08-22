@@ -159,7 +159,7 @@ button img {
   margin-bottom: 5px;
 }
 
-input {
+.panel-tasklist input {
   margin-top: 15px;
   margin-left: 10px;
   background-color: rgba(96, 252, 169);

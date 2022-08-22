@@ -1,8 +1,9 @@
 import Form from './Form'
 import { useState } from 'react'
 
-function List({ name, init }) {
-  const [shoppingList, setShoppingList] = useState(init)
+function List({ name, initialStandartValue, store }) {
+  const initialValue = localStorage.getItem(store)
+  const [list, setList] = useState(initialValue ? JSON.parse(initialValue) : initialStandartValue)
   const [userInput, setUserInput] = useState('')
 
   const handleChange = (e) => {
@@ -13,8 +14,8 @@ function List({ name, init }) {
     if (!e) {
       alert('Nothing!!!')
     } else {
-      setShoppingList([
-        ...shoppingList,
+      const newList = [
+        ...list,
         ...[
           {
             id: Math.random().toString(36).substring(2, 9),
@@ -22,16 +23,22 @@ function List({ name, init }) {
             complete: false,
           },
         ],
-      ])
+      ]
+      setList(newList)
+      localStorage.setItem(store, JSON.stringify(newList))
     }
   }
 
-  function changeComplete(id) {
-    setShoppingList([...shoppingList.map((el) => (el.id === id ? { ...el, complete: !el.complete } : { ...el }))])
+  function changeElement(id) {
+    const newList = [...list.map((el) => (el.id === id ? { ...el, complete: !el.complete } : { ...el }))]
+    setList(newList)
+    localStorage.setItem(store, JSON.stringify(newList))
   }
 
   function removeEl(id) {
-    setShoppingList([...shoppingList.filter((el) => el.id !== id)])
+    const newList = [...list.filter((el) => el.id !== id)]
+    setList(newList)
+    localStorage.setItem(store, JSON.stringify(newList))
   }
 
   function handleSubmit(e) {
@@ -40,10 +47,10 @@ function List({ name, init }) {
     setUserInput('')
   }
 
-  const listItems = shoppingList.map((el, index) => (
+  const listItems = list.map((el, index) => (
     <li key={index} className={el.complete ? 'checked' : ''}>
-      <div className="check" onClick={() => changeComplete(el.id)}></div>
-      <div className="title" onClick={() => changeComplete(el.id)}>
+      <div className="check" onClick={() => changeElement(el.id)}></div>
+      <div className="title" onClick={() => changeElement(el.id)}>
         {el.task}{' '}
       </div>
       <div className="remove" onClick={() => removeEl(el.id)}>
@@ -56,7 +63,7 @@ function List({ name, init }) {
     <div className="panel panel-tasklist">
       <div className="header">
         <div className="title">
-          {name} ({shoppingList.length})
+          {name} ({list.length})
         </div>
       </div>
       <div className="newItem">

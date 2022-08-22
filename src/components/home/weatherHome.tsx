@@ -3,8 +3,7 @@ import Spinner from '../../pages/spinner/Spinner'
 import { useAppSelector } from '../../reduxToolkit/hooks'
 import PanelHomePage from './PanelHomePage'
 import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay'
-import {Link} from "react-router-dom";
-
+import { Link } from 'react-router-dom'
 
 function WeatherHome() {
   const isLoadingWeatherForOneDay = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingWeatherForOneDay)
@@ -29,7 +28,6 @@ function WeatherHome() {
           {location}, {country}
         </div>
       </Link>
-      {/*<button onClick={() => handler()}>BTNBTNBTNBTNBTNBTNBTNBTNBTNBTNBTNBTNBTNBTNBTNBTN</button>*/}
     </div>
   )
 }
