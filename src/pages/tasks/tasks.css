@@ -12,7 +12,7 @@
 .page-tasks .wrapper {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 35px;
   width: 760px;
   height: 440px;
   overflow: hidden;
@@ -72,7 +72,7 @@
   color: White;
 }
 .page-tasks .panel-tasklist ul {
-  height: 370px;
+  height: 340px;
   padding: 10px 10px;
   overflow: auto;
   /* scrollbar design Chrome */
@@ -141,4 +141,40 @@
 .page-tasks .panel-tasklist.right {
   left: auto;
   right: 20px;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  color: #cccccc;
+  line-height: 20px;
+  vertical-align: middle;
+  margin-bottom: 5px;
+}
+
+input {
+  margin-top: 15px;
+  margin-left: 10px;
+  background-color: rgba(96, 252, 169);
+}
+
+.panel-tasklist li {
+  display: flex;
+}
+
+.remove img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  text-align: center;
+  color: #cccccc;
+  line-height: 20px;
+  vertical-align: middle;
 }

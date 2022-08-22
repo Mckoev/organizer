@@ -5,6 +5,7 @@ const toolkitSliceIsLoading = createSlice({
   initialState: {
     isLoadingWeatherForOneDay: true,
     isLoadingWeatherForManyDays: true,
+    isLoadingLatestNews: true
   },
   reducers: {
     isLoadingWeatherForOneDay(state, action) {
@@ -13,9 +14,12 @@ const toolkitSliceIsLoading = createSlice({
     isLoadingWeatherForManyDays(state, action) {
       state.isLoadingWeatherForManyDays = action.payload.isLoadingWeatherForManyDays
     },
+    isLoadingLatestNews(state, action) {
+      state.isLoadingLatestNews = action.payload.isLoadingLatestNews
+    },
   },
 })
 
 export default toolkitSliceIsLoading.reducer
 
-export const { isLoadingWeatherForOneDay ,isLoadingWeatherForManyDays } = toolkitSliceIsLoading.actions
+export const { isLoadingWeatherForOneDay ,isLoadingWeatherForManyDays, isLoadingLatestNews } = toolkitSliceIsLoading.actions

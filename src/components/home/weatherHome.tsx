@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Spinner from '../../pages/spinner/Spinner'
 import { useAppSelector } from '../../reduxToolkit/hooks'
 import PanelHomePage from './PanelHomePage'
-import { getWeatherForOneDay } from '../../helpers/getWeatherForOneDay'
+import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay'
 import {Link} from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ function WeatherHome() {
   const country = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.country)
 
   useEffect(function () {
-    getWeatherForOneDay(location)
+    getWeatherForOneDay()
   }, [])
 
   const st = useAppSelector((state) => state)

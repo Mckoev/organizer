@@ -1,15 +1,6 @@
 import React from 'react'
+import {IElement} from "../../helpers/interfeices";
 
-interface Props {
-  date: string
-  icon_url: string
-  maxTemp: number | string
-  minTemp: number | string
-}
-
-interface IElement {
-  el: Props
-}
 
 function ContentForForecast({ el }: IElement) {
   const DAYS: string[] = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']

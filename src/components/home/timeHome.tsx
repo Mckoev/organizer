@@ -1,17 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {getWeatherForOneDay} from "../../helpers/getWeatherForOneDay";
-import {useAppSelector} from "../../reduxToolkit/hooks";
 
 function TimeHome() {
-    const location = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.location)
-
 
     const [time, setTime] = useState(new Date().toLocaleTimeString())
     const [date, setDate] = useState(new Date())
     const timerId = useRef<NodeJS.Timeout | null>(null);
 
-    const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AVG', 'SEP', 'OCT', 'NOV', 'DEC']
+    const days: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const months: string[] = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AVG', 'SEP', 'OCT', 'NOV', 'DEC']
 
 
      useEffect(() => startTimer(),[])

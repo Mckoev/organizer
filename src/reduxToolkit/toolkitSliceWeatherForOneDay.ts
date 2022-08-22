@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {CITY, LATITUDE, LOCATION, LONGITUDE} from "../api/weather/weatherApiData";
 
 const toolkitSliceWeatherForOneDay = createSlice({
   name: 'weather',
   initialState: {
-    location: 'Moscow',
-    country: 'Russia',
+    location: localStorage.getItem(CITY),
+    country: localStorage.getItem(LOCATION),
     temp: ' ',
     condition: ' ',
     icon_url: ' ',
@@ -12,6 +13,8 @@ const toolkitSliceWeatherForOneDay = createSlice({
     maxWind: '',
     windDirection: '',
     humidity: '',
+    latitude: localStorage.getItem(LATITUDE),
+    longitude: localStorage.getItem(LONGITUDE),
   },
   reducers: {
     weatherAction(state, action) {
@@ -24,6 +27,8 @@ const toolkitSliceWeatherForOneDay = createSlice({
       state.maxWind = action.payload.wind_kph
       state.windDirection = action.payload.wind_direction
       state.humidity = action.payload.humidity
+      state.latitude = action.payload.latitude
+      state.longitude = action.payload.longitude
     },
   },
 })
