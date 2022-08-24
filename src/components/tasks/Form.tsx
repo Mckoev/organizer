@@ -3,7 +3,7 @@ function Form({ handleSubmit, userInput, handleChange }) {
     <form onSubmit={(e) => handleSubmit(e)}>
       <input value={userInput} type="text" onChange={handleChange} />
       <button>
-        <img src={require('../../img/plus.png')} />
+        <img className='icon' src={require('../../img/plus.png')} />
       </button>
     </form>
   )

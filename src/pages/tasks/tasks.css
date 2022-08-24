@@ -149,14 +149,11 @@ button {
   background-color: transparent;
 }
 
-button img {
+button .icon {
   width: 20px;
   height: 20px;
-  text-align: center;
   color: #cccccc;
-  line-height: 20px;
   vertical-align: middle;
-  margin-bottom: 5px;
 }
 
 .panel-tasklist input {
@@ -178,3 +175,10 @@ button img {
   line-height: 20px;
   vertical-align: middle;
 }
+.panel-tasklist button {
+  border: none;
+  border-radius: 20px;
+  /*background-color: #00b5ff;*/
+}
+
+

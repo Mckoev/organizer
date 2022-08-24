@@ -1,4 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
+import {months} from "../../helpers/dateValue";
 
 function TimeHome() {
 
@@ -7,7 +8,6 @@ function TimeHome() {
     const timerId = useRef<NodeJS.Timeout | null>(null);
 
     const days: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-    const months: string[] = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AVG', 'SEP', 'OCT', 'NOV', 'DEC']
 
 
      useEffect(() => startTimer(),[])
@@ -22,7 +22,7 @@ function TimeHome() {
     return (
         <div className="span time">
             <div>{ time }</div>
-            <div className="span date">{`${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth() -1]} ${date.getFullYear()}`}</div>
+            <div className="span date">{`${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`}</div>
         </div>
     );
 }
