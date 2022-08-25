@@ -4,8 +4,8 @@ import PanelCalendar from "../../components/calendar/PanelCalendar";
 import {Calendar as CalendarComponent} from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {months} from "../../helpers/dateValue";
+import Form from "../../components/tasks/Form";
 
-const dates = ['juny 25, 2015', 'juny 26, 2015']
 const classNames = ['panel panel-calendar', 'panel panel-calendar right']
 
 const arr = [{
@@ -52,18 +52,55 @@ const arr2 = [{
   },
 ]
 
+//{day1: [{}, {}, {}],
+//  day2: [{}, {}, {}] }
+
 function Calendar() {
 
   const [value, onChange] = useState(new Date());
   const [date, setDate] = useState(new Date());
+  const [userInput, setUserInput] = useState('')
 
+
+  const obj = {}
+  obj[`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`] = arr2
+
+  const [tasks, setTasks] = useState(obj);
+
+  const handleChange = (e) => {
+    setUserInput(e.currentTarget.value)
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    addTask(userInput)
+    setUserInput('')
+  }
+
+  function addTask(task) {
+    if (!task) {
+      alert('Nothing!!!')
+    } else {
+      setTasks({
+        ...tasks,
+        [`${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`] : [{
+          timeStart: '22:00',
+          timeFinish: '23:00',
+          task: `Party ${task}`
+        }]
+      })
+      //localStorage.setItem(store, JSON.stringify(newList))
+    }
+  }
 
   return (
     <div className="page page-calendar">
       <div className="bg"></div>
       <div className="overlay"></div>
-      <PanelCalendar list={arr} date={date} className={classNames[0]}/>
+      <PanelCalendar list={tasks[`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`]} date={date} className={classNames[0]}/>
       <div className={classNames[1]}><CalendarComponent onChange={onChange} value={value} onClickDay={(value, event) => setDate(value)}/>
+        <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput} />
+
       </div>
 
     </div>
