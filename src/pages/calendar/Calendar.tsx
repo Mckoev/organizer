@@ -61,9 +61,11 @@ function Calendar() {
   const [date, setDate] = useState(new Date());
   const [userInput, setUserInput] = useState('')
 
+  const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`
+
 
   const obj = {}
-  obj[`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`] = arr2
+  obj[dateValue] = arr2
 
   const [tasks, setTasks] = useState(obj);
 
@@ -78,19 +80,38 @@ function Calendar() {
   }
 
   function addTask(task) {
+    const newTask = {
+      timeStart: '22:00',
+      timeFinish: '23:00',
+      task: `Party ${task}`
+    }
     if (!task) {
       alert('Nothing!!!')
     } else {
-      setTasks({
-        ...tasks,
-        [`${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`] : [{
-          timeStart: '22:00',
-          timeFinish: '23:00',
-          task: `Party ${task}`
-        }]
-      })
+      const oldTask = tasks[dateValue]
+      if (oldTask) {
+        oldTask.push(newTask)
+        setTasks({
+          ...tasks,
+          [dateValue]: oldTask
+        })
+      } else {
+        setTasks({
+          ...tasks,
+          [dateValue]: [newTask]
+        })
+      }
+
+      // setTasks({
+      //   ...tasks,
+      //   [dateValue] : oldTask ? oldTask.push(newTask) : [newTask]
+      // })
+
+
+      console.log(oldTask)
       //localStorage.setItem(store, JSON.stringify(newList))
     }
+    console.log(tasks)
   }
 
   return (
