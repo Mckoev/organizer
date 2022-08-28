@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import {useEffect} from 'react'
 import './map.css'
 import YandexMap from "../../components/map/YandexMap";
 import Spinner from "../spinner/Spinner";
@@ -7,12 +7,9 @@ import Form from "../../components/Form";
 import {getWeatherForOneDay} from "../../api/weather/getWeatherForOneDay";
 
 function Map() {
-    useEffect(function () {
-        getWeatherForOneDay()
-    }, [])
+    useEffect(() => getWeatherForOneDay(), [])
 
-    const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingWeatherForOneDay)
-
+    const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForOneDay)
 
     return (
         <div className="page page-map">

@@ -1,5 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import './spinner.css'
 
 function Spinner() {
@@ -48,7 +46,5 @@ function Spinner() {
       </div>
   )
 }
-
-Spinner.propTypes = {}
 
 export default Spinner

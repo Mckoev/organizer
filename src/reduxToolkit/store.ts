@@ -1,14 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import toolkitSliceWeatherForOneDay from './toolkitSliceWeatherForOneDay'
-import toolkitSliceWeatherForManyDays from './toolkitSliceWeatherForManyDays'
-import toolkitSliceIsLoading from './toolkitSliceIsLoading'
-import toolkitSliceLatestNews from "./toolkitSliceLatestNews";
+import weatherForOneDay from './slices/weatherForOneDay'
+import weatherForManyDays from './slices/weatherForManyDays'
+import latestNews from "./slices/latestNews";
+import isLoading from "./slices/isLoading";
 
 const rootReducer = combineReducers({
-  toolkitSliceWeatherForOneDay: toolkitSliceWeatherForOneDay,
-  toolkitSliceWeatherForManyDays: toolkitSliceWeatherForManyDays,
-  toolkitSliceIsLoading: toolkitSliceIsLoading,
-  toolkitSliceLatestNews: toolkitSliceLatestNews
+  weatherForOneDay: weatherForOneDay,
+  weatherForManyDays: weatherForManyDays,
+  isLoading: isLoading,
+  latestNews: latestNews
 })
 
 export const store = configureStore({

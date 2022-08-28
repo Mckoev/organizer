@@ -10,7 +10,7 @@ const init = {
     link: ''
 }
 
-const toolkitSliceLatestNews = createSlice({
+const latestNews = createSlice({
     name: 'latestNews',
     initialState: {
         arrNews: [init],
@@ -24,5 +24,5 @@ const toolkitSliceLatestNews = createSlice({
     },
 })
 
-export default toolkitSliceLatestNews.reducer
-export const { newsAction} = toolkitSliceLatestNews.actions
+export default latestNews.reducer
+export const { newsAction} = latestNews.actions

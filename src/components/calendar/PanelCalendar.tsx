@@ -3,8 +3,8 @@ import {months} from "../../helpers/dateValue";
 
 function PanelCalendar({list, date, className}) {
 
-    const listItems = list ?  list.map((el, index) => (
-        <li key={index} >
+    const listItems = list ? list.map((el, index) => (
+        <li key={index}>
             <div className="time">{el.timeStart} - {el.timeFinish}</div>
             <div className="title">{el.task}</div>
         </li>
@@ -17,7 +17,8 @@ function PanelCalendar({list, date, className}) {
             </div>
             <ul>
                 {listItems}
-            </ul></div>
+            </ul>
+        </div>
 
 
     );

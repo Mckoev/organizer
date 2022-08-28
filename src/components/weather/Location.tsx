@@ -1,24 +1,17 @@
-import React, { useEffect } from 'react'
-import { useAppSelector } from '../../reduxToolkit/hooks'
-import { getWeatherForManyDays } from '../../api/weather/getWeatherForManyDays'
+import {useEffect} from 'react'
+import {getWeatherForManyDays} from '../../api/weather/getWeatherForManyDays'
 import Form from '../Form'
 
 function Location() {
-  useEffect(function () {
-    getWeatherForManyDays()
-  }, [])
+    useEffect(() => getWeatherForManyDays(), [])
 
-  let st = useAppSelector((state) => state)
-
-  return (
-    <div className="panel panel-location">
-      <div className="text-field text-field_floating-2">
-        <Form />
-      </div>
-    </div>
-  )
+    return (
+        <div className="panel panel-location">
+            <div className="text-field text-field_floating-2">
+                <Form/>
+            </div>
+        </div>
+    )
 }
-
-Location.propTypes = {}
 
 export default Location

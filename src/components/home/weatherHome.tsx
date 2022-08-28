@@ -1,37 +1,27 @@
-import React, { useEffect } from 'react'
+import {useEffect} from 'react'
 import Spinner from '../../pages/spinner/Spinner'
-import { useAppSelector } from '../../reduxToolkit/hooks'
+import {useAppSelector} from '../../reduxToolkit/hooks'
 import PanelHomePage from './PanelHomePage'
-import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay'
-import { Link } from 'react-router-dom'
+import {getWeatherForOneDay} from '../../api/weather/getWeatherForOneDay'
+import {Link} from 'react-router-dom'
 
 function WeatherHome() {
-  const isLoadingWeatherForOneDay = useAppSelector((state) => state.toolkitSliceIsLoading.isLoadingWeatherForOneDay)
-  const location = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.location)
-  const country = useAppSelector((state) => state.toolkitSliceWeatherForOneDay.country)
+    const isLoadingWeatherForOneDay = useAppSelector((state) => state.isLoading.isLoadingWeatherForOneDay)
+    const location = useAppSelector((state) => state.weatherForOneDay.location)
+    const country = useAppSelector((state) => state.weatherForOneDay.country)
 
-  useEffect(function () {
-    getWeatherForOneDay()
-  }, [])
+    useEffect(() => getWeatherForOneDay(), [])
 
-  const st = useAppSelector((state) => state)
-
-  function handler() {
-    console.log(st)
-  }
-
-  return (
-    <div className="panel panel-weather">
-      {isLoadingWeatherForOneDay ? <Spinner /> : <PanelHomePage />}
-      <Link to="/weather">
-        <div className="span text">
-          {location}, {country}
+    return (
+        <div className="panel panel-weather">
+            {isLoadingWeatherForOneDay ? <Spinner/> : <PanelHomePage/>}
+            <Link to="/weather">
+                <div className="span text">
+                    {location}, {country}
+                </div>
+            </Link>
         </div>
-      </Link>
-    </div>
-  )
+    )
 }
-
-WeatherHome.propTypes = {}
 
 export default WeatherHome

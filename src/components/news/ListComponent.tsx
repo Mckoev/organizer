@@ -1,4 +1,3 @@
-import React from 'react';
 import {VariableSizeList as List} from 'react-window';
 import RowComponent from "./RowComponent";
 import {useAppSelector} from "../../reduxToolkit/hooks";
@@ -13,7 +12,7 @@ function ListComponent() {
         return index < items.length;
     }
 
-    const items = useAppSelector(state => state.toolkitSliceLatestNews.arrNews).slice(1)
+    const items = useAppSelector(state => state.latestNews.arrNews).slice(1)
     const Row = ({index, style}) => (
         <RowComponent image_url={items[index].image_url} index={index} creator={items[index].creator}
                       source_id={items[index].source_id} link={items[index].link} title={items[index].title}
@@ -50,4 +49,4 @@ function ListComponent() {
     )
 }
 
-export default React.memo(ListComponent);
+export default ListComponent;
