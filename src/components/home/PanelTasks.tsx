@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import {initShopList, shoppingList} from '../tasks/initialData'
+import {shoppingList} from '../tasks/initialData'
+import {initShopList} from "../../mock/mock";
 
 function PanelTasks() {
     const initialValue = localStorage.getItem(shoppingList)
