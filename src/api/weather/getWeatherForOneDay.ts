@@ -1,7 +1,7 @@
 import {URL_HOME, TOKEN, INITIAL_CITY, CITY, LOCATION, LATITUDE, LONGITUDE} from './weatherApiData'
 import {store} from '../../reduxToolkit/store'
-import {weatherAction} from '../../reduxToolkit/toolkitSliceWeatherForOneDay'
-import {isLoadingWeatherForOneDay} from '../../reduxToolkit/toolkitSliceIsLoading'
+import {weatherAction} from '../../reduxToolkit/slices/weatherForOneDay'
+import {isLoadingWeatherForOneDay} from '../../reduxToolkit/slices/isLoading'
 import {METHODS} from "../methods";
 
 export function getWeatherForOneDay(): void {

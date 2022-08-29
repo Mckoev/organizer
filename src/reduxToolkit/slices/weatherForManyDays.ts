@@ -7,7 +7,7 @@ const init = {
   icon_url: '',
 }
 
-const toolkitSliceWeatherForManyDays = createSlice({
+const weatherForManyDays = createSlice({
   name: 'day',
   initialState: {
     arrState: [init, init, init, init, init, init, init],
@@ -24,5 +24,5 @@ const toolkitSliceWeatherForManyDays = createSlice({
   },
 })
 
-export default toolkitSliceWeatherForManyDays.reducer
-export const { daysAction } = toolkitSliceWeatherForManyDays.actions
+export default weatherForManyDays.reducer
+export const { daysAction } = weatherForManyDays.actions

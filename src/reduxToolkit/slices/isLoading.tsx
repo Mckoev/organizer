@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const toolkitSliceIsLoading = createSlice({
+const isLoading = createSlice({
   name: 'isLoading',
   initialState: {
     isLoadingWeatherForOneDay: true,
@@ -20,6 +20,6 @@ const toolkitSliceIsLoading = createSlice({
   },
 })
 
-export default toolkitSliceIsLoading.reducer
+export default isLoading.reducer
 
-export const { isLoadingWeatherForOneDay ,isLoadingWeatherForManyDays, isLoadingLatestNews } = toolkitSliceIsLoading.actions
+export const { isLoadingWeatherForOneDay ,isLoadingWeatherForManyDays, isLoadingLatestNews } = isLoading.actions

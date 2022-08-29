@@ -10,7 +10,7 @@ function TimeHome() {
     const days: string[] = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 
-     useEffect(() => startTimer(),[])
+    useEffect(() => startTimer(), [])
 
     const startTimer = () => {
         timerId.current = setInterval(() => {
@@ -21,12 +21,11 @@ function TimeHome() {
 
     return (
         <div className="span time">
-            <div>{ time }</div>
-            <div className="span date">{`${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`}</div>
+            <div>{time}</div>
+            <div
+                className="span date">{`${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`}</div>
         </div>
     );
 }
-
-TimeHome.propTypes = {};
 
 export default TimeHome;

@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",
+    "eslint": "^8.23.0",
     "gh-pages": "^4.0.0"
   }
 }

@@ -1,7 +1,7 @@
 import {URL_WEATHER, TOKEN, URL_HOME, INITIAL_CITY, CITY} from './weatherApiData'
 import {store} from '../../reduxToolkit/store'
-import {daysAction} from '../../reduxToolkit/toolkitSliceWeatherForManyDays'
-import {isLoadingWeatherForManyDays} from "../../reduxToolkit/toolkitSliceIsLoading";
+import {daysAction} from '../../reduxToolkit/slices/weatherForManyDays'
+import {isLoadingWeatherForManyDays} from "../../reduxToolkit/slices/isLoading";
 import {METHODS} from "../methods";
 
 export function getWeatherForManyDays(): void {
@@ -33,6 +33,6 @@ export function getWeatherForManyDays(): void {
             store.dispatch(isLoadingWeatherForManyDays({'isLoadingWeatherForManyDays': false}))
         })
         .catch((err) => {
-            console.error('Could not fetch ' +  err)
+            console.error('Could not fetch ' + err)
         })
 }

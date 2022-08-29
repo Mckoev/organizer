@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import {CITY, LATITUDE, LOCATION, LONGITUDE} from "../api/weather/weatherApiData";
+import {CITY, LATITUDE, LOCATION, LONGITUDE} from "../../api/weather/weatherApiData";
 
-const toolkitSliceWeatherForOneDay = createSlice({
+const weatherForOneDay = createSlice({
   name: 'weather',
   initialState: {
     location: localStorage.getItem(CITY),
@@ -33,6 +33,6 @@ const toolkitSliceWeatherForOneDay = createSlice({
   },
 })
 
-export default toolkitSliceWeatherForOneDay.reducer
+export default weatherForOneDay.reducer
 
-export const { weatherAction } = toolkitSliceWeatherForOneDay.actions
+export const { weatherAction } = weatherForOneDay.actions
