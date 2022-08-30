@@ -7,8 +7,13 @@ import News from "./pages/news/News";
 import Home from "./pages/home/Home";
 import Page from "./components/page/Page";
 import Weather from "./pages/weather/Weather";
+import {useEffect} from "react";
 
 function App() {
+
+    useEffect(() => {
+        document.title = 'Organizer';
+    });
 
     return (
         <Routes>

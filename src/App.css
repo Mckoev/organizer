@@ -16,10 +16,10 @@
 }
 
 /* scrollbar design IE */
-body {
-  scrollbar-track-color: rgba(0, 0, 0, 0.6);
-  scrollbar-face-color: rgba(0, 0, 0, 0.6);
-}
+/*body {*/
+/*  scrollbar-track-color: rgba(0, 0, 0, 0.6);*/
+/*  scrollbar-face-color: rgba(0, 0, 0, 0.6);*/
+/*}*/
 
 .icon img {
   width: 100%;
