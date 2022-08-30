@@ -5,55 +5,11 @@ import {Calendar as CalendarComponent} from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {months} from "../../helpers/dateValue";
 import FormCalendar from "../../components/calendar/FormCalendar";
+import {initShopList, tasksCalendar} from "../../mock/mock";
+import {shoppingList} from "../../components/tasks/initialData";
 
 const classNames = ['panel panel-calendar', 'panel panel-calendar right']
-
-const arr = [{
-    timeStart: '8:00',
-    timeFinish: '9:00',
-    task: 'Shopping'
-},
-    {
-        timeStart: '10:00',
-        timeFinish: '12:00',
-        task: 'Meet Tom'
-    },
-    {
-        timeStart: '18:00',
-        timeFinish: '20:00',
-        task: 'Go to cinema'
-    },
-    {
-        timeStart: '23:00',
-        timeFinish: '23:00',
-        task: 'Drinking'
-    },
-]
-
-const arr2 = [{
-    timeStart: '9:00',
-    timeFinish: '10:00',
-    task: 'Meeting'
-},
-    {
-        timeStart: '11:00',
-        timeFinish: '13:00',
-        task: 'Go to bank'
-    },
-    {
-        timeStart: '16:00',
-        timeFinish: '17:00',
-        task: 'Dinner'
-    },
-    {
-        timeStart: '22:00',
-        timeFinish: '23:00',
-        task: 'Party'
-    },
-]
-
-//{day1: [{}, {}, {}],
-//  day2: [{}, {}, {}] }
+const calendarEvent: string = 'calendarEvent'
 
 function Calendar() {
 
@@ -65,11 +21,16 @@ function Calendar() {
 
     const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`
 
+    const initialValue = localStorage.getItem(calendarEvent)
 
-    const obj = {}
-    obj[dateValue] = arr2
+    let initialTasks = {}
+    if (initialValue) {
+        initialTasks = JSON.parse(initialValue)
+    } else {
+        initialTasks[dateValue] = tasksCalendar
+    }
 
-    const [tasks, setTasks] = useState(obj);
+    const [tasks, setTasks] = useState(initialTasks);
 
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value)
@@ -93,6 +54,7 @@ function Calendar() {
 
     function addTask(task) {
         const newTask = {
+            id: Math.random().toString(36).substring(2, 9),
             timeStart: userInputTimeStart,
             timeFinish: userInputTimeFinish,
             task: userInput
@@ -100,32 +62,27 @@ function Calendar() {
         if (!task) {
             alert('Nothing!!!')
         } else {
-            const oldTask = tasks[dateValue]
+            let oldTask = tasks[dateValue]
 
+            const addTask = oldTask ? [...oldTask, newTask] : [newTask]
 
-            if (oldTask) {
-                oldTask.push(newTask)
-                setTasks({
-                    ...tasks,
-                    [dateValue]: oldTask
-                })
-            } else {
-                setTasks({
-                    ...tasks,
-                    [dateValue]: [newTask]
-                })
+            const readyTask = {
+                ...tasks,
+                [dateValue]: addTask
             }
-
-            // setTasks({
-            //   ...tasks,
-            //   [dateValue] : oldTask ? oldTask.push(newTask) : [newTask]
-            // })
-
-
-            console.log(oldTask)
-            //localStorage.setItem(store, JSON.stringify(newList))
+            setTasks(readyTask)
+            localStorage.setItem('calendarEvent', JSON.stringify(readyTask))
         }
-        console.log(tasks)
+    }
+
+    function removeEl(id) {
+        const addTask = tasks[dateValue].filter((el) => el.id !== id)
+        const readyTask = {
+            ...tasks,
+            [dateValue]: addTask
+        }
+        setTasks(readyTask)
+        localStorage.setItem(calendarEvent, JSON.stringify(readyTask))
     }
 
     return (
@@ -133,16 +90,15 @@ function Calendar() {
             <div className="bg"></div>
             <div className="overlay"></div>
             <PanelCalendar list={tasks[`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`]}
-                           date={date} className={classNames[0]}/>
+                           date={date} className={classNames[0]} removeEl={removeEl}/>
             <div className={classNames[1]}><CalendarComponent onChange={onChange} value={value}
-                                                              onClickDay={(value, event) => setDate(value)}/>
+                                                              onClickDay={(value) => setDate(value)}/>
                 <FormCalendar handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput}
                               handleChangeTimeStart={handleChangeTimeStart}
                               handleChangeTimeFinish={handleChangeTimeFinish} userInputTimeStart={userInputTimeStart}
                               userInputTimeFinish={userInputTimeFinish}/>
 
             </div>
-
         </div>
     )
 }

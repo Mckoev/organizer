@@ -1,12 +1,16 @@
 import React from 'react';
 import {months} from "../../helpers/dateValue";
 
-function PanelCalendar({list, date, className}) {
+function PanelCalendar({list, date, className, removeEl}) {
+
 
     const listItems = list ? list.map((el, index) => (
         <li key={index}>
             <div className="time">{el.timeStart} - {el.timeFinish}</div>
             <div className="title">{el.task}</div>
+            <div className="remove" onClick={() => removeEl(el.id)}>
+                <img src={require('../../img/remove.png')} alt='remove'></img>
+            </div>
         </li>
     )) : null
 

@@ -1,7 +1,7 @@
 import {useAppSelector} from '../../reduxToolkit/hooks'
 import Spinner from '../../pages/spinner/Spinner'
 import ContentForForecast from './ContentForForecast'
-import {IWeatherBox} from "../../types/interfeices";
+import {IWeatherBox} from '../../types/interfeices'
 
 function Box() {
     const weatherDays: IWeatherBox[] = useAppSelector((state) => state.weatherForManyDays.arrState).slice(1)

@@ -2,13 +2,11 @@ import './tasks.css'
 import List from '../../components/tasks/List'
 import {LISTS_NAMES} from '../../components/tasks/initialData'
 import {
-    initShopList,
-    initTodoList,
-    initLongtermTasks,
     shoppingList,
     todoList,
     longtermTasks
 } from '../../components/tasks/initialData'
+import {initLongtermTasks, initShopList, initTodoList} from "../../mock/mock";
 
 function Tasks() {
     return (

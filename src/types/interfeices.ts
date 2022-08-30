@@ -14,3 +14,10 @@ export interface IElement {
     el: IWeatherBox
 }
 
+export interface ICalendarTask {
+    id: string
+    timeStart: string
+    timeFinish: string,
+    task: string
+}
+

@@ -1,4 +1,4 @@
-import {IElement} from "../../types/interfeices";
+import {IElement} from '../../types/interfeices'
 
 function ContentForForecast({el}: IElement) {
     const DAYS: string[] = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT']
