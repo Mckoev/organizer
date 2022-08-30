@@ -1,4 +1,4 @@
-import {IMethods} from "../helpers/interfeices";
+import {IMethods} from "../types/interfeices";
 
 export const METHODS: IMethods = {
     GET: 'GET',
