@@ -8,9 +8,6 @@ function PanelTasks() {
 
     const [list, setList] = useState(initialValue ? JSON.parse(initialValue) : initShopList)
 
-    console.log(list)
-
-
     const listItems = list.slice(0, 3).map((el, index) => (
         <li key={index} className={el.complete ? 'checked' : ''}>
             <div className="check"></div>
@@ -24,11 +21,11 @@ function PanelTasks() {
         <div className="panel panel-tasks">
             <ul>
                 {listItems}
-                { isManyTasks ?
-                <li className="other">
-                    <div className="plus"></div>
-                     <div className="title">... and {list.length - list.slice(0, 3).length} other tasks</div>
-                </li>
+                {isManyTasks ?
+                    <li className="other">
+                        <div className="plus"></div>
+                        <div className="title">... and {list.length - list.slice(0, 3).length} other tasks</div>
+                    </li>
                     : <></>}
             </ul>
         </div>

@@ -5,8 +5,7 @@ import {Calendar as CalendarComponent} from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {months} from "../../helpers/dateValue";
 import FormCalendar from "../../components/calendar/FormCalendar";
-import {initShopList, tasksCalendar} from "../../mock/mock";
-import {shoppingList} from "../../components/tasks/initialData";
+import {tasksCalendar} from "../../mock/mock";
 
 const classNames = ['panel panel-calendar', 'panel panel-calendar right']
 const calendarEvent: string = 'calendarEvent'
