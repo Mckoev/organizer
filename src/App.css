@@ -1,26 +1,14 @@
 .page .overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 800px;
-  height: 600px;
-  margin: auto auto;
-  background-color: rgba(238, 254, 7, 0.8);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 254, 7, 0.8);
 }
 
 .panel {
-  background-color: rgba(0, 0, 0, 0.2);
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 
-/* scrollbar design IE */
-/*body {*/
-/*  scrollbar-track-color: rgba(0, 0, 0, 0.6);*/
-/*  scrollbar-face-color: rgba(0, 0, 0, 0.6);*/
-/*}*/
-
 .icon img {
-  width: 100%;
+    width: 100%;
 }

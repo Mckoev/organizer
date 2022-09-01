@@ -15,7 +15,7 @@ export function getSize(index, items) {
         count = count - items[index].description.length * 0.03
     }
     if (items[index].description.length > 350) {
-        count = count - items[index].description.length * 0.1
+        count = count - items[index].description.length * 0.03
     }
     return count + items[index].description.length * 0.35
 }

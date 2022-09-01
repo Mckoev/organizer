@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import {createSlice} from '@reduxjs/toolkit'
 
 const init = {
     creator: '',
     title: '',
     description: '',
-    date: '',
+    pubDate: '',
     source_id: '',
     image_url: '',
     link: ''
@@ -25,4 +25,4 @@ const latestNews = createSlice({
 })
 
 export default latestNews.reducer
-export const { newsAction} = latestNews.actions
+export const {newsAction} = latestNews.actions
