@@ -8,3 +8,9 @@ export const shoppingList: string = 'shoppingList'
 export const todoList: string = 'todoList'
 export const longtermTasks: string = 'longtermTasks'
 
+export const TITLES = {
+    PURCHASE: 'purchase',
+    TODO: 'to-do',
+    TASK: 'task'
+}
+

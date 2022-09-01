@@ -1,7 +1,7 @@
 import Form from './Form'
 import {useState} from 'react'
 
-function List({name, initialStandartValue, store}) {
+function List({name, initialStandartValue, store, textTitle}) {
     const initialValue = localStorage.getItem(store)
     const [list, setList] = useState(initialValue ? JSON.parse(initialValue) : initialStandartValue)
     const [userInput, setUserInput] = useState('')
@@ -68,7 +68,7 @@ function List({name, initialStandartValue, store}) {
             </div>
             <div className="newItem">
                 <div className="text">
-                    <span className="title">Add new item</span>
+                    <span className="title">add new {textTitle}:</span>
                 </div>
             </div>
             <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput}/>
