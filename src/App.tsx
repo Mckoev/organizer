@@ -5,7 +5,7 @@ import Map from "./pages/map/Map";
 import Tasks from "./pages/tasks/Tasks";
 import News from "./pages/news/News";
 import Home from "./pages/home/Home";
-import Page from "./components/page/Page";
+import Page from "./components/Page/Page";
 import Weather from "./pages/weather/Weather";
 import {useEffect} from "react";
 

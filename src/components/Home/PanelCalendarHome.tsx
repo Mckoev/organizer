@@ -27,7 +27,9 @@ function PanelCalendarHome() {
         </li>
     )) : null
 
-    const isManyTasks = list.length - list.slice(0, 3).length > 0
+    const isManyTasks = list ? list.length - list.slice(0, 3).length > 0 : false
+
+    const isTasksToday = !!list && list.length != 0
 
     return (
         <div className="panel panel-calendar">
@@ -39,6 +41,9 @@ function PanelCalendarHome() {
                         <div className="title">... and {list.length - list.slice(0, 3).length} other tasks</div>
                     </li>
                     : <></>}
+                {isTasksToday ? <></> : <li className="other">
+                    <div className="title"> Нет задач на сегодня!</div>
+                </li>}
             </ul>
         </div>
     );

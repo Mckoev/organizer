@@ -1,11 +1,11 @@
 import {useState} from 'react'
 import './calendar.css'
-import PanelCalendar from "../../components/calendar/PanelCalendar";
 import {Calendar as CalendarComponent} from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import {months} from "../../helpers/dateValue";
-import FormCalendar from "../../components/calendar/FormCalendar";
 import {tasksCalendar} from "../../mock/mock";
+import PanelCalendar from "../../components/Calendar/PanelCalendar";
+import FormCalendar from "../../components/Calendar/FormCalendar";
 
 const classNames = ['panel panel-calendar', 'panel panel-calendar right']
 const calendarEvent: string = 'calendarEvent'
@@ -86,7 +86,6 @@ function Calendar() {
 
     return (
         <div className="page page-calendar">
-            <div className="bg"></div>
             <div className="overlay"></div>
             <PanelCalendar list={tasks[`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`]}
                            date={date} className={classNames[0]} removeEl={removeEl}/>

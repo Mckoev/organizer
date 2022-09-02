@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {shoppingList} from '../tasks/initialData'
+import {shoppingList} from '../Tasks/initialData'
 import {initShopList} from "../../mock/mock";
 import {useAppSelector} from "../../reduxToolkit/hooks";
 

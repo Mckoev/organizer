@@ -1,8 +1,8 @@
 import React from 'react';
 import './page.css'
-import Icons from "../icons/Icons";
+import Icons from "../Icons/Icons";
 
-const Page = ({component}: { component: React.ReactNode }) => {
+function Page({component}: { component: React.ReactNode }) {
     return (
         <div className='page'>
             {component}

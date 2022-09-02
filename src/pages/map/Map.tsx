@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 import './map.css'
-import YandexMap from "../../components/map/YandexMap";
+import YandexMap from "../../components/Map/YandexMap";
 import Spinner from "../spinner/Spinner";
 import {useAppSelector} from "../../reduxToolkit/hooks";
 import Form from "../../components/Form";

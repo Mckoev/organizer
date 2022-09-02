@@ -3,7 +3,7 @@ import './news.css'
 import {getLatestNews} from "../../api/news/getLatestNews";
 import {useAppSelector} from "../../reduxToolkit/hooks";
 import Spinner from "../spinner/Spinner";
-import ListComponent from "../../components/news/ListComponent";
+import ListComponent from "../../components/News/ListComponent";
 
 function News() {
 

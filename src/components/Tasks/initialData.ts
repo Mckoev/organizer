@@ -1,7 +1,7 @@
 export const LISTS_NAMES = {
     shoppingList: 'Shopping list',
     todoList: 'To-do list',
-    longtermTasks: 'Long-term tasks',
+    longtermTasks: 'Long-term Tasks',
 }
 
 export const shoppingList: string = 'shoppingList'
