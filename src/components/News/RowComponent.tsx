@@ -1,31 +1,33 @@
+import { INews, IStyle } from '../../types/interfaices';
+
 function RowComponent({
-    style,
+    item,
     index,
-    imageUrl,
-    creator,
-    sourceId,
-    link,
-    title,
-    description,
-    date,
+    style,
+}: {
+    item: INews;
+    index: number;
+    style: IStyle;
 }) {
     return (
         <li key={index} style={style}>
             <div className='source'>
-                {creator ? `${creator} (${sourceId})` : sourceId}
+                {item.creator
+                    ? `${item.creator} (${item.source_id})`
+                    : item.source_id}
             </div>
             <div className='news-block'>
                 <a
-                    href={link}
+                    href={item.link}
                     target='_blank'
                     rel='nofollow noopener noreferrer'
                 >
-                    <div className='title'>{title} </div>
-                    <div className='description'>{description}</div>
+                    <div className='title'>{item.title} </div>
+                    <div className='description'>{item.description}</div>
                 </a>
-                <img className='image' src={imageUrl} alt='downloading' />
+                <img className='image' src={item.image_url} alt='downloading' />
             </div>
-            <div className='time'>{date}</div>
+            <div className='time'>{item.pubDate}</div>
         </li>
     );
 }

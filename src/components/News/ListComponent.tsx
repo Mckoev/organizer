@@ -10,22 +10,9 @@ function ListComponent() {
     const isItemLoaded = (index) => index < items.length;
 
     const items = useAppSelector((state) => state.latestNews.arrNews).slice(1);
-    console.log(items);
 
     function Row({ index, style }) {
-        return (
-            <RowComponent
-                imageUrl={items[index].image_url}
-                index={index}
-                creator={items[index].creator}
-                sourceId={items[index].source_id}
-                link={items[index].link}
-                title={items[index].title}
-                description={items[index].description}
-                date={items[index].pubDate}
-                style={style}
-            />
-        );
+        return <RowComponent item={items[index]} index={index} style={style} />;
     }
 
     const getItemSize = (index) => getSize(index, items);
