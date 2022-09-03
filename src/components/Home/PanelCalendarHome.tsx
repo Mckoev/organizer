@@ -21,7 +21,6 @@ function PanelCalendarHome() {
 
     const [tasks, setTasks] = useState(initialTasks);
     const list = tasks[dateValue];
-    console.log(list);
 
     const listItems = list
         ? list.slice(0, 3).map((el, index) => (

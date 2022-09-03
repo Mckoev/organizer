@@ -1,14 +1,12 @@
 import { INews, IStyle } from '../../types/interfaices';
 
-function RowComponent({
-    item,
-    index,
-    style,
-}: {
+type Props = {
     item: INews;
     index: number;
     style: IStyle;
-}) {
+};
+
+function RowComponent({ item, index, style }: Props) {
     return (
         <li key={index} style={style}>
             <div className='source'>

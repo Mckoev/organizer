@@ -45,3 +45,9 @@ export interface IStyle {
     top: number;
     width: string;
 }
+
+export interface ITask {
+    id: string;
+    task: string;
+    complete: boolean;
+}

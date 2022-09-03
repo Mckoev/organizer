@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import Form from './Form';
+import { ITask } from '../../types/interfaices';
 
-function List({ name, initialStandartValue, store, textTitle }) {
+type Props = {
+    name: string;
+    initialStandartValue: ITask[];
+    store: string;
+    textTitle: string;
+};
+
+function List({ name, initialStandartValue, store, textTitle }: Props) {
     const initialValue = localStorage.getItem(store);
     const [list, setList] = useState(
         initialValue ? JSON.parse(initialValue) : initialStandartValue
