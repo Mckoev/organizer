@@ -12,6 +12,7 @@
     "@types/node": "^16.11.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "eslint-config-airbnb": "^19.0.4",
     "react": "^18.2.0",
     "react-calendar": "^3.7.0",
     "react-dom": "^18.2.0",
@@ -22,7 +23,6 @@
     "react-window": "^1.8.7",
     "react-window-infinite-loader": "^1.0.8",
     "react-yandex-maps": "^4.6.0",
-    "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -31,7 +31,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -53,7 +54,15 @@
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.7",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
     "eslint": "^8.23.0",
-    "gh-pages": "^4.0.0"
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.4",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
+    "prettier": "2.7.1",
+    "typescript": "^4.8.2"
   }
 }

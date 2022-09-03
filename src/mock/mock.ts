@@ -1,31 +1,31 @@
-import {ICalendarTask} from "../types/interfeices";
+import { ICalendarTask } from '../types/interfaices';
 
 export const tasksCalendar: ICalendarTask[] = [
     {
         id: Math.random().toString(36).substring(2, 9),
         timeStart: '9:00',
         timeFinish: '10:00',
-        task: 'Meeting'
+        task: 'Meeting',
     },
     {
         id: Math.random().toString(36).substring(2, 9),
         timeStart: '11:00',
         timeFinish: '13:00',
-        task: 'Go to bank'
+        task: 'Go to bank',
     },
     {
         id: Math.random().toString(36).substring(2, 9),
         timeStart: '16:00',
         timeFinish: '17:00',
-        task: 'Dinner'
+        task: 'Dinner',
     },
     {
         id: Math.random().toString(36).substring(2, 9),
         timeStart: '22:00',
         timeFinish: '23:00',
-        task: 'Party'
+        task: 'Party',
     },
-]
+];
 
 export const initShopList = [
     {
@@ -48,7 +48,7 @@ export const initShopList = [
         task: 'Beer',
         complete: false,
     },
-]
+];
 
 export const initTodoList = [
     {
@@ -76,7 +76,7 @@ export const initTodoList = [
         task: 'Dusting',
         complete: false,
     },
-]
+];
 
 export const initLongtermTasks = [
     {
@@ -94,4 +94,4 @@ export const initLongtermTasks = [
         task: 'Car service',
         complete: false,
     },
-]
+];

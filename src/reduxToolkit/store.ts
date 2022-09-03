@@ -1,19 +1,19 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import weatherForOneDay from './slices/weatherForOneDay'
-import weatherForManyDays from './slices/weatherForManyDays'
-import latestNews from "./slices/latestNews";
-import isLoading from "./slices/isLoading";
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import weatherForOneDay from './slices/weatherForOneDay';
+import weatherForManyDays from './slices/weatherForManyDays';
+import latestNews from './slices/latestNews';
+import isLoading from './slices/isLoading';
 
 const rootReducer = combineReducers({
-  weatherForOneDay: weatherForOneDay,
-  weatherForManyDays: weatherForManyDays,
-  isLoading: isLoading,
-  latestNews: latestNews
-})
+    weatherForOneDay,
+    weatherForManyDays,
+    isLoading,
+    latestNews,
+});
 
 export const store = configureStore({
-  reducer: rootReducer,
-})
+    reducer: rootReducer,
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

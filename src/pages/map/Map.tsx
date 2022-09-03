@@ -1,28 +1,29 @@
-import {useEffect} from 'react'
-import './map.css'
-import YandexMap from "../../components/Map/YandexMap";
-import Spinner from "../spinner/Spinner";
-import {useAppSelector} from "../../reduxToolkit/hooks";
-import Form from "../../components/Form";
-import {getWeatherForOneDay} from "../../api/weather/getWeatherForOneDay";
+import { useEffect } from 'react';
+import './map.css';
+import YandexMap from '../../components/Map/YandexMap';
+import Spinner from '../spinner/Spinner';
+import { useAppSelector } from '../../reduxToolkit/hooks';
+import Form from '../../components/Form';
+import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay';
 
 function Map() {
-    useEffect(() => getWeatherForOneDay(), [])
+    useEffect(() => getWeatherForOneDay(), []);
 
-    const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForOneDay)
+    const isLoadingWeatherForOneDay: boolean = useAppSelector(
+        (state) => state.isLoading.isLoadingWeatherForOneDay
+    );
 
     return (
-        <div className="page page-map">
-            <div className="overlay"></div>
-            <div className="title">
-                <Form/>
+        <div className='page page-map'>
+            <div className='overlay' />
+            <div className='title'>
+                <Form />
             </div>
-            <div className="map">
-                {isLoadingWeatherForOneDay ? <Spinner/> : <YandexMap/>}
+            <div className='map'>
+                {isLoadingWeatherForOneDay ? <Spinner /> : <YandexMap />}
             </div>
-
         </div>
-    )
+    );
 }
 
-export default Map
+export default Map;

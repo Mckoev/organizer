@@ -1,4 +1,4 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const init = {
     creator: '',
@@ -7,8 +7,8 @@ const init = {
     pubDate: '',
     source_id: '',
     image_url: '',
-    link: ''
-}
+    link: '',
+};
 
 const latestNews = createSlice({
     name: 'latestNews',
@@ -17,12 +17,12 @@ const latestNews = createSlice({
     },
     reducers: {
         newsAction(state, action) {
-            for (let i = 0; i < action.payload.length; i++) {
-                state.arrNews.push(action.payload[i])
+            for (let i = 0; i < action.payload.length; i += 1) {
+                state.arrNews.push(action.payload[i]);
             }
         },
     },
-})
+});
 
-export default latestNews.reducer
-export const {newsAction} = latestNews.actions
+export default latestNews.reducer;
+export const { newsAction } = latestNews.actions;
