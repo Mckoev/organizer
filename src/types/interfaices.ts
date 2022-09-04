@@ -21,7 +21,7 @@ export interface ICalendarTask {
     task: string;
 }
 
-export interface INews {
+interface INews {
     category?: string[];
     content?: string[] | string | null;
     country?: string[];
@@ -37,7 +37,7 @@ export interface INews {
     video_url?: null;
 }
 
-export interface IStyle {
+interface IStyle {
     height: number;
     left: number;
     position: undefined;
@@ -46,8 +46,21 @@ export interface IStyle {
     width: string;
 }
 
+export interface IRow {
+    item: INews;
+    index: number;
+    style: IStyle;
+}
+
 export interface ITask {
     id: string;
     task: string;
     complete: boolean;
+}
+
+export interface IList {
+    name: string;
+    initialStandartValue: ITask[];
+    store: string;
+    textTitle: string;
 }

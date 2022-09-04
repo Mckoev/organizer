@@ -1,14 +1,11 @@
-import { INews, IStyle } from '../../types/interfaices';
+import { IRow } from '../../types/interfaices';
 
-type Props = {
-    item: INews;
-    index: number;
-    style: IStyle;
-};
-
-function RowComponent({ item, index, style }: Props) {
+function RowComponent({ item, style }: IRow) {
+    const imgSrc = item.image_url
+        ? item.image_url
+        : require('../../img/noimg.png');
     return (
-        <li key={index} style={style}>
+        <li key={item.title} style={style}>
             <div className='source'>
                 {item.creator
                     ? `${item.creator} (${item.source_id})`
@@ -23,7 +20,7 @@ function RowComponent({ item, index, style }: Props) {
                     <div className='title'>{item.title} </div>
                     <div className='description'>{item.description}</div>
                 </a>
-                <img className='image' src={item.image_url} alt='downloading' />
+                <img className='image' src={imgSrc} />
             </div>
             <div className='time'>{item.pubDate}</div>
         </li>

@@ -1,22 +1,15 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Form from './Form';
-import { ITask } from '../../types/interfaices';
+import { IList, ITask } from '../../types/interfaices';
 
-type Props = {
-    name: string;
-    initialStandartValue: ITask[];
-    store: string;
-    textTitle: string;
-};
-
-function List({ name, initialStandartValue, store, textTitle }: Props) {
+function List({ name, initialStandartValue, store, textTitle }: IList) {
     const initialValue = localStorage.getItem(store);
     const [list, setList] = useState(
         initialValue ? JSON.parse(initialValue) : initialStandartValue
     );
     const [userInput, setUserInput] = useState('');
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         setUserInput(e.currentTarget.value);
     };
 
@@ -62,7 +55,7 @@ function List({ name, initialStandartValue, store, textTitle }: Props) {
     }
 
     const listItems = list.map((el, index) => (
-        <li key={index} className={el.complete ? 'checked' : ''}>
+        <li key={el.id} className={el.complete ? 'checked' : ''}>
             <div className='check' onClick={() => changeElement(el.id)} />
             <div className='title' onClick={() => changeElement(el.id)}>
                 {el.task}
