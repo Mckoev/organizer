@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import { IList, ITask } from '../../types/interfaices';
+import { IList } from '../../types/interfaices';
 
-function List({ name, initialStandartValue, store, textTitle }: IList) {
-    const initialValue = localStorage.getItem(store);
-    const [list, setList] = useState(
-        initialValue ? JSON.parse(initialValue) : initialStandartValue
-    );
+function List({ name, initialStandardValue, store, textTitle }: IList) {
+    const initialValue: string | null = localStorage.getItem(store);
+    const [list, setList] = useState(initialValue ? JSON.parse(initialValue) : initialStandardValue);
     const [userInput, setUserInput] = useState('');
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -33,11 +31,7 @@ function List({ name, initialStandartValue, store, textTitle }: IList) {
     }
 
     function changeElement(id) {
-        const newList = [
-            ...list.map((el) =>
-                el.id === id ? { ...el, complete: !el.complete } : { ...el }
-            ),
-        ];
+        const newList = [...list.map((el) => (el.id === id ? { ...el, complete: !el.complete } : { ...el }))];
         setList(newList);
         localStorage.setItem(store, JSON.stringify(newList));
     }
@@ -78,11 +72,7 @@ function List({ name, initialStandartValue, store, textTitle }: IList) {
                     <span className='title'>add new {textTitle}:</span>
                 </div>
             </div>
-            <Form
-                handleSubmit={handleSubmit}
-                handleChange={handleChange}
-                userInput={userInput}
-            />
+            <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput} />
             <ul>{listItems}</ul>
         </div>
     );

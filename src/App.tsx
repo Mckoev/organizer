@@ -1,6 +1,5 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
 import Calendar from './pages/calendar/Calendar';
 import Map from './pages/map/Map';
 import Tasks from './pages/tasks/Tasks';
@@ -10,9 +9,6 @@ import Page from './components/Page/Page';
 import Weather from './pages/weather/Weather';
 
 function App() {
-    useEffect(() => {
-        document.title = 'Organizer';
-    });
 
     return (
         <Routes>

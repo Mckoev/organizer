@@ -1,16 +1,7 @@
-import {
-    URL_HOME,
-    TOKEN,
-    INITIAL_CITY,
-    CITY,
-    LOCATION,
-    LATITUDE,
-    LONGITUDE,
-} from './weatherApiData';
+import { URL_HOME, TOKEN, INITIAL_CITY, CITY, LOCATION, LATITUDE, LONGITUDE } from './weatherApiData';
 import { store } from '../../reduxToolkit/store';
 import { weatherAction } from '../../reduxToolkit/slices/weatherForOneDay';
 import { isLoadingWeatherForOneDay } from '../../reduxToolkit/slices/isLoading';
-import { METHODS } from '../methods';
 
 export function getWeatherForOneDay(): void {
     let location: string | null = localStorage.getItem(CITY);
@@ -19,7 +10,7 @@ export function getWeatherForOneDay(): void {
         location = INITIAL_CITY;
     }
     fetch(URL_HOME, {
-        method: METHODS.POST,
+        method: 'Post',
         headers: {
             'Content-Type': `application/json`,
             Authorization: `Bearer ${TOKEN}`,
@@ -30,9 +21,7 @@ export function getWeatherForOneDay(): void {
     })
         .then((response) => {
             if (!response.ok) {
-                throw new Error(
-                    `Could not fetch ${URL_HOME}, received ${response.status}`
-                );
+                throw new Error(`Could not fetch ${URL_HOME}, received ${response.status}`);
             }
             return response.json();
         })
@@ -48,6 +37,6 @@ export function getWeatherForOneDay(): void {
             );
         })
         .catch((err) => {
-            console.error(`Could not fetch ${  err}`);
+            console.error(`Could not fetch ${err}`);
         });
 }

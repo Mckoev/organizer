@@ -1,15 +1,6 @@
-import React from 'react';
+import { IFormTask } from '../../types/interfaices';
 
-type Props = {
-    userInput: string;
-    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
-    handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
-};
-
-function Form({ handleSubmit, userInput, handleChange }: Props) {
-    console.log(handleSubmit);
-    console.log(userInput);
-    console.log(handleChange);
+function Form({ handleSubmit, userInput, handleChange }: IFormTask) {
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
             <input value={userInput} type='text' onChange={handleChange} />

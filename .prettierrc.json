@@ -4,9 +4,11 @@
   "arrowParens": "always",
   "max-len": [
     "error",
-    180,
+    200,
     2
   ],
+  "max_line_length": 160,
+  "printWidth": 140,
   "tabWidth": 4,
   "useTabs": false,
   "trailingComma": "es5",

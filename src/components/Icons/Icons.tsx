@@ -17,10 +17,7 @@ function Icons() {
                 </div>
                 <div className='icon icon-calendar' data-page='calendar'>
                     <Link to='/calendar'>
-                        <img
-                            src={require('../../img/calendar.png')}
-                            alt='calendar'
-                        />
+                        <img src={require('../../img/calendar.png')} alt='calendar' />
                     </Link>
                 </div>
                 <div className='icon icon-map' data-page='map'>

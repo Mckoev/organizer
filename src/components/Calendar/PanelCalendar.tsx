@@ -1,6 +1,7 @@
 import { months } from '../../helpers/dateValue';
+import { IPanelCalendar } from '../../types/interfaices';
 
-function PanelCalendar({ list, date, className, removeEl }) {
+function PanelCalendar({ list, date, className, removeEl }: IPanelCalendar) {
     const listItems = list
         ? list.map((el, index) => (
               <li key={index}>
@@ -19,8 +20,7 @@ function PanelCalendar({ list, date, className, removeEl }) {
         <div className={className}>
             <div className='header'>
                 <div className='title'>
-                    {date.getDate()} {months[date.getMonth()]}{' '}
-                    {date.getFullYear()}
+                    {date.getDate()} {months[date.getMonth()]} {date.getFullYear()}
                 </div>
             </div>
             <ul>{listItems}</ul>

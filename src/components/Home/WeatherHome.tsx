@@ -6,11 +6,9 @@ import PanelHomePage from './PanelHomePage';
 import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay';
 
 function WeatherHome() {
-    const isLoadingWeatherForOneDay = useAppSelector(
-        (state) => state.isLoading.isLoadingWeatherForOneDay
-    );
-    const location = useAppSelector((state) => state.weatherForOneDay.location);
-    const country = useAppSelector((state) => state.weatherForOneDay.country);
+    const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForOneDay);
+    const location: string | null = useAppSelector((state) => state.weatherForOneDay.location);
+    const country: string | null = useAppSelector((state) => state.weatherForOneDay.country);
 
     useEffect(() => getWeatherForOneDay(), []);
 

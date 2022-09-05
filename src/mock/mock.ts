@@ -1,4 +1,4 @@
-import { ICalendarTask } from '../types/interfaices';
+import { ICalendarTask, ITask } from '../types/interfaices';
 
 export const tasksCalendar: ICalendarTask[] = [
     {
@@ -27,7 +27,7 @@ export const tasksCalendar: ICalendarTask[] = [
     },
 ];
 
-export const initShopList = [
+export const initShopList: ITask[] = [
     {
         id: Math.random().toString(36).substring(2, 9),
         task: 'Milk',
@@ -50,7 +50,7 @@ export const initShopList = [
     },
 ];
 
-export const initTodoList = [
+export const initTodoList: ITask[] = [
     {
         id: Math.random().toString(36).substring(2, 9),
         task: 'Cleaning',
@@ -78,7 +78,7 @@ export const initTodoList = [
     },
 ];
 
-export const initLongtermTasks = [
+export const initLongTermTasks: ITask[] = [
     {
         id: Math.random().toString(36).substring(2, 9),
         task: 'Prepare boiler',

@@ -9,9 +9,7 @@ import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay';
 function Map() {
     useEffect(() => getWeatherForOneDay(), []);
 
-    const isLoadingWeatherForOneDay: boolean = useAppSelector(
-        (state) => state.isLoading.isLoadingWeatherForOneDay
-    );
+    const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForOneDay);
 
     return (
         <div className='page page-map'>
@@ -19,9 +17,7 @@ function Map() {
             <div className='title'>
                 <Form />
             </div>
-            <div className='map'>
-                {isLoadingWeatherForOneDay ? <Spinner /> : <YandexMap />}
-            </div>
+            <div className='map'>{isLoadingWeatherForOneDay ? <Spinner /> : <YandexMap />}</div>
         </div>
     );
 }

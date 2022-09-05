@@ -6,7 +6,7 @@ import PanelCalendarHome from '../../components/Home/PanelCalendarHome';
 
 function Home() {
     return (
-        <div className='page page-home' style={{ display: 'block' }}>
+        <div className='page page-home'>
             <div className='overlay' />
             <div className='panel panel-time'>
                 <TimeHome />

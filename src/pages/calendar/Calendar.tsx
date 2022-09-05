@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import './calendar.css';
 import { Calendar as CalendarComponent } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -6,9 +6,7 @@ import { months } from '../../helpers/dateValue';
 import { tasksCalendar } from '../../mock/mock';
 import PanelCalendar from '../../components/Calendar/PanelCalendar';
 import FormCalendar from '../../components/Calendar/FormCalendar';
-
-const classNames = ['panel panel-calendar', 'panel panel-calendar right'];
-const calendarEvent = 'calendarEvent';
+import { CALENDAR_EVENT } from '../../constants/constanst';
 
 function Calendar() {
     const [value, onChange] = useState(new Date());
@@ -17,11 +15,9 @@ function Calendar() {
     const [userInputTimeStart, setUserInputTimeStart] = useState('00:00');
     const [userInputTimeFinish, setUserInputTimeFinish] = useState('00:00');
 
-    const dateValue = `${value.getDate()} ${
-        months[value.getMonth()]
-    } ${value.getFullYear()}`;
+    const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
 
-    const initialValue = localStorage.getItem(calendarEvent);
+    const initialValue = localStorage.getItem(CALENDAR_EVENT);
 
     let initialTasks = {};
     if (initialValue) {
@@ -32,18 +28,18 @@ function Calendar() {
 
     const [tasks, setTasks] = useState(initialTasks);
 
-    const handleChange = (e) => {
+    const handleChange = (e: FormEvent<HTMLInputElement>) => {
         setUserInput(e.currentTarget.value);
     };
 
-    const handleChangeTimeStart = (e) => {
+    const handleChangeTimeStart = (e: FormEvent<HTMLInputElement>) => {
         setUserInputTimeStart(e.currentTarget.value);
     };
-    const handleChangeTimeFinish = (e) => {
+    const handleChangeTimeFinish = (e: FormEvent<HTMLInputElement>) => {
         setUserInputTimeFinish(e.currentTarget.value);
     };
 
-    function handleSubmit(e) {
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         addTask(userInput);
         setUserInput('');
@@ -62,9 +58,7 @@ function Calendar() {
             alert('Nothing!!!');
         } else {
             const oldTask = tasks[dateValue];
-
             const addTask = oldTask ? [...oldTask, newTask] : [newTask];
-
             const readyTask = {
                 ...tasks,
                 [dateValue]: addTask,
@@ -81,30 +75,20 @@ function Calendar() {
             [dateValue]: addTask,
         };
         setTasks(readyTask);
-        localStorage.setItem(calendarEvent, JSON.stringify(readyTask));
+        localStorage.setItem(CALENDAR_EVENT, JSON.stringify(readyTask));
     }
 
     return (
         <div className='page page-calendar'>
             <div className='overlay' />
             <PanelCalendar
-                list={
-                    tasks[
-                        `${date.getDate()} ${
-                            months[date.getMonth()]
-                        } ${date.getFullYear()}`
-                    ]
-                }
+                list={tasks[`${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`]}
                 date={date}
-                className={classNames[0]}
+                className='panel panel-calendar'
                 removeEl={removeEl}
             />
-            <div className={classNames[1]}>
-                <CalendarComponent
-                    onChange={onChange}
-                    value={value}
-                    onClickDay={(value) => setDate(value)}
-                />
+            <div className='panel panel-calendar right'>
+                <CalendarComponent onChange={onChange} value={value} onClickDay={(value) => setDate(value)} />
                 <FormCalendar
                     handleSubmit={handleSubmit}
                     handleChange={handleChange}

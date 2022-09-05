@@ -1,3 +1,5 @@
+import { IFormCalendar } from '../../types/interfaices';
+
 function Form({
     handleSubmit,
     userInput,
@@ -6,26 +8,14 @@ function Form({
     userInputTimeFinish,
     handleChangeTimeStart,
     handleChangeTimeFinish,
-}) {
+}: IFormCalendar) {
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
-            <input
-                type='time'
-                value={userInputTimeStart}
-                onChange={handleChangeTimeStart}
-            />
-            <input
-                type='time'
-                value={userInputTimeFinish}
-                onChange={handleChangeTimeFinish}
-            />
+            <input type='time' value={userInputTimeStart} onChange={handleChangeTimeStart} />
+            <input type='time' value={userInputTimeFinish} onChange={handleChangeTimeFinish} />
             <input value={userInput} type='text' onChange={handleChange} />
             <button>
-                <img
-                    className='icon'
-                    src={require('../../img/plus.png')}
-                    alt='plus'
-                />
+                <img className='icon' src={require('../../img/plus.png')} alt='plus' />
             </button>
         </form>
     );

@@ -1,9 +1,7 @@
 import { IElement } from '../../types/interfaices';
+import { DAYS_RUS } from '../../constants/constanst';
 
 function ContentForForecast({ el }: IElement) {
-    const DAYS: string[] = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT'];
-    const DAYS_RUS: string[] = ['ВСКР', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
-
     const listWeather = (
         <div className='box'>
             <div className='title'>{DAYS_RUS[new Date(el.date).getDay()]}</div>

@@ -1,7 +1,4 @@
-export interface IMethods {
-    GET: string;
-    POST: string;
-}
+import React, { FormEvent } from 'react';
 
 export interface IWeatherBox {
     date: string;
@@ -21,7 +18,7 @@ export interface ICalendarTask {
     task: string;
 }
 
-interface INews {
+export interface INews {
     category?: string[];
     content?: string[] | string | null;
     country?: string[];
@@ -60,7 +57,39 @@ export interface ITask {
 
 export interface IList {
     name: string;
-    initialStandartValue: ITask[];
+    initialStandardValue: ITask[];
     store: string;
     textTitle: string;
+}
+
+export interface IFormTask {
+    userInput: string;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+    handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
+}
+
+export interface IPanelCalendar {
+    list: ICalendarTask[];
+    date: Date;
+    className: string;
+    removeEl: (id: string) => void;
+}
+
+export interface IFormCalendar {
+    handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    userInput: string;
+    handleChange: (e: FormEvent<HTMLInputElement>) => void;
+    userInputTimeStart: string;
+    userInputTimeFinish: string;
+    handleChangeTimeStart: (e: FormEvent<HTMLInputElement>) => void;
+    handleChangeTimeFinish: (e: FormEvent<HTMLInputElement>) => void;
+}
+
+export interface IInitialTask {
+    [key: string]: ICalendarTask[];
+}
+
+export interface IMapData {
+    center: number[];
+    zoom: number;
 }

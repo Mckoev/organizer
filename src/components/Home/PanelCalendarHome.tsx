@@ -1,26 +1,21 @@
-import { useState } from 'react';
 import { tasksCalendar } from '../../mock/mock';
 import { months } from '../../helpers/dateValue';
+import { CALENDAR_EVENT } from '../../constants/constanst';
+import { ICalendarTask, IInitialTask } from '../../types/interfaices';
 
 function PanelCalendarHome() {
-    const [value, onChange] = useState(new Date());
+    const value: Date = new Date();
+    const dateValue: string = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
+    const initialValue: string | null = localStorage.getItem(CALENDAR_EVENT);
 
-    const calendarEvent = 'calendarEvent';
-    const dateValue = `${value.getDate()} ${
-        months[value.getMonth()]
-    } ${value.getFullYear()}`;
-
-    const initialValue = localStorage.getItem(calendarEvent);
-
-    let initialTasks = {};
+    let initialTasks: IInitialTask = {};
     if (initialValue) {
         initialTasks = JSON.parse(initialValue);
     } else {
         initialTasks[dateValue] = tasksCalendar;
     }
 
-    const [tasks, setTasks] = useState(initialTasks);
-    const list = tasks[dateValue];
+    const list: ICalendarTask[] = initialTasks[dateValue];
 
     const listItems = list
         ? list.slice(0, 3).map((el, index) => (
@@ -33,11 +28,8 @@ function PanelCalendarHome() {
           ))
         : null;
 
-    const isManyTasks = list
-        ? list.length - list.slice(0, 3).length > 0
-        : false;
-
-    const isTasksToday = !!list && list.length !== 0;
+    const isManyTasks: boolean = list ? list.length - list.slice(0, 3).length > 0 : false;
+    const isTasksToday: boolean = !!list && list.length !== 0;
 
     return (
         <div className='panel panel-calendar'>
@@ -46,10 +38,7 @@ function PanelCalendarHome() {
                 {isManyTasks ? (
                     <li className='other'>
                         <div className='plus' />
-                        <div className='title'>
-                            ... and {list.length - list.slice(0, 3).length}{' '}
-                            other tasks
-                        </div>
+                        <div className='title'>... and {list.length - list.slice(0, 3).length} other tasks</div>
                     </li>
                 ) : (
                     <></>

@@ -1,10 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {
-    CITY,
-    LATITUDE,
-    LOCATION,
-    LONGITUDE,
-} from '../../api/weather/weatherApiData';
+import { CITY, LATITUDE, LOCATION, LONGITUDE } from '../../api/weather/weatherApiData';
 
 const weatherForOneDay = createSlice({
     name: 'weather',

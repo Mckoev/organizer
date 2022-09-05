@@ -1,24 +1,12 @@
 import { useAppSelector } from '../../reduxToolkit/hooks';
 
 function ContentForPanel() {
-    const minTemp: string = useAppSelector(
-        (state) => state.weatherForManyDays.arrState[0].minTemp
-    );
-    const maxTemp: string = useAppSelector(
-        (state) => state.weatherForManyDays.arrState[0].maxTemp
-    );
-    const iconUrl: string = useAppSelector(
-        (state) => state.weatherForManyDays.arrState[0].icon_url
-    );
-    const wind: string = useAppSelector(
-        (state) => state.weatherForOneDay.maxWind
-    );
-    const windDirection: string = useAppSelector(
-        (state) => state.weatherForOneDay.windDirection
-    );
-    const humidity: string = useAppSelector(
-        (state) => state.weatherForOneDay.humidity
-    );
+    const minTemp: string = useAppSelector((state) => state.weatherForManyDays.arrState[0].minTemp);
+    const maxTemp: string = useAppSelector((state) => state.weatherForManyDays.arrState[0].maxTemp);
+    const iconUrl: string = useAppSelector((state) => state.weatherForManyDays.arrState[0].icon_url);
+    const wind: string = useAppSelector((state) => state.weatherForOneDay.maxWind);
+    const windDirection: string = useAppSelector((state) => state.weatherForOneDay.windDirection);
+    const humidity: string = useAppSelector((state) => state.weatherForOneDay.humidity);
 
     return (
         <>

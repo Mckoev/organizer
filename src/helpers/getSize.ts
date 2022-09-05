@@ -1,4 +1,6 @@
-export function getSize(index, items) {
+import { INews } from '../types/interfaices';
+
+export function getSize(index: number, items: INews[]): number {
     let count = 110;
     if (items[index].title) {
         if (items[index].title.length > 53) {

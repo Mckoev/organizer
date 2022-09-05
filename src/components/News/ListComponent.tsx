@@ -5,26 +5,23 @@ import RowComponent from './RowComponent';
 import { useAppSelector } from '../../reduxToolkit/hooks';
 import { getLatestNews } from '../../api/news/getLatestNews';
 import { getSize } from '../../helpers/getSize';
+import { INews } from '../../types/interfaices';
 
 function ListComponent() {
-    const isItemLoaded = (index) => index < items.length;
+    const isItemLoaded = (index: number) => index < items.length;
 
-    const items = useAppSelector((state) => state.latestNews.arrNews).slice(1);
+    const items: INews[] = useAppSelector((state) => state.latestNews.arrNews).slice(1);
 
     function Row({ index, style }) {
         return <RowComponent item={items[index]} index={index} style={style} />;
     }
 
-    const getItemSize = (index) => getSize(index, items);
+    const getItemSize = (index: number) => getSize(index, items);
 
     return (
         <AutoSizer>
             {({ height, width }) => (
-                <InfiniteLoader
-                    isItemLoaded={isItemLoaded}
-                    loadMoreItems={getLatestNews}
-                    itemCount={items.length + 1}
-                >
+                <InfiniteLoader isItemLoaded={isItemLoaded} loadMoreItems={getLatestNews} itemCount={items.length + 1}>
                     {({ onItemsRendered, ref }) => (
                         <List
                             height={height}

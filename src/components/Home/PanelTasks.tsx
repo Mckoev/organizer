@@ -1,13 +1,10 @@
-import { useState } from 'react';
-import { shoppingList } from '../Tasks/initialData';
 import { initShopList } from '../../mock/mock';
+import { LISTS_NAMES } from '../../constants/constanst';
+import { ITask } from '../../types/interfaices';
 
 function PanelTasks() {
-    const initialValue = localStorage.getItem(shoppingList);
-
-    const [list, setList] = useState(
-        initialValue ? JSON.parse(initialValue) : initShopList
-    );
+    const initialValue: string | null = localStorage.getItem(LISTS_NAMES.SHOPPING_LIST);
+    const list: ITask[] = initialValue ? JSON.parse(initialValue) : initShopList;
 
     const listItems = list.slice(0, 3).map((el, index) => (
         <li key={index} className={el.complete ? 'checked' : ''}>
@@ -25,10 +22,7 @@ function PanelTasks() {
                 {isManyTasks ? (
                     <li className='other'>
                         <div className='plus' />
-                        <div className='title'>
-                            ... and {list.length - list.slice(0, 3).length}{' '}
-                            other tasks
-                        </div>
+                        <div className='title'>... and {list.length - list.slice(0, 3).length} other tasks</div>
                     </li>
                 ) : (
                     <></>

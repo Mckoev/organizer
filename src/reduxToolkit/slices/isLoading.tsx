@@ -9,12 +9,10 @@ const isLoading = createSlice({
     },
     reducers: {
         isLoadingWeatherForOneDay(state, action) {
-            state.isLoadingWeatherForOneDay =
-                action.payload.isLoadingWeatherForOneDay;
+            state.isLoadingWeatherForOneDay = action.payload.isLoadingWeatherForOneDay;
         },
         isLoadingWeatherForManyDays(state, action) {
-            state.isLoadingWeatherForManyDays =
-                action.payload.isLoadingWeatherForManyDays;
+            state.isLoadingWeatherForManyDays = action.payload.isLoadingWeatherForManyDays;
         },
         isLoadingLatestNews(state, action) {
             state.isLoadingLatestNews = action.payload.isLoadingLatestNews;
@@ -24,8 +22,4 @@ const isLoading = createSlice({
 
 export default isLoading.reducer;
 
-export const {
-    isLoadingWeatherForOneDay,
-    isLoadingWeatherForManyDays,
-    isLoadingLatestNews,
-} = isLoading.actions;
+export const { isLoadingWeatherForOneDay, isLoadingWeatherForManyDays, isLoadingLatestNews } = isLoading.actions;
