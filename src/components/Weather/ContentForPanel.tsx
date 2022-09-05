@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../reduxToolkit/hooks';
+import { useAppSelector } from 'reduxToolkit/hooks';
 
 function ContentForPanel() {
     const minTemp: string = useAppSelector((state) => state.weatherForManyDays.arrState[0].minTemp);

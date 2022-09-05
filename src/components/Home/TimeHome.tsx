@@ -1,6 +1,6 @@
+import { months } from 'helpers/dateValue';
 import { useEffect, useRef, useState } from 'react';
-import { months } from '../../helpers/dateValue';
-import { DAYS } from '../../constants/constanst';
+import { DAYS } from 'constants/constanst';
 
 function TimeHome() {
     const [time, setTime] = useState(new Date().toLocaleTimeString());

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { getWeatherForManyDays } from '../../api/weather/getWeatherForManyDays';
+import { getWeatherForManyDays } from 'api/weather/getWeatherForManyDays';
 import Form from '../Form';
 
 function Location() {

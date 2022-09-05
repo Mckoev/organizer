@@ -1,6 +1,6 @@
 import { Map, YMaps } from 'react-yandex-maps';
-import { useAppSelector } from '../../reduxToolkit/hooks';
-import { IMapData } from '../../types/interfaices';
+import { useAppSelector } from 'reduxToolkit/hooks';
+import { IMapData } from 'types/interfaices';
 
 function YandexMap() {
     const width: string = '100%';

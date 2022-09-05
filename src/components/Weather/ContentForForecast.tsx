@@ -1,5 +1,5 @@
-import { IElement } from '../../types/interfaices';
-import { DAYS_RUS } from '../../constants/constanst';
+import { IElement } from 'types/interfaices';
+import { DAYS_RUS } from 'constants/constanst';
 
 function ContentForForecast({ el }: IElement) {
     const listWeather = (

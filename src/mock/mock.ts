@@ -1,4 +1,4 @@
-import { ICalendarTask, ITask } from '../types/interfaices';
+import { ICalendarTask, ITask } from 'types/interfaices';
 
 export const tasksCalendar: ICalendarTask[] = [
     {

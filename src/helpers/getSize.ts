@@ -1,4 +1,4 @@
-import { INews } from '../types/interfaices';
+import { INews } from 'types/interfaices';
 
 export function getSize(index: number, items: INews[]): number {
     let count = 110;

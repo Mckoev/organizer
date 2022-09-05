@@ -1,7 +1,7 @@
-import { tasksCalendar } from '../../mock/mock';
-import { months } from '../../helpers/dateValue';
-import { CALENDAR_EVENT } from '../../constants/constanst';
-import { ICalendarTask, IInitialTask } from '../../types/interfaices';
+import { CALENDAR_EVENT } from 'constants/constanst';
+import { months } from 'helpers/dateValue';
+import { ICalendarTask, IInitialTask } from 'types/interfaices';
+import { tasksCalendar } from 'mock/mock';
 
 function PanelCalendarHome() {
     const value: Date = new Date();

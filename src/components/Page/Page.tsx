@@ -1,6 +1,6 @@
 import React from 'react';
 import './page.css';
-import Icons from '../Icons/Icons';
+import Icons from 'components/Icons/Icons';
 
 function Page({ component }: { component: React.ReactNode }) {
     return (

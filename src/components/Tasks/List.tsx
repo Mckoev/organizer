@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import { IList } from '../../types/interfaices';
+import { IList } from 'types/interfaices';
 
 function List({ name, initialStandardValue, store, textTitle }: IList) {
     const initialValue: string | null = localStorage.getItem(store);

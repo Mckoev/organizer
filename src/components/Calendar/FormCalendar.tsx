@@ -1,4 +1,4 @@
-import { IFormCalendar } from '../../types/interfaices';
+import { IFormCalendar } from 'types/interfaices';
 
 function Form({
     handleSubmit,

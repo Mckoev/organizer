@@ -1,7 +1,7 @@
-import { URL_HOME, TOKEN, INITIAL_CITY, CITY, LOCATION, LATITUDE, LONGITUDE } from './weatherApiData';
-import { store } from '../../reduxToolkit/store';
-import { weatherAction } from '../../reduxToolkit/slices/weatherForOneDay';
-import { isLoadingWeatherForOneDay } from '../../reduxToolkit/slices/isLoading';
+import { CITY, INITIAL_CITY, LATITUDE, LOCATION, LONGITUDE, TOKEN, URL_HOME } from 'api/weather/weatherApiData';
+import { weatherAction } from 'reduxToolkit/slices/weatherForOneDay';
+import { isLoadingWeatherForOneDay } from 'reduxToolkit/slices/isLoading';
+import { store } from 'reduxToolkit/store';
 
 export function getWeatherForOneDay(): void {
     let location: string | null = localStorage.getItem(CITY);

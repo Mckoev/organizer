@@ -1,5 +1,5 @@
-import { months } from '../../helpers/dateValue';
-import { IPanelCalendar } from '../../types/interfaices';
+import { months } from 'helpers/dateValue';
+import { IPanelCalendar } from 'types/interfaices';
 
 function PanelCalendar({ list, date, className, removeEl }: IPanelCalendar) {
     const listItems = list

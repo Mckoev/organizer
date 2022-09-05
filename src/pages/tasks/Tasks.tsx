@@ -1,7 +1,7 @@
 import './tasks.css';
 import List from '../../components/Tasks/List';
-import { LISTS_NAMES, TITLES } from '../../constants/constanst';
-import { initLongTermTasks, initShopList, initTodoList } from '../../mock/mock';
+import { LISTS_NAMES, TITLES } from 'constants/constanst';
+import { initLongTermTasks, initShopList, initTodoList } from 'mock/mock';
 
 function Tasks() {
     return (

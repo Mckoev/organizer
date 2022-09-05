@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../reduxToolkit/hooks';
+import { useAppSelector } from 'reduxToolkit/hooks';
 
 function PanelHomePage() {
     const temp: string = useAppSelector((state) => state.weatherForOneDay.temp);

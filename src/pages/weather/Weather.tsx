@@ -1,7 +1,7 @@
 import './weather.css';
-import Location from '../../components/Weather/Location';
-import Forecast from '../../components/Weather/Forecast';
-import PanelWeatherPage from '../../components/Weather/PanelWeatherPage';
+import Location from 'components/Weather/Location';
+import Forecast from 'components/Weather/Forecast';
+import PanelWeatherPage from 'components/Weather/PanelWeatherPage';
 
 function Weather() {
     return (

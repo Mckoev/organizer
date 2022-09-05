@@ -1,6 +1,6 @@
-import { initShopList } from '../../mock/mock';
-import { LISTS_NAMES } from '../../constants/constanst';
-import { ITask } from '../../types/interfaices';
+import { initShopList } from 'mock/mock';
+import { ITask } from 'types/interfaices';
+import { LISTS_NAMES } from 'constants/constanst';
 
 function PanelTasks() {
     const initialValue: string | null = localStorage.getItem(LISTS_NAMES.SHOPPING_LIST);

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { setCity } from '../helpers/setCity';
-import { INITIAL_CITY } from '../api/weather/weatherApiData';
-import { useAppSelector } from '../reduxToolkit/hooks';
+import { setCity } from 'helpers/setCity';
+import { INITIAL_CITY } from 'api/weather/weatherApiData';
+import { useAppSelector } from 'reduxToolkit/hooks';
 
 function Form() {
     const [inputCityValue, setInputCityValue] = useState(INITIAL_CITY);

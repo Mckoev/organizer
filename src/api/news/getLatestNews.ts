@@ -1,7 +1,7 @@
-import { URL_LATEST_NEWS } from './newsApiData';
-import { store } from '../../reduxToolkit/store';
-import { newsAction } from '../../reduxToolkit/slices/latestNews';
-import { isLoadingLatestNews } from '../../reduxToolkit/slices/isLoading';
+import { newsAction } from 'reduxToolkit/slices/latestNews';
+import { URL_LATEST_NEWS } from 'api/news/newsApiData';
+import { store } from 'reduxToolkit/store';
+import { isLoadingLatestNews } from 'reduxToolkit/slices/isLoading';
 
 let page: number = 0;
 

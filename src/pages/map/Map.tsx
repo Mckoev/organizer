@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import './map.css';
-import YandexMap from '../../components/Map/YandexMap';
+import YandexMap from 'components/Map/YandexMap';
 import Spinner from '../spinner/Spinner';
-import { useAppSelector } from '../../reduxToolkit/hooks';
-import Form from '../../components/Form';
-import { getWeatherForOneDay } from '../../api/weather/getWeatherForOneDay';
+import { useAppSelector } from 'reduxToolkit/hooks';
+import Form from 'components/Form';
+import { getWeatherForOneDay } from 'api/weather/getWeatherForOneDay';
 
 function Map() {
     useEffect(() => getWeatherForOneDay(), []);

@@ -1,4 +1,4 @@
-import { IRow } from '../../types/interfaices';
+import { IRow } from 'types/interfaices';
 
 function RowComponent({ item, style }: IRow) {
     const imgSrc: string = item.image_url ? item.image_url : require('../../img/noimg.png');

@@ -2,10 +2,10 @@ import { VariableSizeList as List } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import InfiniteLoader from 'react-window-infinite-loader';
 import RowComponent from './RowComponent';
-import { useAppSelector } from '../../reduxToolkit/hooks';
-import { getLatestNews } from '../../api/news/getLatestNews';
-import { getSize } from '../../helpers/getSize';
-import { INews } from '../../types/interfaices';
+import { getSize } from 'helpers/getSize';
+import { INews } from 'types/interfaices';
+import { useAppSelector } from 'reduxToolkit/hooks';
+import { getLatestNews } from 'api/news/getLatestNews';
 
 function ListComponent() {
     const isItemLoaded = (index: number) => index < items.length;

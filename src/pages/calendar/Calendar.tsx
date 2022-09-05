@@ -2,11 +2,11 @@ import { FormEvent, useState } from 'react';
 import './calendar.css';
 import { Calendar as CalendarComponent } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import { months } from '../../helpers/dateValue';
-import { tasksCalendar } from '../../mock/mock';
-import PanelCalendar from '../../components/Calendar/PanelCalendar';
-import FormCalendar from '../../components/Calendar/FormCalendar';
-import { CALENDAR_EVENT } from '../../constants/constanst';
+import { CALENDAR_EVENT } from 'constants/constanst';
+import { months } from 'helpers/dateValue';
+import { tasksCalendar } from 'mock/mock';
+import PanelCalendar from 'components/Calendar/PanelCalendar';
+import FormCalendar from 'components/Calendar/FormCalendar';
 
 function Calendar() {
     const [value, onChange] = useState(new Date());

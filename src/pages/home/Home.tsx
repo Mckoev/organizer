@@ -1,8 +1,8 @@
 import './home.css';
-import TimeHome from '../../components/Home/TimeHome';
-import WeatherHome from '../../components/Home/WeatherHome';
-import PanelTasks from '../../components/Home/PanelTasks';
-import PanelCalendarHome from '../../components/Home/PanelCalendarHome';
+import WeatherHome from 'components/Home/WeatherHome';
+import PanelCalendarHome from 'components/Home/PanelCalendarHome';
+import PanelTasks from 'components/Home/PanelTasks';
+import TimeHome from 'components/Home/TimeHome';
 
 function Home() {
     return (

@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
-import { CITY } from '../api/weather/weatherApiData';
-import { getWeatherForManyDays } from '../api/weather/getWeatherForManyDays';
-import { getWeatherForOneDay } from '../api/weather/getWeatherForOneDay';
+import { CITY } from 'api/weather/weatherApiData';
+import { getWeatherForOneDay } from 'api/weather/getWeatherForOneDay';
+import { getWeatherForManyDays } from 'api/weather/getWeatherForManyDays';
 
 export function setCity(e: FormEvent<HTMLFormElement>, city: string): void {
     e.preventDefault();
