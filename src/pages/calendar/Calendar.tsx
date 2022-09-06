@@ -7,17 +7,18 @@ import { months } from 'helpers/dateValue';
 import { tasksCalendar } from 'mock/mock';
 import PanelCalendar from 'components/Calendar/PanelCalendar';
 import FormCalendar from 'components/Calendar/FormCalendar';
+import { ITask } from 'types/interfaices';
 
 function Calendar() {
-    const [value, onChange] = useState(new Date());
-    const [date, setDate] = useState(new Date());
-    const [userInput, setUserInput] = useState('');
-    const [userInputTimeStart, setUserInputTimeStart] = useState('00:00');
-    const [userInputTimeFinish, setUserInputTimeFinish] = useState('00:00');
+    const [value, onChange] = useState<Date>(new Date());
+    const [date, setDate] = useState<Date>(new Date());
+    const [userInput, setUserInput] = useState<string>('');
+    const [userInputTimeStart, setUserInputTimeStart] = useState<string>('00:00');
+    const [userInputTimeFinish, setUserInputTimeFinish] = useState<string>('00:00');
 
-    const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
+    const dateValue: string = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
 
-    const initialValue = localStorage.getItem(CALENDAR_EVENT);
+    const initialValue: string | null = localStorage.getItem(CALENDAR_EVENT);
 
     let initialTasks = {};
     if (initialValue) {

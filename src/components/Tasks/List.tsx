@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Form from './Form';
-import { IList } from 'types/interfaices';
+import { IList, ITask } from 'types/interfaices';
 
 function List({ name, initialStandardValue, store, textTitle }: IList) {
     const initialValue: string | null = localStorage.getItem(store);
-    const [list, setList] = useState(initialValue ? JSON.parse(initialValue) : initialStandardValue);
-    const [userInput, setUserInput] = useState('');
+    const [list, setList] = useState<ITask[]>(initialValue ? JSON.parse(initialValue) : initialStandardValue);
+    const [userInput, setUserInput] = useState<string>('');
 
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         setUserInput(e.currentTarget.value);

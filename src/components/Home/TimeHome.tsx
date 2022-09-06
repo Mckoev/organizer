@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { DAYS } from 'constants/constanst';
 
 function TimeHome() {
-    const [time, setTime] = useState(new Date().toLocaleTimeString());
-    const [date, setDate] = useState(new Date());
+    const [time, setTime] = useState<string>(new Date().toLocaleTimeString());
+    const [date, setDate] = useState<Date>(new Date());
     const timerId = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => startTimer(), []);

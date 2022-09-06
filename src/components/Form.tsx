@@ -4,7 +4,7 @@ import { INITIAL_CITY } from 'api/weather/weatherApiData';
 import { useAppSelector } from 'reduxToolkit/hooks';
 
 function Form() {
-    const [inputCityValue, setInputCityValue] = useState(INITIAL_CITY);
+    const [inputCityValue, setInputCityValue] = useState<string>(INITIAL_CITY);
     const location: string | null = useAppSelector((state) => state.weatherForOneDay.location);
     const country: string | null = useAppSelector((state) => state.weatherForOneDay.country);
 
