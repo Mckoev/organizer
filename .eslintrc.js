@@ -14,7 +14,12 @@ module.exports = {
         'airbnb',
         'prettier',
     ],
-    overrides: [],
+    overrides: [{
+        files: ['*.ts', '*.mts', '*.cts', '*.tsx'],
+        rules: {
+            'no-undef': 'off',
+        },
+    }],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
@@ -25,10 +30,7 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         'react/react-in-jsx-scope': 'off',
         'import/prefer-default-export': 'off',
-        'react/jsx-filename-extension': [
-            2,
-            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
         'import/extensions': [
             'error',
             'ignorePackages',
@@ -39,10 +41,12 @@ module.exports = {
                 tsx: 'never',
             },
         ],
+        'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
     },
     settings: {
         'import/resolver': {
             node: {
+                paths: ['src'],
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
             },
         },

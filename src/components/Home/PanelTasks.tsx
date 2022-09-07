@@ -6,8 +6,8 @@ function PanelTasks() {
     const initialValue: string | null = localStorage.getItem(LISTS_NAMES.SHOPPING_LIST);
     const list: ITask[] = initialValue ? JSON.parse(initialValue) : initShopList;
 
-    const listItems = list.slice(0, 3).map((el, index) => (
-        <li key={index} className={el.complete ? 'checked' : ''}>
+    const listItems = list.slice(0, 3).map((el) => (
+        <li key={el.id} className={el.complete ? 'checked' : ''}>
             <div className='check' />
             <div className='title'>{el.task}</div>
         </li>
@@ -19,13 +19,11 @@ function PanelTasks() {
         <div className='panel panel-tasks'>
             <ul>
                 {listItems}
-                {isManyTasks ? (
+                {isManyTasks && (
                     <li className='other'>
                         <div className='plus' />
                         <div className='title'>... and {list.length - list.slice(0, 3).length} other tasks</div>
                     </li>
-                ) : (
-                    <></>
                 )}
             </ul>
         </div>

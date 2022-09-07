@@ -3,7 +3,7 @@ import { URL_LATEST_NEWS } from 'api/news/newsApiData';
 import { store } from 'reduxToolkit/store';
 import { isLoadingLatestNews } from 'reduxToolkit/slices/isLoading';
 
-let page: number = 0;
+let page = 0;
 
 export function getLatestNews(): void {
     fetch(`${URL_LATEST_NEWS}&page=${page}`, {

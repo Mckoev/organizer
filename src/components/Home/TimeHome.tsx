@@ -5,9 +5,7 @@ import { DAYS } from 'constants/constanst';
 function TimeHome() {
     const [time, setTime] = useState<string>(new Date().toLocaleTimeString());
     const [date, setDate] = useState<Date>(new Date());
-    const timerId = useRef<NodeJS.Timeout | null>(null);
-
-    useEffect(() => startTimer(), []);
+    const timerId = useRef<NodeJS.Timeout | null>(null); // eslint-disable-line
 
     const startTimer = () => {
         timerId.current = setInterval(() => {
@@ -15,6 +13,8 @@ function TimeHome() {
             setDate(new Date());
         }, 1000);
     };
+
+    useEffect(() => startTimer(), []);
 
     return (
         <div className='span time'>

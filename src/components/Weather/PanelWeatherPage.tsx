@@ -1,5 +1,5 @@
-import Spinner from '../../pages/spinner/Spinner';
 import { useAppSelector } from 'reduxToolkit/hooks';
+import Spinner from '../../pages/spinner/Spinner';
 import ContentForPanel from './ContentForPanel';
 
 function PanelWeatherPage() {

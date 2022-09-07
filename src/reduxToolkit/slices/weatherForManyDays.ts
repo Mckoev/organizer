@@ -10,11 +10,11 @@ const init = {
 const weatherForManyDays = createSlice({
     name: 'day',
     initialState: {
-        arrState: [init, init, init, init, init, init, init],
+        arrState: new Array(7).fill(init),
     },
     reducers: {
         daysAction(state, action) {
-            for (let i = 0; i < action.payload.length; i++) {
+            for (let i = 0; i < action.payload.length; i += 1) {
                 state.arrState[i].date = action.payload[i].date;
                 state.arrState[i].maxTemp = action.payload[i].max_temp_c;
                 state.arrState[i].minTemp = action.payload[i].min_temp_c;

@@ -1,11 +1,13 @@
 import { VariableSizeList as List } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import InfiniteLoader from 'react-window-infinite-loader';
-import RowComponent from './RowComponent';
 import { getSize } from 'helpers/getSize';
 import { INews } from 'types/interfaices';
 import { useAppSelector } from 'reduxToolkit/hooks';
 import { getLatestNews } from 'api/news/getLatestNews';
+import RowComponent from './RowComponent';
+
+/* eslint-disable */
 
 function ListComponent() {
     const isItemLoaded = (index: number) => index < items.length;

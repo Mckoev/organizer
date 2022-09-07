@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
 import './icons.css';
+import homeIcon from 'img/home.png';
+import sunBigIcon from 'img/sunBig.png';
+import calendarIcon from 'img/calendar.png';
+import mapIcon from 'img/maps.png';
+import taskIcon from 'img/task.png';
+import newsIcon from 'img/news.png';
 
 function Icons() {
     return (
@@ -7,32 +13,32 @@ function Icons() {
             <div className='panel panel-functions'>
                 <div className='icon icon-weather' data-page='home'>
                     <Link to='/'>
-                        <img src={require('../../img/home.png')} alt='home' />
+                        <img src={homeIcon} alt='home' />
                     </Link>
                 </div>
                 <div className='icon icon-weather' data-page='weather'>
                     <Link to='/weather'>
-                        <img src={require('../../img/sunBig.png')} alt='sun' />
+                        <img src={sunBigIcon} alt='sun' />
                     </Link>
                 </div>
                 <div className='icon icon-calendar' data-page='calendar'>
                     <Link to='/calendar'>
-                        <img src={require('../../img/calendar.png')} alt='calendar' />
+                        <img src={calendarIcon} alt='calendar' />
                     </Link>
                 </div>
                 <div className='icon icon-map' data-page='map'>
                     <Link to='/map'>
-                        <img src={require('../../img/maps.png')} alt='map' />
+                        <img src={mapIcon} alt='map' />
                     </Link>
                 </div>
                 <div className='icon icon-tasks' data-page='tasks'>
                     <Link to='/lists'>
-                        <img src={require('../../img/task.png')} alt='task' />
+                        <img src={taskIcon} alt='task' />
                     </Link>
                 </div>
                 <div className='icon icon-news' data-page='news'>
                     <Link to='/news'>
-                        <img src={require('../../img/news.png')} alt='news' />
+                        <img src={newsIcon} alt='news' />
                     </Link>
                 </div>
             </div>

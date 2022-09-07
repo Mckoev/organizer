@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import {IList, ITask} from 'types/interfaices';
 import Form from './Form';
-import { IList, ITask } from 'types/interfaices';
 
-function List({ name, initialStandardValue, store, textTitle }: IList) {
+function List({name, initialStandardValue, store, textTitle}: IList) {
     const initialValue: string | null = localStorage.getItem(store);
     const [list, setList] = useState<ITask[]>(initialValue ? JSON.parse(initialValue) : initialStandardValue);
     const [userInput, setUserInput] = useState<string>('');
@@ -31,7 +31,7 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
     }
 
     function changeElement(id) {
-        const newList = [...list.map((el) => (el.id === id ? { ...el, complete: !el.complete } : { ...el }))];
+        const newList = [...list.map((el) => (el.id === id ? {...el, complete: !el.complete} : {...el}))];
         setList(newList);
         localStorage.setItem(store, JSON.stringify(newList));
     }
@@ -48,17 +48,21 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
         setUserInput('');
     }
 
-    const listItems = list.map((el, index) => (
+    /* eslint-disable */
+
+    const listItems = list.map((el) => (
         <li key={el.id} className={el.complete ? 'checked' : ''}>
-            <div className='check' onClick={() => changeElement(el.id)} />
+
+            <div className='check' onClick={() => changeElement(el.id)}/>
             <div className='title' onClick={() => changeElement(el.id)}>
                 {el.task}
             </div>
-            <div className='remove' onClick={() => removeEl(el.id)}>
-                <img src={require('../../img/remove.png')} alt='remove' />
-            </div>
+            <button className='remove' onClick={() => removeEl(el.id)}>
+                <img src={require('../../img/remove.png')} alt='remove'/>
+            </button>
         </li>
     ));
+
 
     return (
         <div className='panel panel-tasklist'>
@@ -72,10 +76,12 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
                     <span className='title'>add new {textTitle}:</span>
                 </div>
             </div>
-            <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput} />
+            <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput}/>
             <ul>{listItems}</ul>
         </div>
     );
 }
+
+/* eslint-enable */
 
 export default List;

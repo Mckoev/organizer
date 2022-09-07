@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Spinner from '../../pages/spinner/Spinner';
 import { useAppSelector } from 'reduxToolkit/hooks';
-import PanelHomePage from './PanelHomePage';
 import { getWeatherForOneDay } from 'api/weather/getWeatherForOneDay';
+import Spinner from '../../pages/spinner/Spinner';
+import PanelHomePage from './PanelHomePage';
 
 function WeatherHome() {
     const isLoadingWeatherForOneDay: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForOneDay);

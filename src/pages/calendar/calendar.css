@@ -93,3 +93,7 @@
     left: auto;
     right: 20px;
 }
+
+.page-calendar .remove {
+    border: none;
+}

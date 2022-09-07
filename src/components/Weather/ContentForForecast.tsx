@@ -2,7 +2,7 @@ import { IElement } from 'types/interfaices';
 import { DAYS_RUS } from 'constants/constanst';
 
 function ContentForForecast({ el }: IElement) {
-    const listWeather = (
+    return (
         <div className='box'>
             <div className='title'>{DAYS_RUS[new Date(el.date).getDay()]}</div>
             <img src={el.icon_url} alt='icon weather' />
@@ -19,8 +19,6 @@ function ContentForForecast({ el }: IElement) {
             </div>
         </div>
     );
-
-    return <>{listWeather}</>;
 }
 
 export default ContentForForecast;

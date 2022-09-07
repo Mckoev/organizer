@@ -7,7 +7,6 @@ import { months } from 'helpers/dateValue';
 import { tasksCalendar } from 'mock/mock';
 import PanelCalendar from 'components/Calendar/PanelCalendar';
 import FormCalendar from 'components/Calendar/FormCalendar';
-import { ITask } from 'types/interfaices';
 
 function Calendar() {
     const [value, onChange] = useState<Date>(new Date());
@@ -16,7 +15,7 @@ function Calendar() {
     const [userInputTimeStart, setUserInputTimeStart] = useState<string>('00:00');
     const [userInputTimeFinish, setUserInputTimeFinish] = useState<string>('00:00');
 
-    const dateValue: string = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
+    const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
 
     const initialValue: string | null = localStorage.getItem(CALENDAR_EVENT);
 
@@ -28,6 +27,27 @@ function Calendar() {
     }
 
     const [tasks, setTasks] = useState(initialTasks);
+
+    function addTask(task) {
+        const newTask = {
+            id: Math.random().toString(36).substring(2, 9),
+            timeStart: userInputTimeStart,
+            timeFinish: userInputTimeFinish,
+            task: userInput,
+        };
+        if (!task) {
+            alert('Nothing!!!');
+        } else {
+            const oldTask = tasks[dateValue];
+            const addNewTask = oldTask ? [...oldTask, newTask] : [newTask];
+            const readyTask = {
+                ...tasks,
+                [dateValue]: addNewTask,
+            };
+            setTasks(readyTask);
+            localStorage.setItem('calendarEvent', JSON.stringify(readyTask));
+        }
+    }
 
     const handleChange = (e: FormEvent<HTMLInputElement>) => {
         setUserInput(e.currentTarget.value);
@@ -48,36 +68,17 @@ function Calendar() {
         setUserInputTimeFinish('00:00');
     }
 
-    function addTask(task) {
-        const newTask = {
-            id: Math.random().toString(36).substring(2, 9),
-            timeStart: userInputTimeStart,
-            timeFinish: userInputTimeFinish,
-            task: userInput,
-        };
-        if (!task) {
-            alert('Nothing!!!');
-        } else {
-            const oldTask = tasks[dateValue];
-            const addTask = oldTask ? [...oldTask, newTask] : [newTask];
-            const readyTask = {
-                ...tasks,
-                [dateValue]: addTask,
-            };
-            setTasks(readyTask);
-            localStorage.setItem('calendarEvent', JSON.stringify(readyTask));
-        }
-    }
-
     function removeEl(id) {
-        const addTask = tasks[dateValue].filter((el) => el.id !== id);
+        const addNewTask = tasks[dateValue].filter((el) => el.id !== id);
         const readyTask = {
             ...tasks,
-            [dateValue]: addTask,
+            [dateValue]: addNewTask,
         };
         setTasks(readyTask);
         localStorage.setItem(CALENDAR_EVENT, JSON.stringify(readyTask));
     }
+
+    /* eslint-disable */
 
     return (
         <div className='page page-calendar'>
@@ -103,5 +104,7 @@ function Calendar() {
         </div>
     );
 }
+
+/* eslint-enable */
 
 export default Calendar;

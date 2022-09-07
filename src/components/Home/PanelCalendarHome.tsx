@@ -5,7 +5,7 @@ import { tasksCalendar } from 'mock/mock';
 
 function PanelCalendarHome() {
     const value: Date = new Date();
-    const dateValue: string = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
+    const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
     const initialValue: string | null = localStorage.getItem(CALENDAR_EVENT);
 
     let initialTasks: IInitialTask = {};
@@ -18,8 +18,8 @@ function PanelCalendarHome() {
     const list: ICalendarTask[] = initialTasks[dateValue];
 
     const listItems = list
-        ? list.slice(0, 3).map((el, index) => (
-              <li key={index}>
+        ? list.slice(0, 3).map((el) => (
+              <li key={el.id}>
                   <div className='time'>
                       {el.timeStart} - {el.timeFinish}
                   </div>
@@ -35,17 +35,13 @@ function PanelCalendarHome() {
         <div className='panel panel-calendar'>
             <ul>
                 {listItems}
-                {isManyTasks ? (
+                {isManyTasks && (
                     <li className='other'>
                         <div className='plus' />
                         <div className='title'>... and {list.length - list.slice(0, 3).length} other tasks</div>
                     </li>
-                ) : (
-                    <></>
                 )}
-                {isTasksToday ? (
-                    <></>
-                ) : (
+                {!isTasksToday && (
                     <li className='other'>
                         <div className='title'> Нет задач на сегодня!</div>
                     </li>
