@@ -6,10 +6,9 @@ import ContentForForecast from './ContentForForecast';
 function Box() {
     const weatherDays: IWeatherBox[] = useAppSelector((state) => state.weatherForManyDays.arrState).slice(1);
     const isLoadingWeatherForManyDays: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForManyDays);
-    console.log(weatherDays);
 
-    const listItems = weatherDays.map((el, index) => (
-        <div className='box' key={index}>
+    const listItems = weatherDays.map((el) => (
+        <div className='box' key={el.id}>
             {isLoadingWeatherForManyDays ? <Spinner /> : <ContentForForecast el={el} />}
         </div>
     ));

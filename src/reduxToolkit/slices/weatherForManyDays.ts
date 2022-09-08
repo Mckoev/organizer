@@ -1,16 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getID } from 'helpers/getID';
 
-const init = {
-    date: '',
-    maxTemp: '',
-    minTemp: '',
-    icon_url: '',
-};
+function init() {
+    return {
+        id: getID(),
+        date: '',
+        maxTemp: '',
+        minTemp: '',
+        icon_url: '',
+    };
+}
 
 const weatherForManyDays = createSlice({
     name: 'day',
     initialState: {
-        arrState: new Array(7).fill(init),
+        arrState: [init(), init(), init(), init(), init(), init(), init()],
     },
     reducers: {
         daysAction(state, action) {

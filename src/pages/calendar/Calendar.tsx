@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useCallback, useState } from 'react';
 import './calendar.css';
 import { Calendar as CalendarComponent } from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -9,13 +9,13 @@ import PanelCalendar from 'components/Calendar/PanelCalendar';
 import FormCalendar from 'components/Calendar/FormCalendar';
 
 function Calendar() {
-    const [value, onChange] = useState<Date>(new Date());
+    const [mapValueDate, setMapValueDate] = useState<Date>(new Date());
     const [date, setDate] = useState<Date>(new Date());
     const [userInput, setUserInput] = useState<string>('');
     const [userInputTimeStart, setUserInputTimeStart] = useState<string>('00:00');
     const [userInputTimeFinish, setUserInputTimeFinish] = useState<string>('00:00');
 
-    const dateValue = `${value.getDate()} ${months[value.getMonth()]} ${value.getFullYear()}`;
+    const dateValue = `${mapValueDate.getDate()} ${months[mapValueDate.getMonth()]} ${mapValueDate.getFullYear()}`;
 
     const initialValue: string | null = localStorage.getItem(CALENDAR_EVENT);
 
@@ -60,25 +60,29 @@ function Calendar() {
         setUserInputTimeFinish(e.currentTarget.value);
     };
 
-    function handleSubmit(e: FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-        addTask(userInput);
-        setUserInput('');
-        setUserInputTimeStart('00:00');
-        setUserInputTimeFinish('00:00');
-    }
+    const handleSubmit = useCallback(
+        (e: FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            addTask(userInput);
+            setUserInput('');
+            setUserInputTimeStart('00:00');
+            setUserInputTimeFinish('00:00');
+        },
+        [setUserInput, setUserInputTimeStart, setUserInputTimeFinish]
+    );
 
-    function removeEl(id) {
-        const addNewTask = tasks[dateValue].filter((el) => el.id !== id);
-        const readyTask = {
-            ...tasks,
-            [dateValue]: addNewTask,
-        };
-        setTasks(readyTask);
-        localStorage.setItem(CALENDAR_EVENT, JSON.stringify(readyTask));
-    }
-
-    /* eslint-disable */
+    const removeEl = useCallback(
+        (id) => {
+            const addNewTask = tasks[dateValue].filter((el) => el.id !== id);
+            const readyTask = {
+                ...tasks,
+                [dateValue]: addNewTask,
+            };
+            setTasks(readyTask);
+            localStorage.setItem(CALENDAR_EVENT, JSON.stringify(readyTask));
+        },
+        [setTasks]
+    );
 
     return (
         <div className='page page-calendar'>
@@ -90,7 +94,7 @@ function Calendar() {
                 removeEl={removeEl}
             />
             <div className='panel panel-calendar right'>
-                <CalendarComponent onChange={onChange} value={value} onClickDay={(value) => setDate(value)} />
+                <CalendarComponent onChange={setMapValueDate} value={mapValueDate} onClickDay={(value) => setDate(value)} />
                 <FormCalendar
                     handleSubmit={handleSubmit}
                     handleChange={handleChange}
@@ -104,7 +108,5 @@ function Calendar() {
         </div>
     );
 }
-
-/* eslint-enable */
 
 export default Calendar;

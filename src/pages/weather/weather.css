@@ -1,9 +1,6 @@
-.page-weather .bg {
-    background-image: url('http://ultraimg.com/images/WA9FyMb.jpg');
-}
 .page-weather .panel-now {
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 20px;
     width: 400px;
     height: 200px;
@@ -16,17 +13,20 @@
     text-align: center;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
+
 .page-weather .panel-now .mainInfo .icon {
     display: block;
     font-size: 4rem;
     line-height: 6rem;
 }
+
 .page-weather .panel-now .mainInfo img {
     display: block;
     margin: auto;
     height: 120px;
     padding-right: 20px;
 }
+
 .page-weather .panel-now .mainInfo .temp {
     display: block;
     font-size: 3rem;
@@ -34,13 +34,16 @@
     margin-bottom: 6px;
     margin-top: -10px;
 }
+
 .page-weather .panel-now .mainInfo .temp .value {
     font-weight: 600;
 }
+
 .page-weather .panel-now .mainInfo .temp .separator {
     margin: 0 3px;
     opacity: 0.4;
 }
+
 .page-weather .panel-now .mainInfo .temp .degree {
     margin-left: 5px;
     font-size: 1.5rem;
@@ -48,23 +51,28 @@
     font-weight: 300;
     vertical-align: top;
 }
+
 .page-weather .panel-now .row {
     display: -webkit-flex;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
+
 .page-weather .panel-now .row .info {
     flex: 1;
     text-align: center;
 }
+
 .page-weather .panel-now .row .info i {
     margin-right: 10px;
     color: #ff6f4d;
 }
+
 .page-weather .panel-now .row .info .value {
     font-weight: 600;
 }
+
 .page-weather .panel-location {
     position: absolute;
     top: 10px;
@@ -78,12 +86,14 @@
     border-radius: 5px;
     background-color: initial;
 }
+
 .page-weather .panel-location .icon {
     display: inline-block;
     text-align: center;
     font-size: 3rem;
     line-height: 4rem;
 }
+
 .page-weather .panel-location .title {
     display: inline-block;
     text-align: center;
@@ -91,9 +101,11 @@
     line-height: 1.2rem;
     margin-right: 10px;
 }
+
 .page-weather .panel-location .title span {
     display: block;
 }
+
 .page-weather .panel-today {
     position: absolute;
     top: 220px;
@@ -110,11 +122,13 @@
     justify-content: space-around;
     justify-content: space-between;
 }
+
 .page-weather .panel-today .box {
     flex: 1;
     height: 100%;
     border-right: 2px solid rgba(0, 0, 0, 0.3);
 }
+
 .page-weather .panel-today .box .title {
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 0.9rem;
@@ -124,6 +138,7 @@
     color: #ff6f4d;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
 .page-weather .panel-today .box .icon {
     display: block;
     font-size: 2rem;
@@ -132,20 +147,24 @@
     text-align: center;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
 }
+
 .page-weather .panel-today .box img {
     display: block;
     height: 50px;
     margin-left: 20px;
 }
+
 .page-weather .panel-today .box .temp {
     font-size: 1.1rem;
     line-height: 2rem;
     font-weight: 300;
     text-align: center;
 }
+
 .page-weather .panel-today .box .temp .value {
     font-weight: 600;
 }
+
 .page-weather .panel-today .box .temp .degree {
     margin-left: 2px;
     font-size: 0.7rem;
@@ -153,6 +172,7 @@
     font-weight: 300;
     vertical-align: top;
 }
+
 .page-weather .panel-forecast {
     position: absolute;
     top: 54%;
@@ -165,11 +185,13 @@
     justify-content: space-around;
     justify-content: space-between;
 }
+
 .page-weather .panel-forecast .box {
     flex: 1;
     height: 100%;
     border-right: 2px solid rgba(0, 0, 0, 0.3);
 }
+
 .page-weather .panel-forecast .box .title {
     background-color: rgba(0, 0, 0, 0.2);
     font-size: 1.5rem;
@@ -180,6 +202,7 @@
     color: #ff6f4d;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
+
 .page-weather .panel-forecast .box .icon {
     display: block;
     font-size: 2rem;
@@ -188,11 +211,13 @@
     text-align: center;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
 }
+
 .page-weather .panel-forecast .box img {
     display: block;
     height: 75px;
     margin: auto;
 }
+
 .page-weather .panel-forecast .box .temp {
     font-size: 1.1rem;
     line-height: 3rem;
@@ -200,13 +225,16 @@
     text-align: center;
     padding: 0 7px;
 }
+
 .page-weather .panel-forecast .box .temp .value {
     font-weight: 600;
 }
+
 .page-weather .panel-forecast .box .temp .separator {
     margin: 0 3px;
     opacity: 0.4;
 }
+
 .page-weather .panel-forecast .box .temp .degree {
     margin-left: 2px;
     font-size: 0.8rem;
@@ -319,8 +347,8 @@ p {
 
 .text-field_floating .text-field__input:focus ~ .text-field__label,
 .text-field_floating
-    .text-field__input:not(:placeholder-shown)
-    ~ .text-field__label {
+.text-field__input:not(:placeholder-shown)
+~ .text-field__label {
     opacity: 0.65;
     transform: scale(0.85) translateY(-0.75rem) translateX(0.15rem);
 }

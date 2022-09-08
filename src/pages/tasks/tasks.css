@@ -1,22 +1,13 @@
-.page-tasks .bg {
-    background-image: url('http://ultraimg.com/images/gAbeciZ.jpg');
-    -webkit-filter: blur(0px);
-    -moz-filter: blur(0px);
-    -o-filter: blur(0px);
-    -ms-filter: blur(0px);
-    filter: blur(0px);
-}
-
 .page-tasks .overlay {
     background-color: rgba(0, 153, 50, 0.3);
 }
 
 .page-tasks .wrapper {
     position: absolute;
-    top: 20px;
-    left: 35px;
+    top: 10px;
+    left: 10px;
     width: 760px;
-    height: 440px;
+    height: 450px;
     overflow: hidden;
 }
 
@@ -24,10 +15,9 @@
     display: inline-block;
     vertical-align: top;
     width: 30%;
-    margin: 0 1%;
+    /*margin: 0 1%;*/
+    margin: 10px;
     background-color: rgba(0, 0, 0, 0.4);
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
 }
 
@@ -39,8 +29,6 @@
     font-size: 1.2rem;
     line-height: 2rem;
     background-color: rgba(0, 255, 84, 0.7);
-    -moz-border-radius: 5px 5px 0 0;
-    -webkit-border-radius: 5px;
     border-radius: 5px 5px 0 0;
 }
 
@@ -75,8 +63,6 @@
     padding: 2px 6px;
     background-color: #006622;
     border: 1px solid #009932;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
     font-family: 'Open Sans';
     color: White;
@@ -86,7 +72,6 @@
     height: 340px;
     padding: 10px 10px;
     overflow: auto;
-    /* scrollbar design Chrome */
 }
 
 .page-tasks .panel-tasklist ul::-webkit-scrollbar {
@@ -109,8 +94,6 @@
 .page-tasks .panel-tasklist ul li {
     padding: 0;
     margin: 8px 0px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -141,7 +124,7 @@
 }
 
 .page-tasks .panel-tasklist ul li.checked .check:after {
-    content: '\f00c';
+    content: '\2714';
     position: absolute;
     font-family: FontAwesome;
     font-size: 0.9rem;
@@ -165,10 +148,9 @@
     right: 20px;
 }
 
-button {
+.button {
     width: 30px;
     height: 30px;
-    background-color: transparent;
 }
 
 button .icon {
@@ -198,8 +180,6 @@ button .icon {
     vertical-align: middle;
 }
 
-.panel-tasklist button {
-    border: none;
+.panel-tasklist .remove {
     border-radius: 20px;
-    /*background-color: #00b5ff;*/
 }

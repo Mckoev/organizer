@@ -5,7 +5,7 @@ function Form({ handleSubmit, userInput, handleChange }: IFormTask) {
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
             <input value={userInput} type='text' onChange={handleChange} />
-            <button type='button'>
+            <button type='button' className='button' onClick={(e) => handleSubmit(e)}>
                 <img className='icon' src={plusIcon} alt='plus' />
             </button>
         </form>

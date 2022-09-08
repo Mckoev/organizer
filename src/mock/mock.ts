@@ -1,26 +1,27 @@
 import { ICalendarTask, ITask } from 'types/interfaices';
+import { getID } from 'helpers/getID';
 
 export const tasksCalendar: ICalendarTask[] = [
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         timeStart: '9:00',
         timeFinish: '10:00',
         task: 'Meeting',
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         timeStart: '11:00',
         timeFinish: '13:00',
         task: 'Go to bank',
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         timeStart: '16:00',
         timeFinish: '17:00',
         task: 'Dinner',
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         timeStart: '22:00',
         timeFinish: '23:00',
         task: 'Party',
@@ -29,22 +30,22 @@ export const tasksCalendar: ICalendarTask[] = [
 
 export const initShopList: ITask[] = [
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Milk',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Bread',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Cheese',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Beer',
         complete: false,
     },
@@ -52,27 +53,27 @@ export const initShopList: ITask[] = [
 
 export const initTodoList: ITask[] = [
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Cleaning',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Washing',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Shopping',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Pay bills',
         complete: true,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Dusting',
         complete: false,
     },
@@ -80,17 +81,17 @@ export const initTodoList: ITask[] = [
 
 export const initLongTermTasks: ITask[] = [
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Prepare boiler',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Bya a sofa',
         complete: false,
     },
     {
-        id: Math.random().toString(36).substring(2, 9),
+        id: getID(),
         task: 'Car service',
         complete: false,
     },

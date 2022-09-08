@@ -1,47 +1,35 @@
-.page-map .bg {
-    background-image: url('http://ultraimg.com/images/9u0jRT1.jpg');
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
-}
 .page-map .overlay {
     background-color: rgba(0, 181, 255, 0.25);
 }
+
 .page-map .title {
     position: absolute;
     width: 90%;
-    top: 10px;
+    top: 20px;
     left: 0;
     right: 0;
     margin: auto;
     text-align: center;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 24px;
+    line-height: 30px;
     background-color: rgba(0, 0, 0, 0.2);
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
     border-radius: 10px;
     font-family: 'Open Sans';
     font-weight: 400;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
+
 .page-map .map {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    top: 0;
+    top: 10px;
     width: 90%;
     height: 63%;
     margin: auto auto;
     margin-top: 10%;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
     border-radius: 8px;
-    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 

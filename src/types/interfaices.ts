@@ -1,6 +1,7 @@
 import React, { FormEvent } from 'react';
 
 export interface IWeatherBox {
+    id: string;
     date: string;
     icon_url: string;
     maxTemp: number | string;
@@ -64,7 +65,7 @@ export interface IList {
 
 export interface IFormTask {
     userInput: string;
-    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
