@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { getWeatherForManyDays } from 'api/weather/getWeatherForManyDays';
-import Form from '../Form';
+import FormWeather from 'components/Weather/FormWeather';
 
 function Location() {
     useEffect(() => getWeatherForManyDays(), []);
@@ -8,7 +8,7 @@ function Location() {
     return (
         <div className='panel panel-location'>
             <div className='text-field text-field_floating'>
-                <Form />
+                <FormWeather />
             </div>
         </div>
     );
