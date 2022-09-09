@@ -71,7 +71,7 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
     /* eslint-enable */
 
     return (
-        <div className='panel panel-tasklist'>
+        <div className='panel panel-taskList'>
             <div className='header'>
                 <div className='title'>
                     {name} ({list.length})

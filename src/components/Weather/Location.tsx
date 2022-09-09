@@ -7,7 +7,7 @@ function Location() {
 
     return (
         <div className='panel panel-location'>
-            <div className='text-field text-field_floating-2'>
+            <div className='text-field text-field_floating'>
                 <Form />
             </div>
         </div>

@@ -5,13 +5,13 @@
 .page-tasks .wrapper {
     position: absolute;
     top: 10px;
-    left: 10px;
-    width: 760px;
-    height: 450px;
-    overflow: hidden;
+    width: 100%;
+    height: 76.8%;
+    display: flex;
+    justify-content: center;
 }
 
-.page-tasks .panel-tasklist {
+.page-tasks .panel-taskList {
     display: inline-block;
     vertical-align: top;
     width: 30%;
@@ -21,33 +21,33 @@
     border-radius: 5px;
 }
 
-.page-tasks .panel-tasklist .header {
+.page-tasks .panel-taskList .header {
     text-align: center;
 }
 
-.page-tasks .panel-tasklist .header .title {
-    font-size: 1.2rem;
-    line-height: 2rem;
+.page-tasks .panel-taskList .header .title {
+    font-size: 18px;
+    line-height: 32px;
     background-color: rgba(0, 255, 84, 0.7);
     border-radius: 5px 5px 0 0;
 }
 
-.page-tasks .panel-tasklist .newItem {
-    padding: 15px 15px 0px 15px;
+.page-tasks .panel-taskList .newItem {
+    padding: 15px 15px 0 15px;
     height: 35px;
 }
 
-.page-tasks .panel-tasklist .newItem .text {
+.page-tasks .panel-taskList .newItem .text {
     cursor: pointer;
 }
 
-.page-tasks .panel-tasklist .newItem .text .title {
+.page-tasks .panel-taskList .newItem .text .title {
     display: inline-block;
     color: #cccccc;
-    font-size: 0.9rem;
+    font-size: 15px;
 }
 
-.page-tasks .panel-tasklist .newItem .text img {
+.page-tasks .panel-taskList .newItem .text img {
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -57,100 +57,71 @@
     vertical-align: middle;
 }
 
-.page-tasks .panel-tasklist .newItem input {
-    display: none;
-    width: 100%;
-    padding: 2px 6px;
-    background-color: #006622;
-    border: 1px solid #009932;
-    border-radius: 5px;
-    font-family: 'Open Sans';
-    color: White;
-}
-
-.page-tasks .panel-tasklist ul {
+.page-tasks .panel-taskList ul {
     height: 340px;
     padding: 10px 10px;
     overflow: auto;
 }
 
-.page-tasks .panel-tasklist ul::-webkit-scrollbar {
+.page-tasks .panel-taskList ul::-webkit-scrollbar {
     height: 10px;
     width: 10px;
 }
 
-.page-tasks .panel-tasklist ul::-webkit-scrollbar-thumb {
+.page-tasks .panel-taskList ul::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #009932;
     border: 1px solid #006622;
 }
 
-.page-tasks .panel-tasklist ul::-webkit-scrollbar-corner {
+.page-tasks .panel-taskList ul::-webkit-scrollbar-corner {
     background: #009932;
     display: none;
     opacity: 0;
 }
 
-.page-tasks .panel-tasklist ul li {
+.page-tasks .panel-taskList ul li {
     padding: 0;
-    margin: 8px 0px;
+    margin: 8px 0;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.page-tasks .panel-tasklist ul li .check,
-.page-tasks .panel-tasklist ul li .title,
-.page-tasks .panel-tasklist ul li .plus {
+.page-tasks .panel-taskList ul li .check,
+.page-tasks .panel-taskList ul li .title,
+.page-tasks .panel-taskList ul li .plus {
     display: inline-block;
     font-size: 1rem;
     line-height: 20px;
     vertical-align: top;
 }
 
-.page-tasks .panel-tasklist ul li .check {
+.page-tasks .panel-taskList ul li .check {
     position: relative;
-    margin: 0px 0px 0px 2px;
+    margin: auto;
     width: 20px;
     height: 20px;
     border: 2px solid #00ff54;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
     border-radius: 20px;
 }
 
-.page-tasks .panel-tasklist ul li .title {
+.page-tasks .panel-taskList ul li .title {
     width: 170px;
     padding: 2px 6px;
 }
 
-.page-tasks .panel-tasklist ul li.checked .check:after {
+.page-tasks .panel-taskList ul li.checked .check:after {
     content: '\2714';
     position: absolute;
-    font-family: FontAwesome;
-    font-size: 0.9rem;
+    font-size: 17px;
     top: -2px;
     left: 1px;
 }
 
-.page-tasks .panel-tasklist ul li.checked .title {
+.page-tasks .panel-taskList ul li.checked .title {
     font-style: italic;
     text-decoration: line-through;
     color: #b3b3b3;
-}
-
-.page-tasks .panel-tasklist ul li .plus {
-    width: 20px;
-    height: 20px;
-}
-
-.page-tasks .panel-tasklist.right {
-    left: auto;
-    right: 20px;
-}
-
-.button {
-    width: 30px;
-    height: 30px;
 }
 
 button .icon {
@@ -160,7 +131,7 @@ button .icon {
     vertical-align: middle;
 }
 
-.panel-tasklist input {
+.panel-taskList input {
     margin-top: 15px;
     margin-left: 10px;
     background-color: rgba(96, 252, 169);
@@ -180,6 +151,6 @@ button .icon {
     vertical-align: middle;
 }
 
-.panel-tasklist .remove {
-    border-radius: 20px;
+.button-plus {
+    margin-left: 10px;
 }

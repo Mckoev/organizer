@@ -15,12 +15,18 @@ function Form() {
         }
     }
 
+    /* eslint-disable*/
+
     return (
-        <form onSubmit={(e) => setCity(e, inputCityValue)}>
+        <form className='weather-form' onSubmit={(e) => setCity(e, inputCityValue)}>
+            <div>Enter the desired city:</div>
             <input className='text-field__input' type='name' id='name' name='city' onChange={(e) => setInputCity(e.target.value)} />
             <label className='text-field__label' htmlFor='name'>
                 {location}, {country}
             </label>
+            <button className='button-33' role='button'>
+                Найти
+            </button>
         </form>
     );
 }

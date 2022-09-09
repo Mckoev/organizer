@@ -3,7 +3,7 @@ import { DAYS_RUS } from 'constants/constanst';
 
 function ContentForForecast({ el }: IElement) {
     return (
-        <div className='box'>
+        <>
             <div className='title'>{DAYS_RUS[new Date(el.date).getDay()]}</div>
             <img src={el.icon_url} alt='icon weather' />
             <div className='temp'>
@@ -17,7 +17,7 @@ function ContentForForecast({ el }: IElement) {
                     <span className='degree'>&deg;C</span>
                 </span>
             </div>
-        </div>
+        </>
     );
 }
 
