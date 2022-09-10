@@ -77,7 +77,7 @@ export interface IPanelCalendar {
 }
 
 export interface IFormCalendar {
-    handleSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     userInput: string;
     handleChange: (e: FormEvent<HTMLInputElement>) => void;
     userInputTimeStart: string;

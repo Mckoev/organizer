@@ -1,7 +1,7 @@
-import { FormEvent, useCallback, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import './calendar.css';
 import { Calendar as CalendarComponent } from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import 'components/Calendar/calendarComponent.css';
 import { CALENDAR_EVENT } from 'constants/constanst';
 import { months } from 'helpers/dateValue';
 import { tasksCalendar } from 'mock/mock';
@@ -35,9 +35,7 @@ function Calendar() {
             timeFinish: userInputTimeFinish,
             task: userInput,
         };
-        if (!task) {
-            alert('Nothing!!!');
-        } else {
+        if (task) {
             const oldTask = tasks[dateValue];
             const addNewTask = oldTask ? [...oldTask, newTask] : [newTask];
             const readyTask = {
@@ -60,29 +58,23 @@ function Calendar() {
         setUserInputTimeFinish(e.currentTarget.value);
     };
 
-    const handleSubmit = useCallback(
-        (e: FormEvent<HTMLFormElement>) => {
-            e.preventDefault();
-            addTask(userInput);
-            setUserInput('');
-            setUserInputTimeStart('00:00');
-            setUserInputTimeFinish('00:00');
-        },
-        [setUserInput, setUserInputTimeStart, setUserInputTimeFinish]
-    );
+    const handleSubmit = (e: FormEvent<HTMLFormElement> | React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        e.preventDefault();
+        addTask(userInput);
+        setUserInput('');
+        setUserInputTimeStart('00:00');
+        setUserInputTimeFinish('00:00');
+    };
 
-    const removeEl = useCallback(
-        (id) => {
-            const addNewTask = tasks[dateValue].filter((el) => el.id !== id);
-            const readyTask = {
-                ...tasks,
-                [dateValue]: addNewTask,
-            };
-            setTasks(readyTask);
-            localStorage.setItem(CALENDAR_EVENT, JSON.stringify(readyTask));
-        },
-        [setTasks]
-    );
+    const removeEl = (id) => {
+        const addNewTask = tasks[dateValue].filter((el) => el.id !== id);
+        const readyTask = {
+            ...tasks,
+            [dateValue]: addNewTask,
+        };
+        setTasks(readyTask);
+        localStorage.setItem(CALENDAR_EVENT, JSON.stringify(readyTask));
+    };
 
     return (
         <div className='page page-calendar'>
