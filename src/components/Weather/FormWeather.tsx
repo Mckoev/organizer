@@ -15,8 +15,6 @@ function FormWeather() {
         }
     }
 
-    /* eslint-disable*/
-
     return (
         <form className='weather-form' onSubmit={(e) => setCity(e, inputCityValue)}>
             <div>Enter the desired city:</div>
@@ -24,7 +22,7 @@ function FormWeather() {
             <label className='text-field__label' htmlFor='name'>
                 {location}, {country}
             </label>
-            <button className='button-33' role='button'>
+            <button type='button' className='button-33'>
                 Найти
             </button>
         </form>

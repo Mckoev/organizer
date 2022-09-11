@@ -1,4 +1,5 @@
 import React, { FormEvent } from 'react';
+import { Action } from '@reduxjs/toolkit';
 
 export interface IWeatherBox {
     id: string;
@@ -93,4 +94,20 @@ export interface IInitialTask {
 export interface IMapData {
     center: number[];
     zoom: number;
+}
+
+export interface ICalendarLogic {
+    date: Date;
+    list: ICalendarTask[];
+    setDate: React.Dispatch<React.SetStateAction<Date>>;
+    removeEl: (id: string) => void;
+    setMapValueDate: React.Dispatch<React.SetStateAction<Date>>;
+    mapValueDate: Date;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    handleChange: (event: React.FormEvent<HTMLInputElement>) => void;
+    userInput: string;
+    handleChangeTimeStart: (event: FormEvent<HTMLInputElement>) => void;
+    handleChangeTimeFinish: (event: FormEvent<HTMLInputElement>) => void;
+    userInputTimeStart: string;
+    userInputTimeFinish: string;
 }
