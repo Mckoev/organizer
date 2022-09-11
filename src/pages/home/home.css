@@ -75,10 +75,10 @@
 }
 
 .page-home .panel-calendar ul li {
-    padding: 0;
+    padding: 3px;
     margin: 8px 0px;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .page-home .panel-calendar ul li .time,
@@ -123,10 +123,12 @@
 }
 
 .page-home .panel-tasks ul li {
-    padding: 0;
+    padding: 3px;
     margin: 8px 0px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .page-home .panel-tasks ul li .check,
@@ -152,7 +154,7 @@
 }
 
 .page-home .panel-tasks ul li.checked .check:after {
-    content: '\f00c';
+    content: '\2714';
     position: absolute;
     font-family: FontAwesome;
     font-size: 0.9rem;

@@ -22,7 +22,7 @@ function PanelTasks() {
                 {isManyTasks && (
                     <li className='other'>
                         <div className='plus' />
-                        <div className='title'>... and {list.length - list.slice(0, 3).length} other tasks</div>
+                        <div className='title'>... and {list.length - list.slice(0, 3).length} other purchases</div>
                     </li>
                 )}
             </ul>

@@ -4,7 +4,7 @@
 
 .page-map .title {
     position: absolute;
-    width: 90%;
+    width: 95%;
     top: 20px;
     left: 0;
     right: 0;
@@ -25,12 +25,12 @@
     right: 0;
     bottom: 0;
     top: 10px;
-    width: 90%;
-    height: 63%;
+    width: 95%;
+    height: 61.5%;
     margin: auto auto;
     margin-top: 10%;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .title #name {

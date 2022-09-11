@@ -38,7 +38,7 @@ function PanelCalendarHome() {
                 {isManyTasks && (
                     <li className='other'>
                         <div className='plus' />
-                        <div className='title'>... and {list.length - list.slice(0, 3).length} other tasks</div>
+                        <div className='title'>... and {list.length - list.slice(0, 3).length} other events</div>
                     </li>
                 )}
                 {!isTasksToday && (
