@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './map.css';
 import YandexMap from 'components/Map/YandexMap';
 import { useAppSelector } from 'reduxToolkit/hooks';
-import Form from 'components/Form';
+import FormMap from 'components/Map/FormMap';
 import { getWeatherForOneDay } from 'api/weather/getWeatherForOneDay';
 import Spinner from '../spinner/Spinner';
 
@@ -15,7 +15,7 @@ function Map() {
         <div className='page page-map'>
             <div className='overlay' />
             <div className='title'>
-                <Form />
+                <FormMap />
             </div>
             <div className='map'>{isLoadingWeatherForOneDay ? <Spinner /> : <YandexMap />}</div>
         </div>

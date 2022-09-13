@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { setCity } from 'helpers/setCity';
+import { FormEvent, useState } from 'react';
 import { INITIAL_CITY } from 'api/weather/weatherApiData';
 import { useAppSelector } from 'reduxToolkit/hooks';
+import { getWeatherForManyDays } from 'api/weather/getWeatherForManyDays';
+import { getWeatherForOneDay } from 'api/weather/getWeatherForOneDay';
+import { setCity } from 'helpers/setCity';
 
-function Form() {
+export const useFormLogic = () => {
     const [inputCityValue, setInputCityValue] = useState<string>(INITIAL_CITY);
     const location: string | null = useAppSelector((state) => state.weatherForOneDay.location);
     const country: string | null = useAppSelector((state) => state.weatherForOneDay.country);
@@ -15,14 +17,17 @@ function Form() {
         }
     }
 
-    return (
-        <form className='weather-form' onSubmit={(e) => setCity(e, inputCityValue)}>
-            <input className='text-field__input' type='name' id='name' name='city' onChange={(e) => setInputCity(e.target.value)} />
-            <label className='text-field__label' htmlFor='name'>
-                {location}, {country}
-            </label>
-        </form>
-    );
-}
+    function changeCity(e: FormEvent<HTMLFormElement>): void {
+        e.preventDefault();
+        setCity(e, inputCityValue);
+        getWeatherForManyDays();
+        getWeatherForOneDay();
+    }
 
-export default Form;
+    return {
+        changeCity,
+        setInputCity,
+        country,
+        location,
+    };
+};

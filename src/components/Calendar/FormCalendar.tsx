@@ -40,9 +40,6 @@ function Form({
                     </div>
                 </div>
             </div>
-            {/*<button type='button' onClick={(e) => handleSubmit(e)}>*/}
-            {/*    <img className='icon' src={plusIcon} alt='plus' />*/}
-            {/*</button>*/}
         </form>
     );
 }

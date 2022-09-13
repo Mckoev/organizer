@@ -1,5 +1,6 @@
 import React, { FormEvent } from 'react';
-import { Action } from '@reduxjs/toolkit';
+
+/* eslint-disable no-unused-vars */
 
 export interface IWeatherBox {
     id: string;
@@ -111,3 +112,12 @@ export interface ICalendarLogic {
     userInputTimeStart: string;
     userInputTimeFinish: string;
 }
+
+export interface IFormLogic {
+    changeCity: (e: FormEvent<HTMLFormElement>) => void;
+    setInputCity: (city: string) => void;
+    country: string | null;
+    location: string | null;
+}
+
+/* eslint-enable no-unused-vars */

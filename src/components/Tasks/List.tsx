@@ -9,22 +9,25 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
     const [list, setList] = useState<ITask[]>(initialValue ? JSON.parse(initialValue) : initialStandardValue);
     const [userInput, setUserInput] = useState<string>('');
 
-    function addTask(e) {
-        if (e) {
-            const newList = [
-                ...list,
-                ...[
-                    {
-                        id: getID(),
-                        task: e,
-                        complete: false,
-                    },
-                ],
-            ];
-            setList(newList);
-            localStorage.setItem(store, JSON.stringify(newList));
-        }
-    }
+    const addTask = useCallback(
+        (e) => {
+            if (e) {
+                const newList = [
+                    ...list,
+                    ...[
+                        {
+                            id: getID(),
+                            task: e,
+                            complete: false,
+                        },
+                    ],
+                ];
+                setList(newList);
+                localStorage.setItem(store, JSON.stringify(newList));
+            }
+        },
+        [list, store]
+    );
 
     function changeElement(id) {
         const newList = [...list.map((el) => (el.id === id ? { ...el, complete: !el.complete } : { ...el }))];
@@ -51,7 +54,7 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
             addTask(userInput);
             setUserInput('');
         },
-        [addTask]
+        [addTask, userInput]
     );
 
     /* eslint-disable */
