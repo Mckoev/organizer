@@ -1,4 +1,5 @@
 import { useAppSelector } from 'reduxToolkit/hooks';
+import styles from 'pages/weather/weather.module.scss';
 
 function ContentForPanel() {
     const minTemp: string = useAppSelector((state) => state.weatherForManyDays.arrState[0].minTemp);
@@ -10,29 +11,29 @@ function ContentForPanel() {
 
     return (
         <>
-            <div className='mainInfo'>
+            <div className={styles.mainInfo}>
                 <img src={iconUrl} alt='icon' />
-                <div className='temp'>
-                    <span className='value'>
+                <div className={styles.temp}>
+                    <span className={styles.value}>
                         {maxTemp}
-                        <span className='degree'>&deg;C</span>
+                        <span className={styles.degree}>&deg;C</span>
                     </span>
-                    <span className='separator'>/</span>
-                    <span className='value'>
+                    <span className={styles.separator}>/</span>
+                    <span className={styles.value}>
                         {minTemp}
-                        <span className='degree'>&deg;C</span>
+                        <span className={styles.degree}>&deg;C</span>
                     </span>
                 </div>
             </div>
-            <div className='row'>
-                <div className='info'>
-                    <span className='value'>{wind} km/h</span>
+            <div className={styles.row}>
+                <div className={styles.info}>
+                    <span className={styles.value}>{wind} km/h</span>
                 </div>
-                <div className='info'>
-                    <span className='value'>{windDirection}</span>
+                <div className={styles.info}>
+                    <span className={styles.value}>{windDirection}</span>
                 </div>
-                <div className='info'>
-                    <span className='value'>{humidity} </span>
+                <div className={styles.info}>
+                    <span className={styles.value}>{humidity} </span>
                 </div>
             </div>
         </>

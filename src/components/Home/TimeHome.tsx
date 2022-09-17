@@ -1,6 +1,8 @@
 import { months } from 'helpers/dateValue';
 import { useEffect, useRef, useState } from 'react';
 import { DAYS } from 'constants/constanst';
+import classNames from 'classnames/bind';
+import styles from 'pages/home/home.module.scss';
 
 function TimeHome() {
     const [time, setTime] = useState<string>(new Date().toLocaleTimeString());
@@ -16,10 +18,12 @@ function TimeHome() {
 
     useEffect(() => startTimer(), []);
 
+    const cx = classNames.bind(styles);
+
     return (
-        <div className='span time'>
+        <div className={cx('span', 'time')}>
             <div>{time}</div>
-            <div className='span date'>{`${DAYS[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`}</div>
+            <div className={cx('span', 'date')}>{`${DAYS[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`}</div>
         </div>
     );
 }

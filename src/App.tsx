@@ -1,4 +1,3 @@
-import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Calendar from './pages/calendar/Calendar';
 import Map from './pages/map/Map';
@@ -7,9 +6,9 @@ import News from './pages/news/News';
 import Home from './pages/home/Home';
 import Page from './components/Page/Page';
 import Weather from './pages/weather/Weather';
+import './App.module.scss';
 
 function App() {
-
     return (
         <Routes>
             <Route path='/' element={<Page component={Home()} />} />

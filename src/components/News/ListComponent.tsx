@@ -6,6 +6,7 @@ import { INews } from 'types/interfaices';
 import { useAppSelector } from 'reduxToolkit/hooks';
 import { getLatestNews } from 'api/news/getLatestNews';
 import RowComponent from './RowComponent';
+import styles from '../../pages/news/news.module.scss';
 
 /* eslint-disable */
 
@@ -32,7 +33,7 @@ function ListComponent() {
                             width={width}
                             ref={ref}
                             onItemsRendered={onItemsRendered}
-                            className='list-container'
+                            className={styles.listContainer}
                         >
                             {Row}
                         </List>

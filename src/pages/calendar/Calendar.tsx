@@ -1,10 +1,12 @@
-import './calendar.css';
+import 'pages/calendar/calendar.module.scss';
 import { Calendar as CalendarComponent } from 'react-calendar';
-import 'components/Calendar/calendarComponent.css';
+import classNames from 'classnames/bind';
 import PanelCalendar from 'components/Calendar/PanelCalendar';
 import FormCalendar from 'components/Calendar/FormCalendar';
 import { useCalendarLogic } from 'hooks/useCalendarLogic';
 import { ICalendarLogic } from 'types/interfaices';
+import styles from './calendar.module.scss';
+import 'components/Calendar/calendarComponent.module.scss';
 
 function Calendar() {
     const {
@@ -23,11 +25,13 @@ function Calendar() {
         userInputTimeFinish,
     }: ICalendarLogic = useCalendarLogic();
 
+    const cx = classNames.bind(styles);
+
     return (
-        <div className='page page-calendar'>
-            <div className='overlay' />
-            <PanelCalendar list={list} date={date} className='panel panel-calendar' removeEl={removeEl} />
-            <div className='panel panel-calendar right'>
+        <div className={cx('page', 'pageCalendar')}>
+            <div className={styles.overlay} />
+            <PanelCalendar list={list} date={date} className={cx('panel', 'panelCalendar')} removeEl={removeEl} />
+            <div className={cx('panel', 'panelCalendar', 'right')}>
                 <CalendarComponent onChange={setMapValueDate} value={mapValueDate} onClickDay={(value) => setDate(value)} />
                 <FormCalendar
                     handleSubmit={handleSubmit}

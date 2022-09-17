@@ -1,4 +1,6 @@
-.main-icons .panel-functions {
+
+.mainIcons {
+  .panel-functions {
     position: absolute;
     width: 100%;
     bottom: 0px;
@@ -7,22 +9,29 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-.main-icons .panel-functions .icon {
+  }
+
+  .icon {
     margin: 0px 20px;
     font-size: 45px;
     width: 87px;
     height: 87px;
     text-align: center;
     cursor: pointer;
-    /*border: 2px solid rgba(0, 233, 94, 0.4);*/
     -moz-border-radius: 87px;
     -webkit-border-radius: 87px;
     border-radius: 87px;
+
+    img {
+      width: 100%;
+    }
+  }
 }
-.main-icons .panel-functions .icon .title {
-    font-size: 1rem;
-    text-align: center;
-    text-transform: uppercase;
-    display: none;
+
+.panel {
+  background-color: rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
+
+
+

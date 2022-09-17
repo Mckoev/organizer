@@ -2,7 +2,10 @@ import React, { useCallback, useState } from 'react';
 import { IList, ITask } from 'types/interfaices';
 import { getID } from 'helpers/getID';
 import removeIcon from 'img/remove.png';
+import classNames from 'classnames/bind';
+import styles from 'pages/tasks/tasks.module.scss';
 import Form from './Form';
+import 'App.module.scss';
 
 function List({ name, initialStandardValue, store, textTitle }: IList) {
     const initialValue: string | null = localStorage.getItem(store);
@@ -59,13 +62,15 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
 
     /* eslint-disable */
 
+    const cx = classNames.bind(styles);
+
     const listItems = list.map((el) => (
-        <li key={el.id} className={el.complete ? 'checked' : ''}>
-            <div className='check' onClick={() => changeElement(el.id)} />
-            <div className='title' onClick={() => changeElement(el.id)}>
+        <li key={el.id} className={cx({ checked: el.complete }, '')}>
+            <div className={styles.check} onClick={() => changeElement(el.id)} />
+            <div className={styles.title} onClick={() => changeElement(el.id)}>
                 {el.task}
             </div>
-            <button type='button' className='button remove' onClick={() => removeEl(el.id)}>
+            <button type='button' className={styles.remove} onClick={() => removeEl(el.id)}>
                 <img src={removeIcon} alt='remove' />
             </button>
         </li>
@@ -74,15 +79,15 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
     /* eslint-enable */
 
     return (
-        <div className='panel panel-taskList'>
-            <div className='header'>
-                <div className='title'>
+        <div className={cx('panel', 'panel-taskList')}>
+            <div className={styles.header}>
+                <div className={styles.title}>
                     {name} ({list.length})
                 </div>
             </div>
-            <div className='newItem'>
-                <div className='text'>
-                    <span className='title'>add new {textTitle}:</span>
+            <div className={styles.newItem}>
+                <div className={styles.text}>
+                    <span className={styles.title}>add new {textTitle}:</span>
                 </div>
             </div>
             <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput} />

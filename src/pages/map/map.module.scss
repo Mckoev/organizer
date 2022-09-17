@@ -1,8 +1,7 @@
-.page-map .overlay {
-    background-color: rgba(0, 181, 255, 0.25);
-}
+@import 'src/variables';
 
-.page-map .title {
+.pageMap {
+  .title {
     position: absolute;
     width: 95%;
     top: 20px;
@@ -17,9 +16,13 @@
     font-family: 'Open Sans';
     font-weight: 400;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-}
 
-.page-map .map {
+    input {
+      color: white;
+    }
+  }
+
+  .map {
     position: absolute;
     left: 0;
     right: 0;
@@ -27,12 +30,22 @@
     top: 10px;
     width: 95%;
     height: 61.5%;
-    margin: auto auto;
-    margin-top: 10%;
+    margin: 10% auto auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .overlay {
+    background-color: $color-blueFrostySky;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.title #name {
-    color: white;
-}
+
+
+
+
+
+
+

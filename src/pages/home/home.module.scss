@@ -1,0 +1,199 @@
+@import 'src/variables';
+
+.pageHome {
+  .panelTime {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 370px;
+    border-radius: 5px;
+
+    .time {
+      font-size: 90px;
+      line-height: 8rem;
+      text-align: center;
+    }
+
+    .date {
+      background-color: $color-malachite;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      text-align: center;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  .panelWeather {
+    position: absolute;
+    top: 20px;
+    width: 370px;
+    right: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    .condition {
+      font-size: 22px;
+      line-height: 1.5rem;
+      border-radius: 5px 0 0 0;
+      margin-top: 5px;
+    }
+
+    .icon {
+      display: inline-block;
+      font-size: 3rem;
+      line-height: 4rem;
+      margin-right: 40px;
+    }
+
+    img {
+      width: 94px;
+      margin-right: 50px;
+    }
+
+    .temp {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 5rem;
+      line-height: 6rem;
+      font-weight: 400;
+
+      .degree {
+        font-size: 2rem;
+        line-height: 4rem;
+        vertical-align: top;
+      }
+    }
+
+    .text {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+      background-color: $color-malachite;
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  .panelCalendar {
+    position: absolute;
+    top: 220px;
+    width: 380px;
+    height: 180px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: initial;
+
+    ul {
+      padding: 0 20px;
+
+      .other {
+        .title {
+          font-style: italic;
+          color: #cccccc;
+          font-size: 0.9rem;
+        }
+      }
+
+      li {
+        padding: 3px;
+        margin: 8px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+
+        .time, .title {
+          display: inline-block;
+          font-size: 1rem;
+          line-height: 1.2rem;
+          padding: 2px 6px;
+        }
+
+        .time {
+          width: 120px;
+          text-align: center;
+          font-weight: 300;
+          background-color: $color-malachite;
+          border-radius: 4px 0 0 4px;
+        }
+      }
+    }
+  }
+
+  .panelTasks {
+    position: absolute;
+    top: 215px;
+    right: 0;
+    width: 300px;
+    height: 180px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: initial;
+
+    ul {
+      padding-right: 30px;
+
+      li {
+        padding: 3px;
+        margin: 8px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .check, .title, .plus {
+        display: inline-block;
+        font-size: 1rem;
+        line-height: 20px;
+        vertical-align: middle;
+      }
+
+      .title {
+        padding: 2px 6px;
+      }
+
+      .check {
+        position: relative;
+        margin: 0 0 0 2px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color-malachite;
+        border-radius: 20px;
+      }
+
+      .checked {
+        .check:after {
+          content: '\2714';
+          position: absolute;
+          font-size: 0.9rem;
+          top: -2px;
+          left: 1px;
+        }
+      }
+
+      .other {
+        .title {
+          font-style: italic;
+          color: #cccccc;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.overlay {
+  background-color: $color-yellow;
+  height: 100%;
+  width: 100%;
+}
+
+.plus {
+  width: 20px;
+  height: 20px;
+}
+
