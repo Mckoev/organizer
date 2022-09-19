@@ -10,8 +10,8 @@ function Location() {
     const cx = classNames.bind(styles);
 
     return (
-        <div className={cx('panel', 'panelLocation')}>
-            <div className={cx('text-field', 'text-field_floating')}>
+        <div className={cx('panelNow', 'panel_loc_right')}>
+            <div className={styles.textField}>
                 <FormWeather />
             </div>
         </div>

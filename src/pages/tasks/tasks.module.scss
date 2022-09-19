@@ -1,171 +1,161 @@
 @import 'src/variables';
 
-.page-tasks {
-  .overlay {
-    background-color: $color-brightGreen;
-    width: 100%;
-    height: 100%;
-  }
-
-  .wrapper {
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    height: 76.8%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .panel-taskList {
-    display: inline-block;
-    vertical-align: top;
-    width: 30%;
-    margin: 10px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-
-    .header {
-      text-align: center;
-
-      .title {
-        font-size: 18px;
-        line-height: 32px;
-        background-color: $color-springGreen;
-        border-radius: 5px 5px 0 0;
-      }
-    }
-
-    .newItem {
-      padding: 15px 15px 0 15px;
-      height: 35px;
-
-      .text {
-        cursor: pointer;
-
-        .title {
-          display: inline-block;
-          color: $color-lightTelegrey;
-          font-size: 15px;
-        }
-
-        img {
-          width: 20px;
-          height: 20px;
-          margin-right: 5px;
-          text-align: center;
-          color: $color-lightTelegrey;
-          line-height: 20px;
-          vertical-align: middle;
-        }
-      }
-    }
-
-    ul {
-      padding: 10px 10px;
-      overflow: auto;
-      height: 70%;
-
-      li {
-        padding: 0;
-        margin: 8px 0;
-        border-radius: 10px;
-        cursor: pointer;
-
-        .check, .title, .plus {
-          display: inline-block;
-          font-size: 1rem;
-          line-height: 20px;
-          vertical-align: top;
-        }
-
-        .check {
-          position: relative;
-          margin: auto;
-          width: 20px;
-          height: 20px;
-          border: 2px solid $color-springGreen;
-          border-radius: 20px;
-        }
-
-        .title {
-          width: 170px;
-          padding: 2px 6px;
-        }
-      }
-
-      .checked {
-        .check::after {
-          content: '\2714';
-          position: absolute;
-          font-size: 17px;
-          top: -2px;
-          left: 1px;
-        }
-      }
-
-      .checked {
-        .title {
-          font-style: italic;
-          text-decoration: line-through;
-          color: $color-lightGrey;
-        }
-      }
-    }
-
-    ul::-webkit-scrollbar {
-      height: 10px;
-      width: 10px;
-    }
-
-    ul::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: $color-brightGreen;
-      border: 1px solid $color-universityOfMichiganGreen;
-    }
-
-    ul::-webkit-scrollbar-corner {
-      background: $color-brightGreen;
-      display: none;
-      opacity: 0;
-    }
-
-    input {
-      margin-top: 15px;
-      margin-left: 10px;
-      background-color: $color-seaGreen;
-    }
-  }
+.tasks {
+  background-color: $color-brightGreen;
+  width: 100%;
+  height: 100%;
 }
 
-button {
-  .icon {
-    width: 20px;
-    height: 20px;
-    color: $color-lightTelegrey;
-    vertical-align: middle;
-  }
+.lists {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 76.8%;
+  display: flex;
+  justify-content: center;
 }
 
-.panel {
-  li {
-    display: flex;
-  }
+.formTasks__input {
+  margin-top: 15px;
+  margin-left: 10px;
+  background-color: $color-seaGreen;
 }
 
-.remove {
-  padding: 0;
-
-  img {
-    width: 25px;
-    height: 25px;
-    margin-right: 5px;
-    text-align: center;
-    line-height: 20px;
-    vertical-align: middle;
-  }
+.formTasks__img {
+  width: 20px;
+  height: 20px;
+  color: $color-lightTelegrey;
+  vertical-align: middle;
 }
 
-.buttonPlus {
+.eventSwitcher__removeImg {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  text-align: center;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.formTasks__button {
   margin-left: 10px;
 }
 
+.list {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+}
+
+.list__header {
+  text-align: center;
+}
+
+.list__title {
+  font-size: 18px;
+  line-height: 32px;
+  background-color: $color-springGreen;
+  border-radius: 5px 5px 0 0;
+}
+
+.list__newItem {
+  padding: 15px 15px 0 15px;
+  height: 35px;
+}
+
+.list__text {
+  cursor: pointer;
+}
+
+.list__text_title {
+  display: inline-block;
+  color: $color-lightTelegrey;
+  font-size: 15px;
+}
+
+.eventSwitcher {
+  padding: 10px 10px;
+  overflow: auto;
+  height: 70%;
+}
+
+.eventSwitcher__checked {
+  .eventSwitcher__check::after {
+    content: '\2714';
+    position: absolute;
+    font-size: 17px;
+    top: -2px;
+    left: 1px;
+  }
+}
+
+.eventSwitcher__checked {
+  .eventSwitcher__title {
+    font-style: italic;
+    text-decoration: line-through;
+    color: $color-lightGrey;
+  }
+}
+
+.eventSwitcher__check {
+  position: relative;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-springGreen;
+  border-radius: 20px;
+}
+
+.eventSwitcher__check, .eventSwitcher__title {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 20px;
+  vertical-align: top;
+}
+
+.eventSwitcher__title {
+  width: 170px;
+  padding: 2px 6px;
+}
+
+.eventSwitcher__remove {
+  padding: 0;
+}
+
+.eventSwitcher__img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  color: $color-lightTelegrey;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.eventSwitcher_event {
+  display: flex;
+  padding: 0;
+  margin: 8px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.eventSwitcher::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+.eventSwitcher::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $color-brightGreen;
+  border: 1px solid $color-universityOfMichiganGreen;
+}
+
+.eventSwitcher::-webkit-scrollbar-corner {
+  background: $color-brightGreen;
+  display: none;
+  opacity: 0;
+}

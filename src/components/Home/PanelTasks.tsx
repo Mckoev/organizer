@@ -11,22 +11,21 @@ function PanelTasks() {
     const cx = classNames.bind(styles);
 
     const listItems = list.slice(0, 3).map((el) => (
-        <li key={el.id} className={cx({ checked: el.complete }, '')}>
-            <div className={styles.check} />
-            <div className={styles.title}>{el.task}</div>
+        <li key={el.id} className={cx({ eventSwitcher__checked: el.complete }, 'eventSwitcher__event')}>
+            <div className={styles.eventSwitcher__check} />
+            <div className={styles.eventSwitcher__eventTitle}>{el.task}</div>
         </li>
     ));
 
     const isManyTasks = list.length - list.slice(0, 3).length > 0;
 
     return (
-        <div className={cx('panel', 'panelTasks')}>
-            <ul>
+        <div className={cx('panelTasks', 'panelTasks_loc_right')}>
+            <ul className={styles.eventSwitcher}>
                 {listItems}
                 {isManyTasks && (
-                    <li className={styles.other}>
-                        <div className={styles.plus} />
-                        <div className={styles.title}>... and {list.length - list.slice(0, 3).length} other purchases</div>
+                    <li className={styles.eventSwitcher__event}>
+                        <div className={styles.eventSwitcher__other}>... and {list.length - list.slice(0, 3).length} other purchases</div>
                     </li>
                 )}
             </ul>

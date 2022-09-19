@@ -1,5 +1,4 @@
 import { useAppSelector } from 'reduxToolkit/hooks';
-import classNames from 'classnames/bind';
 import styles from 'pages/home/home.module.scss';
 
 function PanelHomePage() {
@@ -7,15 +6,13 @@ function PanelHomePage() {
     const condition: string = useAppSelector((state) => state.weatherForOneDay.condition);
     const iconUrl: string = useAppSelector((state) => state.weatherForOneDay.icon_url);
 
-    const cx = classNames.bind(styles);
-
     return (
         <>
-            <div className={styles.condition}>{condition}</div>
-            <img src={iconUrl} alt='icon' />
-            <div className={cx('span', 'temp')}>
+            <div className={styles.panel__condition}>{condition}</div>
+            <img className={styles.panel__img} src={iconUrl} alt='icon' />
+            <div className={styles.panel__temp}>
                 {temp}
-                <span className={styles.degree}>&deg;C</span>
+                <span className={styles.panel__degree}>&deg;C</span>
             </div>
         </>
     );

@@ -1,22 +1,16 @@
 import 'pages/home/home.module.scss';
-import WeatherHome from 'components/Home/WeatherHome';
-import PanelCalendarHome from 'components/Home/PanelCalendarHome';
+import PanelWeather from 'components/Home/PanelWeather';
+import PanelCalendar from 'components/Home/PanelCalendar';
 import PanelTasks from 'components/Home/PanelTasks';
-import TimeHome from 'components/Home/TimeHome';
-import classNames from 'classnames/bind';
+import PanelTime from 'components/Home/PanelTime';
 import styles from './home.module.scss';
 
 function Home() {
-    const cx = classNames.bind(styles);
-
     return (
-        <div className={cx('page', 'pageHome')}>
-            <div className={styles.overlay} />
-            <div className={cx('panel', 'panelTime')}>
-                <TimeHome />
-            </div>
-            <WeatherHome />
-            <PanelCalendarHome />
+        <div className={styles.home}>
+            <PanelTime />
+            <PanelWeather />
+            <PanelCalendar />
             <PanelTasks />
         </div>
     );

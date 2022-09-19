@@ -65,13 +65,13 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
     const cx = classNames.bind(styles);
 
     const listItems = list.map((el) => (
-        <li key={el.id} className={cx({ checked: el.complete }, '')}>
-            <div className={styles.check} onClick={() => changeElement(el.id)} />
-            <div className={styles.title} onClick={() => changeElement(el.id)}>
+        <li key={el.id} className={cx({ eventSwitcher__checked: el.complete }, 'eventSwitcher_event')}>
+            <div className={styles.eventSwitcher__check} onClick={() => changeElement(el.id)} />
+            <div className={styles.eventSwitcher__title} onClick={() => changeElement(el.id)}>
                 {el.task}
             </div>
-            <button type='button' className={styles.remove} onClick={() => removeEl(el.id)}>
-                <img src={removeIcon} alt='remove' />
+            <button type='button' className={styles.eventSwitcher__removeButton} onClick={() => removeEl(el.id)}>
+                <img className={styles.eventSwitcher__removeImg} src={removeIcon} alt='remove' />
             </button>
         </li>
     ));
@@ -79,19 +79,19 @@ function List({ name, initialStandardValue, store, textTitle }: IList) {
     /* eslint-enable */
 
     return (
-        <div className={cx('panel', 'panel-taskList')}>
-            <div className={styles.header}>
-                <div className={styles.title}>
+        <div className={styles.list}>
+            <div className={styles.list__header}>
+                <div className={styles.list__title}>
                     {name} ({list.length})
                 </div>
             </div>
-            <div className={styles.newItem}>
-                <div className={styles.text}>
-                    <span className={styles.title}>add new {textTitle}:</span>
+            <div className={styles.list__newItem}>
+                <div className={styles.list__text}>
+                    <span className={styles.list__text_title}>add new {textTitle}:</span>
                 </div>
             </div>
             <Form handleSubmit={handleSubmit} handleChange={handleChange} userInput={userInput} />
-            <ul>{listItems}</ul>
+            <ul className={styles.eventSwitcher}>{listItems}</ul>
         </div>
     );
 }

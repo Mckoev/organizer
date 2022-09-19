@@ -27,13 +27,13 @@ function ListComponent() {
                 <InfiniteLoader isItemLoaded={isItemLoaded} loadMoreItems={getLatestNews} itemCount={items.length + 1}>
                     {({ onItemsRendered, ref }) => (
                         <List
-                            height={height}
+                            height={height - 8}
                             itemCount={items.length + 1}
                             itemSize={getItemSize}
                             width={width}
                             ref={ref}
                             onItemsRendered={onItemsRendered}
-                            className={styles.listContainer}
+                            className={styles.listComponent}
                         >
                             {Row}
                         </List>

@@ -1,37 +1,33 @@
 
-.mainIcons {
-  .panel-functions {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    padding: 20px 0px;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  .icon {
-    margin: 0px 20px;
-    font-size: 45px;
-    width: 87px;
-    height: 87px;
-    text-align: center;
-    cursor: pointer;
-    -moz-border-radius: 87px;
-    -webkit-border-radius: 87px;
-    border-radius: 87px;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-.panel {
+.panelIcons {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding: 20px 0px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.2);
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
+
+.panelIcons__icon {
+  margin: 0px 20px;
+  font-size: 45px;
+  width: 87px;
+  height: 87px;
+  text-align: center;
+  cursor: pointer;
+  -moz-border-radius: 87px;
+  -webkit-border-radius: 87px;
+  border-radius: 87px;
+}
+
+.panelIcons__img {
+  width: 100%;
+}
+
 
 
 

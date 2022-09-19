@@ -8,7 +8,7 @@ function PanelWeatherPage() {
     const isLoadingWeatherForManyDays: boolean = useAppSelector((state) => state.isLoading.isLoadingWeatherForManyDays);
     const cx = classNames.bind(styles);
 
-    return <div className={cx('panel', 'panelNow')}>{isLoadingWeatherForManyDays ? <Spinner /> : <ContentForPanel />}</div>;
+    return <div className={cx('panel_loc_left', 'panelNow')}>{isLoadingWeatherForManyDays ? <Spinner /> : <ContentForPanel />}</div>;
 }
 
 export default PanelWeatherPage;

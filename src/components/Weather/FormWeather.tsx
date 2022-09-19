@@ -6,13 +6,13 @@ function FormWeather() {
     const { changeCity, setInputCity, country, location }: IFormLogic = useFormLogic();
 
     return (
-        <form className={styles.weatherForm} onSubmit={(e) => changeCity(e)}>
+        <form className={styles.formCity} onSubmit={(e) => changeCity(e)}>
             <div>Enter the desired city:</div>
-            <input className='text-field__input' type='name' id='name' name='city' onChange={(e) => setInputCity(e.target.value)} />
-            <label className='text-field__label' htmlFor='name'>
+            <input className={styles.formCity__input} type='name' id='name' name='city' onChange={(e) => setInputCity(e.target.value)} />
+            <label className={styles.formCity__label} htmlFor='name'>
                 {location}, {country}
             </label>
-            <button type='submit' className={styles.buttonCalendar}>
+            <button type='submit' className={styles.formCity__button}>
                 Найти
             </button>
         </form>

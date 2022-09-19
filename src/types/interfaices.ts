@@ -74,7 +74,6 @@ export interface IFormTask {
 export interface IPanelCalendar {
     list: ICalendarTask[];
     date: Date;
-    className: string;
     removeEl: (id: string) => void;
 }
 

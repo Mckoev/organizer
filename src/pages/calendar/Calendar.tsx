@@ -28,10 +28,9 @@ function Calendar() {
     const cx = classNames.bind(styles);
 
     return (
-        <div className={cx('page', 'pageCalendar')}>
-            <div className={styles.overlay} />
-            <PanelCalendar list={list} date={date} className={cx('panel', 'panelCalendar')} removeEl={removeEl} />
-            <div className={cx('panel', 'panelCalendar', 'right')}>
+        <div className={styles.calendar}>
+            <PanelCalendar list={list} date={date} removeEl={removeEl} />
+            <div className={cx('panelCalendar', 'panelCalendar_right')}>
                 <CalendarComponent onChange={setMapValueDate} value={mapValueDate} onClickDay={(value) => setDate(value)} />
                 <FormCalendar
                     handleSubmit={handleSubmit}

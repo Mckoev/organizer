@@ -1,0 +1,16 @@
+.page {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 800px;
+  height: 600px;
+  margin: auto auto;
+  border-radius: 6px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+  user-select: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

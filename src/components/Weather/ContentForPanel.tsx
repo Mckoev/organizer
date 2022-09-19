@@ -12,28 +12,31 @@ function ContentForPanel() {
     return (
         <>
             <div className={styles.mainInfo}>
-                <img src={iconUrl} alt='icon' />
-                <div className={styles.temp}>
-                    <span className={styles.value}>
+                <img className={styles.mainInfo__img} src={iconUrl} alt='icon' />
+                <div className={styles.mainInfo__temp}>
+                    <span className={styles.mainInfo__value}>
                         {maxTemp}
-                        <span className={styles.degree}>&deg;C</span>
+                        <span className={styles.mainInfo__degree}>&deg;C</span>
                     </span>
-                    <span className={styles.separator}>/</span>
-                    <span className={styles.value}>
+                    <span className={styles.mainInfo__separator}>/</span>
+                    <span className={styles.mainInfo__value}>
                         {minTemp}
-                        <span className={styles.degree}>&deg;C</span>
+                        <span className={styles.mainInfo__degree}>&deg;C</span>
                     </span>
                 </div>
             </div>
             <div className={styles.row}>
-                <div className={styles.info}>
-                    <span className={styles.value}>{wind} km/h</span>
+                <div className={styles.row__info}>
+                    <span className={styles.row__description}>SP: </span>
+                    <span className={styles.row__value}>{wind} km/h</span>
                 </div>
-                <div className={styles.info}>
-                    <span className={styles.value}>{windDirection}</span>
+                <div className={styles.row__info}>
+                    <span className={styles.row__description}>DIRECT: </span>
+                    <span className={styles.row__value}>{windDirection}</span>
                 </div>
-                <div className={styles.info}>
-                    <span className={styles.value}>{humidity} </span>
+                <div className={styles.row__info}>
+                    <span className={styles.row__description}>HUMID: </span>
+                    <span className={styles.row__value}>{humidity} %</span>
                 </div>
             </div>
         </>

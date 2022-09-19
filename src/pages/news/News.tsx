@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { getLatestNews } from 'api/news/getLatestNews';
-import classNames from 'classnames/bind';
 import { useAppSelector } from 'reduxToolkit/hooks';
 import Spinner from '../spinner/Spinner';
 import ListComponent from '../../components/News/ListComponent';
@@ -11,13 +10,9 @@ function News() {
 
     useEffect(() => getLatestNews(), []);
 
-    const cx = classNames.bind(styles);
-
     return (
-        <div className={cx('page', 'pageNews')}>
-            <div className={styles.overlay}>
-                <div className={cx('panel', 'panel-newsList')}>{isLoadingLatestNews ? <Spinner /> : <ListComponent />}</div>
-            </div>
+        <div className={styles.news}>
+            <div className={styles.newsList}>{isLoadingLatestNews ? <Spinner /> : <ListComponent />}</div>
         </div>
     );
 }

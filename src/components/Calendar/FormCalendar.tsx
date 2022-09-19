@@ -16,31 +16,31 @@ function Form({
     const cx = classNames.bind(styles);
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)} className={styles.form__groupFormInputs}>
-            <div className={styles.form__groupInputs}>
-                <div className={styles.form__group}>
-                    <input type='time' className={styles.form__field} value={userInputTimeStart} onChange={handleChangeTimeStart} />
-                    <label htmlFor='name' className={styles.form__label}>
+        <form onSubmit={(e) => handleSubmit(e)} className={styles.formCalendar}>
+            <div className={styles.formCalendar__groupInputs}>
+                <div className={styles.formCalendar__group}>
+                    <input type='time' className={styles.formCalendar__form__field} value={userInputTimeStart} onChange={handleChangeTimeStart} />
+                    <label htmlFor='name' className={styles.formCalendar__form__label}>
                         Input time to start event:
                     </label>
                 </div>
-                <div className={styles.form__group}>
-                    <input type='time' className={styles.form__field} value={userInputTimeFinish} onChange={handleChangeTimeFinish} />
-                    <label htmlFor='name' className={styles.form__label}>
+                <div className={styles.formCalendar__group}>
+                    <input type='time' className={styles.formCalendar__form__field} value={userInputTimeFinish} onChange={handleChangeTimeFinish} />
+                    <label htmlFor='name' className={styles.formCalendar__form__label}>
                         Input time to finish event:
                     </label>
                 </div>
-                <div className={styles.form__group}>
-                    <input value={userInput} type='text' onChange={handleChange} className={styles.form__field} />
-                    <label htmlFor='name' className={styles.form__label}>
+                <div className={styles.formCalendar__group}>
+                    <input value={userInput} type='text' onChange={handleChange} className={styles.formCalendar__form__field} />
+                    <label htmlFor='name' className={styles.formCalendar__form__label}>
                         Text event:
                     </label>
                 </div>
             </div>
-            <div className={styles.buttonCalendar} onClick={(e) => handleSubmit(e)}>
-                <div className={styles.outer}>
-                    <div className={styles.height}>
-                        <div className={styles.inner}>Создать</div>
+            <div className={styles.formCalendar__button} onClick={(e) => handleSubmit(e)}>
+                <div className={styles.formCalendar__outer}>
+                    <div className={styles.formCalendar__height}>
+                        <div className={styles.formCalendar__inner}>Создать</div>
                     </div>
                 </div>
             </div>
