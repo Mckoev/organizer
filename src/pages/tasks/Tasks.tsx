@@ -2,7 +2,6 @@ import 'pages/tasks/tasks.module.scss';
 import { LISTS_NAMES, TITLES } from 'constants/constanst';
 import { initLongTermTasks, initShopList, initTodoList } from 'mock/mock';
 import styles from './tasks.module.scss';
-import 'App.module.scss';
 import List from '../../components/Tasks/List';
 
 function Tasks() {

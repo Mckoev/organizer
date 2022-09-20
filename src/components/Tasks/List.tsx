@@ -5,7 +5,6 @@ import removeIcon from 'img/remove.png';
 import classNames from 'classnames/bind';
 import styles from 'pages/tasks/tasks.module.scss';
 import Form from './Form';
-import 'App.module.scss';
 
 function List({ name, initialStandardValue, store, textTitle }: IList) {
     const initialValue: string | null = localStorage.getItem(store);

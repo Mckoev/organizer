@@ -6,7 +6,6 @@ import News from './pages/news/News';
 import Home from './pages/home/Home';
 import Page from './components/Page/Page';
 import Weather from './pages/weather/Weather';
-import './App.module.scss';
 
 function App() {
     return (

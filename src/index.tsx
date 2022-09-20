@@ -1,4 +1,4 @@
-import './index.css';
+import 'index.module.scss';
 import ReactDOM from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
