@@ -55,7 +55,7 @@
 
 .rowComponent__newsBlock {
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
 }
 
 .rowComponent__source {
