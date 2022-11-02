@@ -2,9 +2,8 @@
 .panelIcons {
   position: absolute;
   width: 100%;
-  bottom: 0px;
-  padding: 20px 0px;
-  display: -webkit-flex;
+  bottom: 0;
+  padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -13,14 +12,12 @@
 }
 
 .panelIcons__icon {
-  margin: 0px 20px;
+  margin: 0 20px;
   font-size: 45px;
   width: 87px;
   height: 87px;
   text-align: center;
   cursor: pointer;
-  -moz-border-radius: 87px;
-  -webkit-border-radius: 87px;
   border-radius: 87px;
 }
 
@@ -28,6 +25,19 @@
   width: 100%;
 }
 
+@media (max-width: 480px) {
+  .panelIcons{
+    position: fixed;
+    width: 96.5%;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0;
+    justify-content: center;
+  }
+  .panelIcons__icon {
+    margin: 0 10px;
+    height: 10%;
+  }
+}
 
 
 

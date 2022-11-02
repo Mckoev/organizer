@@ -159,3 +159,40 @@
   display: none;
   opacity: 0;
 }
+@media (max-width: 480px) {
+  .tasks {
+    position: static;
+  }
+
+  .lists {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .formTasks__input {
+    width: 72.5%;
+    margin-left: 20px;
+  }
+  .eventSwitcher {
+    margin: auto;
+  }
+
+  .eventSwitcher__check {
+    margin:0 10px ;
+  }
+
+  .eventSwitcher__title {
+    width: 70%;
+  }
+
+  .list__text_title {
+    margin-left: 5px;
+  }
+
+}

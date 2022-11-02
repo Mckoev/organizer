@@ -65,6 +65,22 @@
   box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
 }
 
+@media (max-width: 480px) {
+  .pageMap {
+    position: static;
+    height: 100%;
+  }
+
+  .pageMap__title {
+    position: static;
+  }
+
+  .pageMap__map {
+    position: static;
+    height: 75vh;
+  }
+}
+
 
 
 

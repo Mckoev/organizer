@@ -150,3 +150,28 @@ a {
 .panelTasks_loc_right {
   right: 0;
 }
+
+@media (max-width: 480px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
+  .home__panel_loc-right {
+    position: static;
+  }
+
+  .panelTasks {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+  }
+
+  .panel__time {
+    font-size: 5rem;
+  }
+  .home__panel_width {
+    width: 95%;
+    margin: 10px auto;
+  }
+}

@@ -97,4 +97,22 @@
   font-weight: 300;
 }
 
+@media (max-width: 480px) {
+  .news {
+    position: static;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .news__newsList {
+    width: 98%;
+    height: 88%;
+    margin: 3px auto;
+  }
+
+  .rowComponent {
+    height: 100%;
+  }
+
+}
 

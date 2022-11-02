@@ -11,7 +11,7 @@
 .panelCalendar {
   margin-top: 20px;
   width: 360px;
-  height: 440px;
+  height: 73.5%;
   overflow: hidden;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.55);
@@ -180,6 +180,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
           1px 1px 1px rgba(255,255,255,.1),
           -2px -2px 5px rgba(0,0,0,.5);
   transition: .2s;
+  text-align: center;
 }
 .formCalendar__button:hover {
   color: rgba(255,255,255,.9);
@@ -193,4 +194,24 @@ input[type="time"]::-webkit-calendar-picker-indicator {
           inset rgba(255,255,255,.5) 5px 5px 8px 5px,
           1px 1px 1px rgba(255,255,255,.2),
           -2px -2px 5px rgba(0,0,0,.5);
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 70px;
+  }
+
+  .panelCalendar {
+    width: 95%;
+    height: 100%;
+    margin: 10px auto auto;
+  }
+  .formCalendar__button {
+    font-size: 1rem;
+    }
+  .formCalendar {
+    height: 100%;
+  }
 }

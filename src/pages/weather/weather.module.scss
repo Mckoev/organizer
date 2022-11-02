@@ -274,3 +274,33 @@ input:-webkit-autofill:focus {
   background-color: #f5f5f5;
   opacity: 1;
 }
+
+@media (max-width: 480px) {
+
+  .pageWeather {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+  }
+
+  .panelNow {
+    position: static;
+    margin: 15px auto;
+  }
+
+  .panelForecast {
+    position: static;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 15px auto 80px;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .formCity__button {
+    margin-top: 20px;
+  }
+}

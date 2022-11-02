@@ -150,3 +150,11 @@
     background-color: $color-gainsborough;
   }
 }
+
+@media (max-width: 480px) {
+  :global {
+    .react-calendar {
+      height: 100%;
+    }
+    }
+}
