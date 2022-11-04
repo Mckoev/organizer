@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/combine-react/static/css/main.305f2ff4.css",
-    "main.js": "/combine-react/static/js/main.fc8b6bd7.js",
-    "static/media/noimg.png": "/combine-react/static/media/noimg.0fd7bc197152fd60b4da.png",
-    "static/media/news.png": "/combine-react/static/media/news.773cae3aa8ca50826c79.png",
-    "static/media/calendar.png": "/combine-react/static/media/calendar.8164c373404ebc434b2e.png",
-    "static/media/maps.png": "/combine-react/static/media/maps.9cd98cdf6cc619102a9b.png",
-    "static/media/task.png": "/combine-react/static/media/task.ae62621237d863a267e9.png",
-    "static/media/home.png": "/combine-react/static/media/home.dc7fa2562a8483990d5e.png",
-    "static/media/plus.png": "/combine-react/static/media/plus.4e03bc0ed5feb84a15c1.png",
-    "index.html": "/combine-react/index.html",
-    "main.305f2ff4.css.map": "/combine-react/static/css/main.305f2ff4.css.map",
-    "main.fc8b6bd7.js.map": "/combine-react/static/js/main.fc8b6bd7.js.map"
+    "main.css": "/organizer/static/css/main.305f2ff4.css",
+    "main.js": "/organizer/static/js/main.85dbf220.js",
+    "static/media/noimg.png": "/organizer/static/media/noimg.0fd7bc197152fd60b4da.png",
+    "static/media/news.png": "/organizer/static/media/news.773cae3aa8ca50826c79.png",
+    "static/media/calendar.png": "/organizer/static/media/calendar.8164c373404ebc434b2e.png",
+    "static/media/maps.png": "/organizer/static/media/maps.9cd98cdf6cc619102a9b.png",
+    "static/media/task.png": "/organizer/static/media/task.ae62621237d863a267e9.png",
+    "static/media/home.png": "/organizer/static/media/home.dc7fa2562a8483990d5e.png",
+    "static/media/plus.png": "/organizer/static/media/plus.4e03bc0ed5feb84a15c1.png",
+    "index.html": "/organizer/index.html",
+    "main.305f2ff4.css.map": "/organizer/static/css/main.305f2ff4.css.map",
+    "main.85dbf220.js.map": "/organizer/static/js/main.85dbf220.js.map"
   },
   "entrypoints": [
     "static/css/main.305f2ff4.css",
-    "static/js/main.fc8b6bd7.js"
+    "static/js/main.85dbf220.js"
   ]
 }
