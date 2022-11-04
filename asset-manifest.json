@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/combine-react/static/css/main.ee36f736.css",
-    "main.js": "/combine-react/static/js/main.91b609cd.js",
+    "main.css": "/combine-react/static/css/main.612d829b.css",
+    "main.js": "/combine-react/static/js/main.39d5f642.js",
     "static/media/noimg.png": "/combine-react/static/media/noimg.0fd7bc197152fd60b4da.png",
     "static/media/news.png": "/combine-react/static/media/news.773cae3aa8ca50826c79.png",
     "static/media/calendar.png": "/combine-react/static/media/calendar.8164c373404ebc434b2e.png",
@@ -10,11 +10,11 @@
     "static/media/home.png": "/combine-react/static/media/home.dc7fa2562a8483990d5e.png",
     "static/media/plus.png": "/combine-react/static/media/plus.4e03bc0ed5feb84a15c1.png",
     "index.html": "/combine-react/index.html",
-    "main.ee36f736.css.map": "/combine-react/static/css/main.ee36f736.css.map",
-    "main.91b609cd.js.map": "/combine-react/static/js/main.91b609cd.js.map"
+    "main.612d829b.css.map": "/combine-react/static/css/main.612d829b.css.map",
+    "main.39d5f642.js.map": "/combine-react/static/js/main.39d5f642.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee36f736.css",
-    "static/js/main.91b609cd.js"
+    "static/css/main.612d829b.css",
+    "static/js/main.39d5f642.js"
   ]
 }
