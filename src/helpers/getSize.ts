@@ -7,8 +7,6 @@ export function getSize(index: number, items: INews[]): number {
         count += 100
     }
 
-        console.log(items[index].description)
-
     if (items[index].title) {
         if (items[index].title.length > 53) {
             count = count + items[index].title.length - 50;

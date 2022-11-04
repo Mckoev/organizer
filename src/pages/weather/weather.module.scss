@@ -4,13 +4,17 @@
   background-color: $color-yellow;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
 }
 
 .panelNow {
-  position: absolute;
-  top: 20px;
-  width: 370px;
+  width: 45%;
+  height: 42%;
   border-radius: 5px;
+  margin-top: 20px;
   padding: 10px;
   background-color: rgba(0, 0, 0, .2);
 }
@@ -77,27 +81,6 @@ i {
   color: #ff6f4d;
 }
 
-
-//.icon {
-//  display: block;
-//  font-size: 4rem;
-//  line-height: 6rem;
-//}
-//
-
-.panel_loc_right {
-  right: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 37%;
-}
-
-.panel_loc_left {
-  left: 20px;
-}
-
-
 .icon {
   display: inline-block;
   text-align: center;
@@ -118,16 +101,14 @@ i {
 }
 
 .panelForecast {
-  position: absolute;
-  left: 20px;
-  top: 51.8%;
   width: 95%;
-  height: 150px;
+  height: 28%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
+  margin-top: 25px;
 }
 
 .box {
@@ -244,7 +225,7 @@ input:-webkit-autofill:focus {
 .formCity__label {
   display: block;
   margin-bottom: 0.25rem;
-  position: absolute;
+  //position: absolute;
   top: 0;
   left: 0;
   height: 100%;
@@ -278,22 +259,22 @@ input:-webkit-autofill:focus {
 @media (max-width: 480px) {
 
   .pageWeather {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
+    //display: flex;
+    //justify-content: center;
+    //height: 100%;
   }
 
   .panelNow {
     position: static;
     margin: 15px auto;
+    width: 95%;
   }
 
   .panelForecast {
     position: static;
     display: flex;
     height: 100%;
-    width: 100%;
+    width: 95%;
     flex-wrap: wrap;
     margin: 15px auto 80px;
     padding-left: 3px;

@@ -1,9 +1,10 @@
+@import 'src/variables';
 
 .panelIcons {
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 20px 0;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -25,17 +26,33 @@
   width: 100%;
 }
 
+.panelIcons__selected {
+  background-color: $color-malachite;
+  width: 87px;
+  height: 87px;
+  padding: 20px;
+}
+
 @media (max-width: 480px) {
   .panelIcons{
     position: fixed;
-    width: 96.5%;
+    left: 1px;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 0;
-    justify-content: center;
+    padding: 7px 5px;
+    margin-bottom: 5px;
+    justify-content: space-between;
   }
   .panelIcons__icon {
-    margin: 0 10px;
-    height: 10%;
+    margin: 0 4px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .panelIcons__selected {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
   }
 }
 

@@ -37,7 +37,7 @@
 }
 
 .panel__time {
-  font-size: 90px;
+  font-size: 5.5rem;
   line-height: 8rem;
 }
 
@@ -173,5 +173,8 @@ a {
   .home__panel_width {
     width: 95%;
     margin: 10px auto;
+  }
+  .panelTasks_loc_right{
+    margin-bottom: 60px;
   }
 }
