@@ -1,4 +1,4 @@
-.page {
+.layout {
   position: relative;
   left: 0;
   right: 0;
@@ -16,7 +16,7 @@
 }
 
 @media (max-width: 480px) {
-  .page {
+  .layout {
     position: static;
     height: 100%;
     width: 100%;
