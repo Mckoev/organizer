@@ -4,21 +4,19 @@ In the project directory, you can run:
 
 ### `npm start`
 
-# `органайзер`
+# `Organizer`
 
-Данный проект представляет собой органайзер - незаменимый помощник, который всегда под рукой!
+The purpose of this project is to demonstrate practical skills of the development on the stack: react, redux, typesript, scss + various libraries.
 
-Страницы: 
+The organizer is an indispensable assistant that is always at hand!
 
-1) Содержит текущее время, погоду и расписание календаря на сегодняшний день, часть списка покупок
-2) Погода на неделю и возможность изменения локации
-3) Календарь с возможностью добавления и редактирования событий
-4) Яндекс карта с выбранной локацией
-5) Список покупок, список дел, задачи на длительное время
-6) Новости - бесконечная прокрутка
+Pages:
 
-Данные локаций и ваших списков сохраняются в браузере (localstorage)
+The 1st page contains the current time, weather and calendar schedule for today, part of the shopping list.
+The 2nd one includes the weather for the next 7 days and the possibility of changing the location.
+The 3rd one is the calendar with the ability to add and edit events.
+The 4th one is yandex map with the selected location.
+The 5th one contains a list of shopping, to-do list, tasks for a long time.
+The 6th one is the infinity scroll of news.
 
-
-
-
+Information of the location and your lists are saved in the browser (localstorage)
