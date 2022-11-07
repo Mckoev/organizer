@@ -1,7 +1,7 @@
 import { CITY, INITIAL_CITY, TOKEN, URL_HOME, URL_WEATHER } from 'api/weather/weatherApiData';
 import { daysAction } from 'reduxToolkit/slices/weatherForManyDays';
 import { store } from 'reduxToolkit/store';
-import { isLoadingWeatherForManyDays } from 'reduxToolkit/slices/isLoading';
+import { isErrorApiForManyDays, isLoadingWeatherForManyDays } from "reduxToolkit/slices/isLoading";
 
 export function getWeatherForManyDays(): void {
     let location: string | null = localStorage.getItem(CITY);
@@ -34,7 +34,9 @@ export function getWeatherForManyDays(): void {
                 })
             );
         })
-        .catch((err) => {
-            console.error(`Could not fetch ${err}`);
+        .catch(() => {
+            store.dispatch(isErrorApiForManyDays({
+                isErrorApiForManyDays: true,
+            }))
         });
 }

@@ -6,6 +6,9 @@ const isLoading = createSlice({
         isLoadingWeatherForOneDay: true,
         isLoadingWeatherForManyDays: true,
         isLoadingLatestNews: true,
+        isErrorApiForOneDay: false,
+        isErrorApiForManyDays: false,
+        isErrorApiLatestNews: false,
     },
     reducers: {
         isLoadingWeatherForOneDay(state, action) {
@@ -17,9 +20,18 @@ const isLoading = createSlice({
         isLoadingLatestNews(state, action) {
             state.isLoadingLatestNews = action.payload.isLoadingLatestNews;
         },
+        isErrorApiForOneDay(state, action) {
+            state.isErrorApiForOneDay = action.payload.isErrorApiForOneDay;
+        },
+        isErrorApiForManyDays(state, action) {
+            state.isErrorApiForManyDays = action.payload.isErrorApiForManyDays;
+        },
+        isErrorApiLatestNews(state, action) {
+            state.isErrorApiLatestNews = action.payload.isErrorApiLatestNews;
+        }
     },
 });
 
 export default isLoading.reducer;
 
-export const { isLoadingWeatherForOneDay, isLoadingWeatherForManyDays, isLoadingLatestNews } = isLoading.actions;
+export const { isLoadingWeatherForOneDay, isLoadingWeatherForManyDays, isLoadingLatestNews, isErrorApiForOneDay, isErrorApiForManyDays, isErrorApiLatestNews } = isLoading.actions;

@@ -1,6 +1,6 @@
 import { CITY, INITIAL_CITY, LATITUDE, LOCATION, LONGITUDE, TOKEN, URL_HOME } from 'api/weather/weatherApiData';
 import { weatherAction } from 'reduxToolkit/slices/weatherForOneDay';
-import { isLoadingWeatherForOneDay } from 'reduxToolkit/slices/isLoading';
+import { isErrorApiForOneDay, isLoadingWeatherForOneDay } from "reduxToolkit/slices/isLoading";
 import { store } from 'reduxToolkit/store';
 
 export function getWeatherForOneDay(): void {
@@ -36,7 +36,9 @@ export function getWeatherForOneDay(): void {
                 })
             );
         })
-        .catch((err) => {
-            console.error(`Could not fetch ${err}`);
+        .catch(() => {
+            store.dispatch(isErrorApiForOneDay({
+                isErrorApiForOneDay: true,
+            }))
         });
 }
