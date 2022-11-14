@@ -20,7 +20,7 @@ function PanelTasks() {
     const isManyTasks = list.length - list.slice(0, 3).length > 0;
 
     return (
-        <div className={cx('panelTasks', 'panelTasks_loc_right')}>
+        <div className={`${styles.panelTasks} ${styles.panelTasks_loc_right}`}>
             <ul className={styles.eventSwitcher}>
                 {listItems}
                 {isManyTasks && (

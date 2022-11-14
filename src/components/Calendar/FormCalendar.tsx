@@ -1,6 +1,5 @@
-import { IFormCalendar } from 'types/interfaices';
-import styles from 'pages/calendar/calendar.module.scss';
-import classNames from 'classnames/bind';
+import { IFormCalendar } from "types/interfaices";
+import styles from "pages/calendar/calendar.module.scss";
 
 /* eslint-disable */
 
@@ -13,7 +12,6 @@ function Form({
     handleChangeTimeStart,
     handleChangeTimeFinish,
 }: IFormCalendar) {
-    const cx = classNames.bind(styles);
 
     return (
         <form onSubmit={(e) => handleSubmit(e)} className={styles.formCalendar}>

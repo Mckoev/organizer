@@ -1,20 +1,18 @@
 import { Link, useLocation } from "react-router-dom";
-import homeIcon from 'img/home.png';
-import sunBigIcon from 'img/sunBig.png';
-import calendarIcon from 'img/calendar.png';
-import mapIcon from 'img/maps.png';
-import taskIcon from 'img/task.png';
-import newsIcon from 'img/news.png';
-import classNames from "classnames/bind";
-import styles from './icons.module.scss';
+import homeIcon from "img/home.png";
+import sunBigIcon from "img/sunBig.png";
+import calendarIcon from "img/calendar.png";
+import mapIcon from "img/maps.png";
+import taskIcon from "img/task.png";
+import newsIcon from "img/news.png";
+import styles from "./icons.module.scss";
 
 function Icons() {
 
   const location = useLocation();
-  const cx = classNames.bind(styles);
 
   const styleJustIcon = styles.panelIcons__icon
-  const styleSelectedIcon = cx('panelIcons__icon', 'panelIcons__selected')
+  const styleSelectedIcon =  `${styles.panelIcons__icon} ${styles.panelIcons__selected}`
 
   console.log(location.pathname);
     return (
