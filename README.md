@@ -1,3 +1,7 @@
+### Deploy
+
+https://mckoev.github.io/organizer/
+
 In the project directory, you can run:
 
 ### `npm install --force`
